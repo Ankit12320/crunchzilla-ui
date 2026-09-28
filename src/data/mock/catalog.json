@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "gaya-tilkut",
+    "name": "Gaya Tilkut (Handmade Gud)",
+    "category": "tilkut",
+    "eyebrow": "Seasonal Delicacy",
+    "description": "Traditional melt-in-mouth confection hand-pounded using slow-roasted white sesame seeds and unrefined sugarcane molasses.",
+    "image": "tilkut",
+    "imageAlt": "Crunchzilla Gaya Heritage Tilkut authentic hand-pressed roasted sesame seed treat",
+    "primaryBadge": { "icon": "stars", "label": "Bestseller", "tone": "amber" },
+    "secondaryBadge": { "label": "Gaya Specialty", "tone": "cardamom" },
+    "highlight": { "left": "Winter Festive Special", "right": "100% Sesame & Gud" },
+    "rating": 4.9,
+    "reviewCount": 142,
+    "popularity": 100,
+    "variantLabel": "Select Weight",
+    "variants": [
+      { "id": "400g", "label": "400g", "price": 249, "mrp": 299 },
+      { "id": "800g", "label": "800g Twin Pack", "price": 469 }
+    ]
+  },
+  {
+    "slug": "roasted-makhana",
+    "name": "Artisanal Roasted Makhana",
+    "category": "makhana",
+    "eyebrow": "Gluten-Free Crisp",
+    "description": "Naturally hand-harvested lotus pops, roasted in micro-batches with zero palm oil. Fluffy, exceptionally crunchy, and mineral rich.",
+    "image": "makhana",
+    "imageAlt": "Crunchzilla artisanal golden roasted Makhana foxnuts",
+    "primaryBadge": { "icon": "eco", "label": "Superfood", "tone": "forest" },
+    "secondaryBadge": { "label": "Mithila Origin", "tone": "cardamom" },
+    "highlight": { "left": "Jumbo 6-Suta Grade", "right": "16g Protein / 100g" },
+    "rating": 5.0,
+    "reviewCount": 98,
+    "popularity": 98,
+    "variantLabel": "Select Pack Size",
+    "variants": [
+      { "id": "200g", "label": "200g Jumbo", "price": 299, "mrp": 350 },
+      { "id": "400g", "label": "400g Family", "price": 549 }
+    ]
+  },
+  {
+    "slug": "chana-sattu",
+    "name": "Pure Roasted Chana Sattu",
+    "category": "sattu",
+    "eyebrow": "High Fibre Staple",
+    "description": "Slow clay-oven roasted Bengal gram grounded fine. Perfect for cooling summer sattu sharbat, stuffed litti, and protein-packed parathas.",
+    "image": "sattu",
+    "imageAlt": "Crunchzilla Pure Chana Sattu slow-roasted Bengal Gram flour packaging pouch",
+    "primaryBadge": { "icon": "fitness_center", "label": "Desi Protein", "tone": "terracotta" },
+    "secondaryBadge": { "label": "Wood-Fired Roasted", "tone": "sand" },
+    "highlight": { "left": "Stone Ground Flour", "right": "24g Protein / 100g" },
+    "rating": 4.8,
+    "reviewCount": 118,
+    "popularity": 92,
+    "variantLabel": "Select Weight",
+    "variants": [
+      { "id": "500g", "label": "500g", "price": 189, "mrp": 220 },
+      { "id": "1kg", "label": "1kg Saver", "price": 349 }
+    ]
+  },
+  {
+    "slug": "katarni-chura",
+    "name": "Bhagalpuri Katarni Chura",
+    "category": "chura",
+    "eyebrow": "Artisanal Poha / Chura",
+    "description": "Famous for its distinctive natural fragrance and feather-soft texture when paired with sweet curd (Dahi-Chura) or roasted savoury snacks.",
+    "image": "katarniChura",
+    "imageAlt": "Crunchzilla traditional flattened Katarni grains in artisanal spoon",
+    "primaryBadge": { "icon": "verified", "label": "GI Tagged Rice", "tone": "secondary" },
+    "secondaryBadge": { "label": "Bhagalpur Heritage", "tone": "cardamom" },
+    "highlight": { "left": "Heirloom Aroma", "right": "Naturally Flattened" },
+    "rating": 4.9,
+    "reviewCount": 64,
+    "popularity": 88,
+    "variantLabel": "Select Weight",
+    "variants": [
+      { "id": "500g", "label": "500g", "price": 149, "mrp": 180 },
+      { "id": "1kg", "label": "1kg Pack", "price": 279 }
+    ]
+  },
+  {
+    "slug": "basmati-poha",
+    "name": "Premium Basmati Poha",
+    "category": "chura",
+    "eyebrow": "Pantry Essential",
+    "description": "Delicate, aromatic rice flakes gently flattened for effortless morning poha bowls, wholesome cutlets, and crunchy tea-time chivda.",
+    "image": "basmatiPoha",
+    "imageAlt": "Thin golden Basmati poha flakes on a handmade ceramic plate with cardamom pods",
+    "primaryBadge": { "icon": "breakfast_dining", "label": "Daily Breakfast", "tone": "neutral" },
+    "secondaryBadge": { "label": "Extra Thin & Crisp", "tone": "cardamom" },
+    "highlight": { "left": "Zero Polished Starch", "right": "Ready in 5 Mins" },
+    "rating": 4.7,
+    "reviewCount": 49,
+    "popularity": 80,
+    "variantLabel": "Select Weight",
+    "variants": [
+      { "id": "500g", "label": "500g", "price": 129, "mrp": 160 },
+      { "id": "1kg", "label": "1kg Family", "price": 239 }
+    ]
+  },
+  {
+    "slug": "jaggery-cubes",
+    "name": "Organic Sugarcane Gud Cubes",
+    "category": "jaggery",
+    "eyebrow": "Natural Sweetener",
+    "description": "Clarified without sulphur or artificial bleaching chemicals. Deep caramel notes ideal for tea, desserts, festive sweetmaking, or post-meal digestion.",
+    "image": "jaggeryCubes",
+    "imageAlt": "Dark golden organic sugarcane jaggery cubes on a rustic wood block",
+    "primaryBadge": { "icon": "nature", "label": "Unrefined", "tone": "amber" },
+    "secondaryBadge": { "label": "Chemical-Free", "tone": "cardamom" },
+    "highlight": { "left": "Pure Molasses Note", "right": "Natural Iron Booster" },
+    "rating": 4.9,
+    "reviewCount": 78,
+    "popularity": 85,
+    "variantLabel": "Select Weight",
+    "variants": [
+      { "id": "500g", "label": "500g", "price": 160, "mrp": 200 },
+      { "id": "1kg", "label": "1kg Jar", "price": 299 }
+    ]
+  }
+]

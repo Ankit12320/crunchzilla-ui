@@ -1,0 +1,30 @@
+[
+  {
+    "id": "aman-kumar",
+    "name": "Aman Kumar",
+    "purchase": "Gaya Tilkut",
+    "rating": 5,
+    "quote": "I absolutely loved the gud tilkut. The taste instantly reminded me of my hometown — it felt just like having something made at home. It’s soft, light, and melts in the mouth beautifully. Being so far away, it was truly comforting to taste something so familiar."
+  },
+  {
+    "id": "gugul-dash",
+    "name": "Gugul Dash",
+    "purchase": "Express Delivery",
+    "rating": 5,
+    "quote": "The delivery was also very prompt and arrived the very next day, which was a pleasant surprise. Overall, a wonderful experience, and I really enjoyed it. Highly recommended."
+  },
+  {
+    "id": "vivek-adarsh",
+    "name": "Vivek Adarsh",
+    "purchase": "Gud & Makhana",
+    "rating": 4.5,
+    "quote": "Jaggery was too good, wish I could have ordered in more quantity. Makhana was also good. Tilkut sugar was good too... Overall good experience and happy with the quality."
+  },
+  {
+    "id": "anish",
+    "name": "Anish",
+    "purchase": "Crispy Tilkut",
+    "rating": 5,
+    "quote": "Tried Tilkut.. It is really good. Something similar to gajak, but a bit more crispy and different. Tastes really good and is healthy as well. Home made taste.."
+  }
+]

@@ -1,0 +1,185 @@
+/*
+ * Crunchzilla design tokens.
+ * Everything in @theme becomes a Tailwind utility (bg-*, text-*, font-*, …).
+ */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* ── Fonts (loaded via next/font in app/layout.tsx) ── */
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
+
+  /* ── shadcn/ui bridge ── */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
+
+  /* ── MD3 surfaces ── */
+  --color-surface: #fbf9f6;
+  --color-surface-dim: #dbdad7;
+  --color-surface-bright: #fbf9f6;
+  --color-surface-variant: #e4e2df;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f3f0;
+  --color-surface-container: #efeeeb;
+  --color-surface-container-high: #eae8e5;
+  --color-surface-container-highest: #e4e2df;
+  --color-on-surface: #1b1c1a;
+  --color-on-surface-variant: #564338;
+  --color-inverse-surface: #30312f;
+  --color-inverse-on-surface: #f2f0ed;
+  --color-outline: #897267;
+  --color-outline-variant: #ddc1b3;
+
+  /* ── MD3 primary (roasted brown) ── */
+  --color-on-primary: #ffffff;
+  --color-primary-container: #b45309;
+  --color-on-primary-container: #fff1eb;
+  --color-primary-fixed: #ffdbca;
+  --color-primary-fixed-dim: #ffb68e;
+  --color-on-primary-fixed: #331200;
+
+  /* ── MD3 secondary (leaf green) ── */
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #bdefbf;
+  --color-on-secondary-container: #426e48;
+  --color-secondary-fixed: #bdefbf;
+  --color-on-secondary-fixed: #002109;
+
+  /* ── MD3 tertiary ── */
+  --color-tertiary: #884400;
+  --color-tertiary-container: #ad5800;
+  --color-on-tertiary-container: #fff1e9;
+  --color-tertiary-fixed: #ffdcc5;
+  --color-on-tertiary-fixed: #301400;
+
+  /* ── MD3 error ── */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* ── Brand palette ── */
+  --color-golden-sand: #faf4de;
+  --color-warm-cream: #faf8f5;
+  --color-pure-parchment: #ffffff;
+  --color-cardamom-light: #e8f0ea;
+  --color-roasted-terracotta: #b45309;
+  --color-warm-amber: #d97706;
+  --color-spiced-tangerine: #e67e22;
+  --color-botanical-forest: #2e5a36;
+  --color-charcoal-bark: #1f2937;
+  --color-whatsapp-emerald: #25d366;
+
+  /* ── Type scale ── */
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.15;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 600;
+
+  --text-display-mobile: 2.25rem;
+  --text-display-mobile--line-height: 1.2;
+  --text-display-mobile--letter-spacing: -0.01em;
+  --text-display-mobile--font-weight: 600;
+
+  --text-headline-lg: 2.5rem;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--letter-spacing: -0.015em;
+  --text-headline-lg--font-weight: 600;
+
+  --text-headline-lg-mobile: 1.75rem;
+  --text-headline-lg-mobile--line-height: 1.25;
+  --text-headline-lg-mobile--letter-spacing: -0.01em;
+  --text-headline-lg-mobile--font-weight: 600;
+
+  --text-headline-md: 1.875rem;
+  --text-headline-md--line-height: 1.3;
+  --text-headline-md--font-weight: 500;
+
+  --text-headline-sm: 1.375rem;
+  --text-headline-sm--line-height: 1.35;
+  --text-headline-sm--font-weight: 500;
+
+  --text-title-lg: 1.25rem;
+  --text-title-lg--line-height: 1.4;
+  --text-title-lg--font-weight: 700;
+
+  --text-title-md: 1.125rem;
+  --text-title-md--line-height: 1.45;
+  --text-title-md--font-weight: 600;
+
+  --text-title-sm: 1rem;
+  --text-title-sm--line-height: 1.45;
+  --text-title-sm--font-weight: 600;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+
+  --text-body-md: 0.9375rem;
+  --text-body-md--line-height: 1.55;
+
+  --text-body-sm: 0.8125rem;
+  --text-body-sm--line-height: 1.5;
+
+  --text-label-lg: 0.875rem;
+  --text-label-lg--line-height: 1.2;
+  --text-label-lg--letter-spacing: 0.04em;
+  --text-label-lg--font-weight: 700;
+
+  --text-label-md: 0.75rem;
+  --text-label-md--line-height: 1.2;
+  --text-label-md--letter-spacing: 0.05em;
+  --text-label-md--font-weight: 700;
+
+  --text-label-sm: 0.6875rem;
+  --text-label-sm--line-height: 1.2;
+  --text-label-sm--letter-spacing: 0.06em;
+  --text-label-sm--font-weight: 700;
+}
+
+/* shadcn/ui semantic variables mapped onto the brand palette */
+:root {
+  --background: #fbf9f6;
+  --foreground: #1b1c1a;
+  --card: #ffffff;
+  --card-foreground: #1b1c1a;
+  --popover: #ffffff;
+  --popover-foreground: #1b1c1a;
+  --primary: #903f00;
+  --primary-foreground: #ffffff;
+  --secondary: #3c6843;
+  --secondary-foreground: #ffffff;
+  --muted: #efeeeb;
+  --muted-foreground: #564338;
+  --accent: #eae8e5;
+  --accent-foreground: #1b1c1a;
+  --destructive: #ba1a1a;
+  --border: #ddc1b3;
+  --input: #ddc1b3;
+  --ring: #903f00;
+  --radius: 0.5rem;
+
+  /* Sticky header = 1.75rem announcement bar + 5rem nav row */
+  --header-height: 6.75rem;
+}

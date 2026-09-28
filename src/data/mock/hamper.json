@@ -1,0 +1,14 @@
+{
+  "slug": "heritage-pantry-hamper",
+  "name": "The Complete Bihari Heritage Pantry Hamper",
+  "tag": "Family Discovery Box",
+  "description": "Can’t decide where to begin? Experience our flagship artisanal collection in one beautifully curated box: Gaya Tilkut (400g), Roasted Jumbo Makhana (200g), Pure Chana Sattu (500g), and Bhagalpuri Katarni Chura (500g).",
+  "images": ["tilkut", "makhana", "sattu", "katarniChura"],
+  "perks": [
+    { "label": "Net Weight", "value": "1.6 kg Artisanal", "tone": "terracotta" },
+    { "label": "Savings", "value": "Flat ₹180 Off", "tone": "secondary" },
+    { "label": "Shipping", "value": "100% Free Express", "tone": "amber" }
+  ],
+  "value": 886,
+  "price": 699
+}

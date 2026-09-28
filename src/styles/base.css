@@ -1,0 +1,14 @@
+/* Element-level defaults */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+  body {
+    @apply bg-surface text-body-md text-on-surface;
+    overscroll-behavior: none;
+  }
+}

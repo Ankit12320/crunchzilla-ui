@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "tilkut",
+    "name": "Crunchzilla Tilkut",
+    "price": 249,
+    "subtitle": "Winter & Festival Specialty",
+    "description": "Handmade with roasted sesame seeds and pure jaggery, a traditional Indian sweet perfect for festivals, snacks, and gifting. Soft, flaky, and melting in mouth.",
+    "image": "tilkut",
+    "imageAlt": "Crunchzilla Tilkut handmade with roasted sesame seeds and pure jaggery",
+    "badge": { "label": "Bestseller", "tone": "amber" },
+    "rating": 4.9,
+    "reviewCount": "120+",
+    "variants": [
+      { "id": "400g", "label": "400g" },
+      { "id": "800g", "label": "800g (Pack of 2)" }
+    ]
+  },
+  {
+    "slug": "makhana",
+    "name": "Crunchzilla Makhana",
+    "price": 299,
+    "subtitle": "Original Indian Foxnuts",
+    "description": "Light, crunchy, protein-rich foxnuts, the perfect healthy snack for everyday energy. 100% natural, hand-picked jumbo grades, and guilt-free snacking.",
+    "image": "makhana",
+    "imageAlt": "Crunchzilla artisanal roasted Makhana jar packed fresh",
+    "badge": { "label": "Bestseller", "tone": "forest" },
+    "rating": 5.0,
+    "reviewCount": "250+",
+    "variants": [
+      { "id": "200g", "label": "200g Jumbo" },
+      { "id": "400g", "label": "400g Family" }
+    ]
+  },
+  {
+    "slug": "sattu",
+    "name": "Crunchzilla Sattu",
+    "price": 189,
+    "subtitle": "Slow-Roasted Bengal Gram",
+    "description": "A protein-rich superfood made from roasted gram flour, perfect for drinks, parathas, laddoos, and everyday nutrition. Unadulterated digestive health.",
+    "image": "sattu",
+    "imageAlt": "Crunchzilla Pure Chana Sattu freshly roasted gram flour",
+    "badge": { "label": "Superfood", "tone": "tertiary" },
+    "rating": 4.8,
+    "reviewCount": "85",
+    "variants": [
+      { "id": "500g", "label": "500g" },
+      { "id": "1kg", "label": "1kg Saver" }
+    ]
+  }
+]
