@@ -45,17 +45,7 @@ export default function Header() {
             <Icon name="chat" className="text-[18px]" />
             WhatsApp Order
           </a>
-          <button
-            type="button"
-            aria-label="Search catalog"
-            className="flex h-10 w-10 items-center justify-center rounded-full text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-on-surface"
-          >
-            <Icon name="search" className="text-[22px]" />
-          </button>
           <CartButton />
-          <div className="hidden h-8 w-8 items-center justify-center rounded-full bg-primary shadow-sm sm:flex">
-            <Icon name="person" className="text-[18px] text-on-primary" />
-          </div>
           <MobileNav />
         </div>
       </div>
