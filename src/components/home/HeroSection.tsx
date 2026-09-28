@@ -112,17 +112,17 @@ export default function HeroSection() {
                 <Icon name="eco" className="text-[16px]" />
                 100% Homemade Taste
               </div>
-              <div className="absolute right-6 bottom-6 left-6 flex items-center justify-between rounded-xl bg-pure-parchment/95 p-4 shadow-lg backdrop-blur-md">
-                {/* <div>
+              {/* <div className="absolute right-6 bottom-6 left-6 flex items-center justify-between rounded-xl bg-pure-parchment/95 p-4 shadow-lg backdrop-blur-md">
+                <div>
                   <p className="text-title-sm font-bold text-primary">Gaya Special Gud Tilkut</p>
                   <p className="text-body-sm text-on-surface-variant">
                     Winter delight melted with pure jaggery
                   </p>
-                </div> */}
-                {/* <span className="rounded-full bg-golden-sand px-3 py-1 text-title-sm text-primary">
+                </div>
+                <span className="rounded-full bg-golden-sand px-3 py-1 text-title-sm text-primary">
                   ₹249
-                </span> */}
-              </div>
+                </span>
+              </div> */}
             </div>
 
             {/* Overlapping Makhana card — sits just above the middle of the left edge so it
