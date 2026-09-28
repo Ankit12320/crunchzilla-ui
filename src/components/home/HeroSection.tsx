@@ -119,9 +119,9 @@ export default function HeroSection() {
                     Winter delight melted with pure jaggery
                   </p>
                 </div>
-                <span className="rounded-full bg-golden-sand px-3 py-1 text-title-sm text-primary">
+                {/* <span className="rounded-full bg-golden-sand px-3 py-1 text-title-sm text-primary">
                   ₹249
-                </span>
+                </span> */}
               </div>
             </div>
 
