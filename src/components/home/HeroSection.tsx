@@ -113,12 +113,12 @@ export default function HeroSection() {
                 100% Homemade Taste
               </div>
               <div className="absolute right-6 bottom-6 left-6 flex items-center justify-between rounded-xl bg-pure-parchment/95 p-4 shadow-lg backdrop-blur-md">
-                <div>
+                {/* <div>
                   <p className="text-title-sm font-bold text-primary">Gaya Special Gud Tilkut</p>
                   <p className="text-body-sm text-on-surface-variant">
                     Winter delight melted with pure jaggery
                   </p>
-                </div>
+                </div> */}
                 {/* <span className="rounded-full bg-golden-sand px-3 py-1 text-title-sm text-primary">
                   ₹249
                 </span> */}
