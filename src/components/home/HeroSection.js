@@ -31,7 +31,7 @@ export default function HeroSection() {
           </div>
 
           <div className="space-y-3">
-            <h1 className="font-display text-display-mobile font-bold tracking-tight text-primary md:text-display">
+            <h1 className="font-display text-display-mobile font-bold tracking-tight text-[#fffaf0]md:text-display">
               Wholesome Staples and Snacks
             </h1>
             <p className="font-display text-headline-sm italic text-on-surface-variant">
@@ -129,9 +129,9 @@ export default function HeroSection() {
                     Winter delight melted with pure jaggery
                   </p>
                 </div>
-                <span className="rounded-full bg-golden-sand px-3 py-1 text-title-sm text-primary">
-                  ₹249
-                </span>
+                // <span className="rounded-full bg-golden-sand px-3 py-1 text-title-sm text-primary">
+                //   249
+                // </span>
               </div> */}
             </div>
 
