@@ -2,7 +2,6 @@
   {
     "slug": "tilkut",
     "name": "Crunchzilla Tilkut",
-    "price": 249,
     "subtitle": "Winter & Festival Specialty",
     "description": "Handmade with roasted sesame seeds and pure jaggery, a traditional Indian sweet perfect for festivals, snacks, and gifting. Soft, flaky, and melting in mouth.",
     "image": "tilkut",
@@ -18,7 +17,6 @@
   {
     "slug": "makhana",
     "name": "Crunchzilla Makhana",
-    "price": 299,
     "subtitle": "Original Indian Foxnuts",
     "description": "Light, crunchy, protein-rich foxnuts, the perfect healthy snack for everyday energy. 100% natural, hand-picked jumbo grades, and guilt-free snacking.",
     "image": "makhana",
@@ -34,7 +32,6 @@
   {
     "slug": "sattu",
     "name": "Crunchzilla Sattu",
-    "price": 189,
     "subtitle": "Slow-Roasted Bengal Gram",
     "description": "A protein-rich superfood made from roasted gram flour, perfect for drinks, parathas, laddoos, and everyday nutrition. Unadulterated digestive health.",
     "image": "sattu",

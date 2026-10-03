@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: `${SITE.name} | ${SITE.tagline}`,
+  title: `${SITE.name} `,
   description: SITE.description,
   icons: {
     icon: IMAGES.brand.logo,

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/common/Icon";
-import AnnouncementBar from "@/components/layout/AnnouncementBar";
+//import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import CartButton from "@/components/layout/CartButton";
 import MobileNav from "@/components/layout/MobileNav";
 import NavLinks from "@/components/layout/NavLinks";
@@ -12,7 +12,7 @@ import { whatsappLink } from "@/lib/whatsapp";
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-surface/90 shadow-[0_1px_8px_rgba(45,30,15,0.05)] backdrop-blur-xl">
-      <AnnouncementBar />
+      {/* //<AnnouncementBar /> */}
       <div className="container-page flex h-20 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-4">
           <Image
@@ -27,9 +27,9 @@ export default function Header() {
             <span className="font-display text-headline-sm font-bold tracking-tight text-primary">
               {SITE.name}
             </span>
-            <span className="-mt-1 whitespace-nowrap text-label-sm uppercase tracking-widest text-secondary">
+            {/* <span className="-mt-1 whitespace-nowrap text-label-sm uppercase tracking-widest text-secondary">
               {SITE.tagline}
-            </span>
+            </span> */}
           </span>
         </Link>
 

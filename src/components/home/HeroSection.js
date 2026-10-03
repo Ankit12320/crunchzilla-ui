@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Icon from "@/components/common/Icon";
-import { HERO_CUSTOMER_INITIALS, HERO_VALUE_PILLS, TONE_TEXT } from "@/constants/home";
+import {
+  HERO_CUSTOMER_INITIALS,
+  HERO_VALUE_PILLS,
+  TONE_TEXT,
+} from "@/constants/home";
 import { IMAGES } from "@/constants/images";
 import { SITE } from "@/constants/site";
 import { whatsappLink } from "@/lib/whatsapp";
@@ -27,7 +31,7 @@ export default function HeroSection() {
           </div>
 
           <div className="space-y-3">
-            <h1 className="font-display text-display-mobile font-bold tracking-tight text-primary md:text-display">
+            <h1 className="font-display text-display-mobile font-bold tracking-tight text-[#fffaf0]md:text-display">
               Wholesome Staples and Snacks
             </h1>
             <p className="font-display text-headline-sm italic text-on-surface-variant">
@@ -36,9 +40,10 @@ export default function HeroSection() {
           </div>
 
           <p className="max-w-xl text-body-lg text-on-surface">
-            From festive sweets to daily essentials, {SITE.name} brings you India’s
-            time-honored recipes in fresh, premium form. Every batch is slow-roasted using
-            simple, natural ingredients packed with authentic taste.
+            From festive sweets to daily essentials, {SITE.name} brings you
+            India’s time-honored recipes in fresh, premium form. Every batch is
+            slow-roasted using simple, natural ingredients packed with authentic
+            taste.
           </p>
 
           <div className="grid w-full grid-cols-2 gap-2 pt-2 sm:grid-cols-4">
@@ -47,7 +52,10 @@ export default function HeroSection() {
                 key={label}
                 className="flex items-center gap-2 rounded-lg bg-surface px-3 py-2 shadow-sm"
               >
-                <Icon name={icon} className={`text-[18px] ${TONE_TEXT[tone]}`} />
+                <Icon
+                  name={icon}
+                  className={`text-[18px] ${TONE_TEXT[tone]}`}
+                />
                 <span className="text-label-sm text-on-surface">{label}</span>
               </div>
             ))}
@@ -62,7 +70,9 @@ export default function HeroSection() {
               <Icon name="arrow_downward" className="text-[18px]" />
             </a>
             <a
-              href={whatsappLink(`Hi ${SITE.name}, I would like to order wholesome snacks.`)}
+              href={whatsappLink(
+                `Hi ${SITE.name}, I would like to order wholesome snacks.`,
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-whatsapp-emerald px-6 py-3.5 text-title-sm text-pure-parchment shadow-md transition-all hover:opacity-95"
@@ -84,8 +94,8 @@ export default function HeroSection() {
               ))}
             </div>
             <p>
-              Loved by <strong>{SITE.happyHouseholds} homes</strong> seeking pure hometown
-              nostalgia.
+              Loved by <strong>{SITE.happyHouseholds} homes</strong> seeking
+              pure hometown nostalgia.
             </p>
           </div>
         </div>
@@ -119,9 +129,9 @@ export default function HeroSection() {
                     Winter delight melted with pure jaggery
                   </p>
                 </div>
-                <span className="rounded-full bg-golden-sand px-3 py-1 text-title-sm text-primary">
-                  ₹249
-                </span>
+                // <span className="rounded-full bg-golden-sand px-3 py-1 text-title-sm text-primary">
+                //   249
+                // </span>
               </div> */}
             </div>
 
@@ -140,8 +150,12 @@ export default function HeroSection() {
                   Foxnut Crunch
                 </span>
               </div>
-              <p className="mt-2 px-1 text-title-sm text-on-surface">Artisanal Makhana</p>
-              <p className="px-1 text-label-sm text-secondary">Slow roasted daily</p>
+              <p className="mt-2 px-1 text-title-sm text-on-surface">
+                Artisanal Makhana
+              </p>
+              <p className="px-1 text-label-sm text-secondary">
+                Slow roasted daily
+              </p>
             </div>
 
             {/* Quality badge */}
@@ -151,7 +165,9 @@ export default function HeroSection() {
                 <span className="block text-label-sm uppercase leading-tight tracking-wider opacity-80">
                   Certified
                 </span>
-                <span className="text-label-md leading-none font-bold">Zero Chemicals</span>
+                <span className="text-label-md leading-none font-bold">
+                  Zero Chemicals
+                </span>
               </div>
             </div>
           </div>
