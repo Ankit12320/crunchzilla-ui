@@ -13,6 +13,7 @@ export const SITE = {
   supportHours: "24*7",
   freeShippingAbove: 499,
   fulfillmentHubs: "Patna / Bihar & Bengaluru, Karnataka",
+  whatsappCommunityUrl: "https://chat.whatsapp.com/FuO9iku8PoD3a3COL0aqax?mode=gi_t",
   fssaiLicense: "21225192003493",
   rating: "4.9/5",
   happyHouseholds: "500+",

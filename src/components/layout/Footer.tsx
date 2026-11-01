@@ -18,6 +18,13 @@ export default function Footer() {
       href: whatsappLink(),
       external: true,
     },
+    {
+      icon: "groups",
+      iconClass: "text-whatsapp-emerald",
+      label: "Community & Stories (WhatsApp)",
+      href: SITE.whatsappCommunityUrl,
+      external: true,
+    },
   ];
 
   return (
@@ -35,6 +42,18 @@ export default function Footer() {
           <div className="flex items-center gap-2 text-label-sm text-on-surface-variant">
             <Icon name="favorite" className="text-[18px] text-primary" />
             Made with Pride in India
+          </div>
+          <div className="pt-1">
+            <a
+              href={SITE.whatsappCommunityUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Join Crunchzilla Community & Stories on WhatsApp"
+              className="inline-flex items-center gap-2 rounded-full bg-cardamom-light px-3.5 py-1.5 text-label-sm font-semibold text-primary transition-all duration-200 hover:bg-whatsapp-emerald hover:text-pure-parchment"
+            >
+              <Icon name="groups" className="text-[18px] text-whatsapp-emerald" />
+              Community &amp; Stories
+            </a>
           </div>
         </div>
 
@@ -91,6 +110,17 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
         </p>
+        <div className="flex items-center gap-2">
+          <a
+            href={SITE.whatsappCommunityUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-label-sm font-semibold text-primary transition-colors hover:text-whatsapp-emerald"
+          >
+            <Icon name="groups" className="text-[18px] text-whatsapp-emerald" />
+            Community &amp; Stories
+          </a>
+        </div>
         <div className="flex flex-wrap items-center justify-center gap-4">
           {LEGAL_LINKS.map(({ label, href }) => (
             <Link key={label} href={href} className={linkClass}>

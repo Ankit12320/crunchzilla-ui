@@ -1,6 +1,7 @@
 import Icon from "@/components/common/Icon";
 import StarRating from "@/components/common/StarRating";
 import { COMMUNITY_VOICES, FEATURED_STORY } from "@/constants/about";
+import { SITE } from "@/constants/site";
 
 export default function CommunityLove() {
   return (
@@ -39,6 +40,18 @@ export default function CommunityLove() {
                   <span className="text-label-sm text-on-surface">— {name}</span>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-8">
+              <a
+                href={SITE.whatsappCommunityUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-whatsapp-emerald px-6 py-3 text-label-md font-bold text-pure-parchment shadow-md transition-all hover:bg-primary hover:shadow-lg"
+              >
+                <Icon name="groups" className="text-[20px]" />
+                Join Community &amp; Stories on WhatsApp
+              </a>
             </div>
           </div>
         </figure>

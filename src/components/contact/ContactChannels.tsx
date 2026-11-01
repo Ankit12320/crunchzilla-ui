@@ -52,6 +52,24 @@ export default function ContactChannels() {
           freshness.
         </p>
       </Channel>
+
+      <Channel icon="groups" iconClass="bg-cardamom-light text-primary">
+        <span className={labelClass}>Community &amp; Stories</span>
+        <div className="flex flex-wrap items-center gap-3 pt-1">
+          <a
+            href={SITE.whatsappCommunityUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-whatsapp-emerald px-4 py-2 text-label-md font-bold text-pure-parchment shadow-xs transition-all hover:bg-primary"
+          >
+            <Icon name="groups" className="text-[18px]" />
+            Join Community &amp; Stories
+          </a>
+        </div>
+        <p className="text-body-sm text-on-surface-variant pt-1">
+          Join our WhatsApp community for batch roasting updates, authentic regional recipes, and pantry stories.
+        </p>
+      </Channel>
     </div>
   );
 }
