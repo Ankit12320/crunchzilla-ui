@@ -20,12 +20,13 @@ export default function ProductCard({ product }: { product: Product }) {
   const addToCart = useAddToCart();
 
   const variant = product.variants.find((v) => v.id === variantId) ?? product.variants[0];
+  const activePrice = variant?.price ?? product.price;
 
   const handleAddToCart = () => {
     addToCart({
       slug: product.slug,
       name: product.name,
-      price: product.price,
+      price: activePrice,
       variantId: variant.id,
       variantLabel: variant.label,
       image: IMAGES.products[product.image],
@@ -61,7 +62,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <div className="mb-1 flex items-baseline justify-between">
             <h3 className="font-display text-headline-sm font-bold text-primary">{product.name}</h3>
             <span className="font-display text-headline-sm font-bold text-on-surface">
-              ₹{product.price}
+              ₹{activePrice}
             </span>
           </div>
           <p className="mb-2 text-label-sm uppercase tracking-wider text-secondary">
@@ -90,7 +91,7 @@ export default function ProductCard({ product }: { product: Product }) {
                         : "bg-surface-container text-on-surface hover:bg-surface-container-high"
                     )}
                   >
-                    {v.label}
+                    {v.label} {v.price ? `(₹${v.price})` : ""}
                   </button>
                 );
               })}
@@ -108,7 +109,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </button>
             <a
               href={whatsappLink(
-                `Hi, I want to buy ${product.name} ${variant.label}`
+                `Hi, I want to buy ${product.name} (${variant.label}) for ₹${activePrice}`
               )}
               target="_blank"
               rel="noopener noreferrer"

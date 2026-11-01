@@ -7,6 +7,7 @@ export type BadgeTone = "amber" | "forest" | "tertiary";
 export interface ProductVariant {
   id: string;
   label: string;
+  price?: number;
 }
 
 export interface Product {

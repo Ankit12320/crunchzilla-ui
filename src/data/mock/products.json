@@ -11,8 +11,8 @@
     "rating": 4.9,
     "reviewCount": "1.2k+",
     "variants": [
-      { "id": "500g", "label": "500g" },
-      { "id": "1kg", "label": "1kg (Pack of 2)" }
+      { "id": "500g", "label": "500g", "price": 450 },
+      { "id": "1kg", "label": "1kg (Pack of 2)", "price": 825 }
     ]
   },
   {
@@ -27,8 +27,8 @@
     "rating": 4.8,
     "reviewCount": "950+",
     "variants": [
-      { "id": "500g", "label": "500g Jumbo" },
-      { "id": "1kg", "label": "1kg (Family Pack)" }
+      { "id": "500g", "label": "500g Jumbo", "price": 800 },
+      { "id": "1kg", "label": "1kg (Family Pack)", "price": 1600 }
     ]
   },
   {
@@ -43,8 +43,8 @@
     "rating": 4.9,
     "reviewCount": "820+",
     "variants": [
-      { "id": "500g", "label": "500g" },
-      { "id": "1kg", "label": "1kg (Saver Pack)" }
+      { "id": "500g", "label": "500g", "price": 150 },
+      { "id": "1kg", "label": "1kg (Saver Pack)", "price": 230 }
     ]
   }
 ]
