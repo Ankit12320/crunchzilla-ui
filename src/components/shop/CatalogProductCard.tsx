@@ -7,7 +7,7 @@ import { IMAGES } from "@/constants/images";
 import { PRIMARY_BADGE_STYLES, SECONDARY_BADGE_STYLES } from "@/constants/shop";
 import { useAddToCart } from "@/hooks/use-add-to-cart";
 import { cn } from "@/lib/utils";
-import { buildSingleProductOrderWhatsAppLink } from "@/lib/whatsapp";
+import { buildProductCardWhatsAppLink } from "@/lib/whatsapp";
 import type { CatalogProduct } from "@/types/catalog";
 
 export default function CatalogProductCard({ product }: { product: CatalogProduct }) {
@@ -135,12 +135,12 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
           </div>
           <div className="flex items-center gap-2">
             <a
-              href={buildSingleProductOrderWhatsAppLink(
-                product.name,
-                variant.label,
-                variant.price,
-                1
-              )}
+              href={buildProductCardWhatsAppLink({
+                name: product.name,
+                variantLabel: variant.label,
+                price: variant.price,
+                summary: product.eyebrow,
+              })}
               target="_blank"
               rel="noopener noreferrer"
               title="Order via WhatsApp"
