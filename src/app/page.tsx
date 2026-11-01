@@ -7,12 +7,12 @@ import BestsellersSection from "@/components/home/BestsellersSection";
 import MakhanaSpotlight from "@/components/home/MakhanaSpotlight";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import FeedbackSection from "@/components/home/FeedbackSection";
-import { fetchBestsellers } from "@/lib/products";
+import { fetchCatalog } from "@/lib/catalog";
 import { fetchTestimonials } from "@/lib/testimonials";
 
 export default async function Home() {
   const [products, testimonials] = await Promise.all([
-    fetchBestsellers(),
+    fetchCatalog(),
     fetchTestimonials(),
   ]);
 

@@ -1,17 +1,15 @@
-import type { Product } from "@/types/product";
-
-// Mock data imports — replace with real API calls later
-import productsList from "@/data/mock/products.json";
+import type { CatalogProduct } from "@/types/catalog";
+import { fetchCatalog } from "@/lib/catalog";
 
 // ─── API Service Layer ─────────────────────────────────────────────
-// Replace mock implementations below with real fetch() calls when ready.
+// Unified catalog service: returns all products synchronized with the Shop catalog.
 // ────────────────────────────────────────────────────────────────────
 
 /**
- * GET /api/products/bestsellers
- * Returns the products featured on the home page.
+ * Returns all products featured on the home page.
+ * Synchronized directly with the Shop catalog so any newly added product
+ * automatically appears on the Home page without duplicates or stale data.
  */
-export async function fetchBestsellers(): Promise<Product[]> {
-  // TODO: Replace with → const res = await fetch(`${API_BASE}/products/bestsellers`);
-  return productsList as Product[];
+export async function fetchBestsellers(): Promise<CatalogProduct[]> {
+  return fetchCatalog();
 }
