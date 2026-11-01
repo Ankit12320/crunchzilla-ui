@@ -126,6 +126,11 @@ export const FEATURED_STORY = {
 
 export const COMMUNITY_VOICES = [
   {
+    name: "Prem",
+    quote:
+      "Excellent quality and authentic taste! I really loved the freshness and traditional flavour. The packaging was good, pure and healthy. Highly recommended for authentic Bihar specialties.",
+  },
+  {
     name: "Gugul Dash",
     quote: "The delivery was prompt and arrived next day. Makhana was crisp and Gud was exceptional.",
   },
