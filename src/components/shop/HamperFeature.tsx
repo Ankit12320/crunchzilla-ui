@@ -52,19 +52,6 @@ export default function HamperFeature({ hamper }: { hamper: Hamper }) {
                     ₹{hamper.price}
                   </span>
                 </div>
-                <a
-                  href={buildProductCardWhatsAppLink({
-                    name: hamper.name,
-                    variantLabel: "Heritage Hamper Box",
-                    price: hamper.price,
-                  })}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-full bg-whatsapp-emerald px-6 py-3 text-label-lg text-pure-parchment shadow-md transition-all hover:bg-secondary"
-                >
-                  <Icon name="chat" className="text-[20px]" />
-                  Order Hamper on WhatsApp
-                </a>
                 <AddToCartButton
                   item={{
                     slug: hamper.slug,
@@ -74,11 +61,24 @@ export default function HamperFeature({ hamper }: { hamper: Hamper }) {
                     variantLabel: "Hamper",
                     image: IMAGES.catalog[hamper.images[0]],
                   }}
-                  className="flex items-center gap-2 rounded-full bg-roasted-terracotta px-5 py-3 text-label-lg text-pure-parchment shadow-md transition-all hover:bg-primary"
+                  className="flex flex-1 min-w-[200px] items-center justify-center gap-2 rounded-full bg-roasted-terracotta px-6 py-3 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-primary"
                 >
                   <Icon name="shopping_bag" className="text-[20px]" />
                   Add to Cart
                 </AddToCartButton>
+                <a
+                  href={buildProductCardWhatsAppLink({
+                    name: hamper.name,
+                    variantLabel: "Heritage Hamper Box",
+                    price: hamper.price,
+                  })}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-1 min-w-[200px] items-center justify-center gap-2 rounded-full bg-whatsapp-emerald px-6 py-3 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-secondary"
+                >
+                  <Icon name="chat" className="text-[20px]" />
+                  Order Hamper on WhatsApp
+                </a>
               </div>
             </div>
 

@@ -124,31 +124,19 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
         </div>
 
         {/* Action area */}
-        <div className="-mx-5 -mb-5 flex items-center justify-between gap-3 rounded-b-xl bg-surface-container-low p-5">
-          <div>
-            {variant.mrp && (
-              <span className="block text-label-sm text-on-surface-variant line-through">
-                ₹{variant.mrp}
-              </span>
-            )}
-            <span className="text-title-lg font-bold leading-none text-primary">₹{variant.price}</span>
+        <div className="-mx-5 -mb-5 space-y-3 rounded-b-xl bg-surface-container-low p-5">
+          <div className="flex items-baseline justify-between">
+            <span className="text-label-sm font-medium text-on-surface-variant">Price</span>
+            <div className="flex items-baseline gap-2">
+              {variant.mrp && (
+                <span className="text-label-sm text-on-surface-variant line-through">
+                  ₹{variant.mrp}
+                </span>
+              )}
+              <span className="text-title-lg font-bold leading-none text-primary">₹{variant.price}</span>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <a
-              href={buildProductCardWhatsAppLink({
-                name: product.name,
-                variantLabel: variant.label,
-                price: variant.price,
-              })}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Order ${product.name} on WhatsApp`}
-              title="Order on WhatsApp"
-              className="flex items-center gap-1.5 rounded-full bg-whatsapp-emerald px-3.5 py-2 text-label-sm text-pure-parchment shadow-sm transition-all hover:bg-secondary whitespace-nowrap"
-            >
-              <Icon name="chat" className="text-[16px]" />
-              <span>Order on WhatsApp</span>
-            </a>
+          <div className="grid grid-cols-2 gap-2.5">
             <button
               type="button"
               onClick={() =>
@@ -161,11 +149,26 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
                   image: image,
                 })
               }
-              className="flex items-center gap-1.5 rounded-full bg-roasted-terracotta px-4 py-2 text-label-sm text-pure-parchment shadow-sm transition-all hover:bg-primary"
+              className="flex w-full items-center justify-center gap-1.5 rounded-full bg-roasted-terracotta py-2.5 px-3 text-label-sm font-semibold text-pure-parchment shadow-sm transition-all hover:bg-primary active:scale-[0.98]"
             >
               <Icon name="shopping_bag" className="text-[16px]" />
-              Add to Cart
+              <span>Add to Cart</span>
             </button>
+            <a
+              href={buildProductCardWhatsAppLink({
+                name: product.name,
+                variantLabel: variant.label,
+                price: variant.price,
+              })}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Order ${product.name} on WhatsApp`}
+              title="Order on WhatsApp"
+              className="flex w-full items-center justify-center gap-1.5 rounded-full bg-whatsapp-emerald py-2.5 px-3 text-label-sm font-semibold text-pure-parchment shadow-sm transition-all hover:bg-secondary whitespace-nowrap active:scale-[0.98]"
+            >
+              <Icon name="chat" className="text-[16px]" />
+              <span>Order on WhatsApp</span>
+            </a>
           </div>
         </div>
       </div>
