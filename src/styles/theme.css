@@ -180,6 +180,6 @@
   --ring: #903f00;
   --radius: 0.5rem;
 
-  /* Sticky header = 1.75rem announcement bar + 5rem nav row */
-  --header-height: 6.75rem;
+  /* Sticky header = 5rem nav row (announcement bar disabled) */
+  --header-height: 5rem;
 }

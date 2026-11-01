@@ -23,12 +23,13 @@ export default function CatalogFilterBar({
   onSortChange,
 }: CatalogFilterBarProps) {
   return (
-    <section className="sticky top-header z-30 w-full bg-surface/95 py-3.5 shadow-sm backdrop-blur-md">
-      <div className="container-page flex flex-col items-stretch justify-between gap-3 md:flex-row md:items-center">
+    <section className="relative w-full border-y border-surface-container-high bg-surface py-4">
+      <div className="container-page flex flex-col items-stretch justify-between gap-4 lg:flex-row lg:items-center">
+        {/* Category Pills */}
         <div
           role="group"
           aria-label="Filter by category"
-          className="no-scrollbar flex min-w-0 items-center gap-2 overflow-x-auto pb-1 md:pb-0 lg:flex-wrap lg:overflow-visible"
+          className="no-scrollbar flex min-w-0 items-center gap-2 overflow-x-auto pb-1 sm:pb-0 lg:flex-wrap"
         >
           {CATALOG_CATEGORIES.map(({ id, label }) => {
             const active = id === category;
@@ -39,7 +40,7 @@ export default function CatalogFilterBar({
                 aria-pressed={active}
                 onClick={() => onCategoryChange(id)}
                 className={cn(
-                  "rounded-full px-4 py-2 text-label-md whitespace-nowrap transition-all",
+                  "shrink-0 rounded-full px-4 py-2 text-label-md whitespace-nowrap transition-all",
                   active
                     ? "bg-roasted-terracotta text-pure-parchment shadow-sm"
                     : "bg-surface-container-high text-on-surface-variant hover:bg-surface-variant hover:text-on-surface"
@@ -51,8 +52,12 @@ export default function CatalogFilterBar({
           })}
         </div>
 
-        <div className="flex w-full shrink-0 items-center justify-between gap-3 md:w-auto md:justify-end">
-          <span aria-live="polite" className="hidden whitespace-nowrap text-label-sm text-on-surface-variant sm:inline">
+        {/* Sort & Count Controls */}
+        <div className="flex w-full shrink-0 items-center justify-between gap-3 sm:w-auto sm:justify-end">
+          <span
+            aria-live="polite"
+            className="whitespace-nowrap text-label-sm text-on-surface-variant"
+          >
             Showing {visibleCount} artisan {visibleCount === 1 ? "item" : "items"}
           </span>
           <div className="relative inline-flex items-center">
