@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Icon from "@/components/common/Icon";
+import { FacebookIcon, InstagramIcon } from "@/components/common/SocialIcons";
 import { FOOTER_CATEGORIES, LEGAL_LINKS, NAV_LINKS, SITE } from "@/constants/site";
 import { whatsappLink } from "@/lib/whatsapp";
 
@@ -53,6 +54,31 @@ export default function Footer() {
             >
               <Icon name="groups" className="text-[18px] text-whatsapp-emerald" />
               Community &amp; Stories
+            </a>
+          </div>
+          <div className="flex items-center gap-2.5 pt-1">
+            <span className="text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">
+              Follow Us:
+            </span>
+            <a
+              href={SITE.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              title="Facebook"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-on-surface shadow-xs transition-all duration-200 hover:bg-[#1877F2] hover:text-white hover:scale-110 active:scale-95"
+            >
+              <FacebookIcon className="h-4 w-4" />
+            </a>
+            <a
+              href={SITE.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              title="Instagram"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-on-surface shadow-xs transition-all duration-200 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white hover:scale-110 active:scale-95"
+            >
+              <InstagramIcon className="h-4 w-4" />
             </a>
           </div>
         </div>
@@ -110,7 +136,7 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
         </p>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center justify-center gap-4">
           <a
             href={SITE.whatsappCommunityUrl}
             target="_blank"
@@ -120,6 +146,32 @@ export default function Footer() {
             <Icon name="groups" className="text-[18px] text-whatsapp-emerald" />
             Community &amp; Stories
           </a>
+          <span className="hidden text-outline-variant/40 sm:inline">•</span>
+          <div className="flex items-center gap-2">
+            <span className="text-label-xs font-semibold uppercase tracking-wider text-on-surface-variant">
+              Connect:
+            </span>
+            <a
+              href={SITE.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              title="Facebook"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all duration-200 hover:bg-[#1877F2] hover:text-white hover:scale-110 active:scale-95"
+            >
+              <FacebookIcon className="h-4 w-4" />
+            </a>
+            <a
+              href={SITE.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              title="Instagram"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all duration-200 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white hover:scale-110 active:scale-95"
+            >
+              <InstagramIcon className="h-4 w-4" />
+            </a>
+          </div>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-4">
           {LEGAL_LINKS.map(({ label, href }) => (

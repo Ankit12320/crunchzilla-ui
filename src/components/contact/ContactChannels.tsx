@@ -1,4 +1,5 @@
 import Icon from "@/components/common/Icon";
+import { FacebookIcon, InstagramIcon } from "@/components/common/SocialIcons";
 import { SITE } from "@/constants/site";
 
 const labelClass = "text-label-sm uppercase tracking-wider text-on-surface-variant";
@@ -64,6 +65,26 @@ export default function ContactChannels() {
           >
             <Icon name="groups" className="text-[18px]" />
             Join Community &amp; Stories
+          </a>
+          <a
+            href={SITE.facebookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            title="Facebook"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-surface-container-high text-on-surface shadow-xs transition-all hover:bg-[#1877F2] hover:text-white"
+          >
+            <FacebookIcon className="h-4 w-4" />
+          </a>
+          <a
+            href={SITE.instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            title="Instagram"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-surface-container-high text-on-surface shadow-xs transition-all hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white"
+          >
+            <InstagramIcon className="h-4 w-4" />
           </a>
         </div>
         <p className="text-body-sm text-on-surface-variant pt-1">

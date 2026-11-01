@@ -14,6 +14,8 @@ export const SITE = {
   freeShippingAbove: 499,
   fulfillmentHubs: "Patna / Bihar & Bengaluru, Karnataka",
   whatsappCommunityUrl: "https://chat.whatsapp.com/FuO9iku8PoD3a3COL0aqax?mode=gi_t",
+  facebookUrl: "https://www.facebook.com/profile.php?id=61580215401129&sk=directory_intro",
+  instagramUrl: "https://www.instagram.com/crunchzilla02/",
   fssaiLicense: "21225192003493",
   rating: "4.9/5",
   happyHouseholds: "500+",
