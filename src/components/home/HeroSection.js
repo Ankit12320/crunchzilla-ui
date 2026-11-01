@@ -64,7 +64,7 @@ export default function HeroSection() {
           <div className="flex w-full flex-col sm:flex-row sm:flex-wrap items-center gap-4 pt-4">
             <a
               href="#bestsellers"
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-roasted-terracotta px-8 py-3.5 text-title-sm text-on-primary shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:shadow-lg"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-roasted-terracotta px-8 py-3.5 text-title-sm text-on-primary shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:shadow-lg active:scale-95"
             >
               Explore Our Range
               <Icon name="arrow_downward" className="text-[18px]" />
@@ -75,7 +75,7 @@ export default function HeroSection() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-whatsapp-emerald px-6 py-3.5 text-title-sm text-pure-parchment shadow-md transition-all hover:opacity-95"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-whatsapp-emerald px-6 py-3.5 text-title-sm text-pure-parchment shadow-md transition-all hover:opacity-95 active:scale-95"
             >
               <Icon name="chat" className="text-[20px]" />
               Order on WhatsApp

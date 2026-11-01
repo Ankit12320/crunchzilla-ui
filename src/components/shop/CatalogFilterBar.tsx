@@ -29,7 +29,7 @@ export default function CatalogFilterBar({
         <div
           role="group"
           aria-label="Filter by category"
-          className="no-scrollbar flex min-w-0 items-center gap-2 overflow-x-auto pb-1 sm:pb-0 lg:flex-wrap"
+          className="no-scrollbar touch-scroll-x flex min-w-0 items-center gap-2 overflow-x-auto pb-1 sm:pb-0 lg:flex-wrap"
         >
           {CATALOG_CATEGORIES.map(({ id, label }) => {
             const active = id === category;
@@ -40,7 +40,7 @@ export default function CatalogFilterBar({
                 aria-pressed={active}
                 onClick={() => onCategoryChange(id)}
                 className={cn(
-                  "shrink-0 rounded-full px-4 py-2 text-label-md whitespace-nowrap transition-all",
+                  "flex min-h-[40px] shrink-0 items-center justify-center rounded-full px-4 py-2 text-label-md whitespace-nowrap transition-all active:scale-95",
                   active
                     ? "bg-roasted-terracotta text-pure-parchment shadow-sm"
                     : "bg-surface-container-high text-on-surface-variant hover:bg-surface-variant hover:text-on-surface"

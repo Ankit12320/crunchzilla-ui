@@ -25,7 +25,7 @@ type ContactValues = z.infer<typeof contactSchema>;
 
 const labelClass = "block text-label-sm uppercase tracking-wider text-on-surface-variant";
 const inputClass =
-  "w-full rounded-lg bg-surface-container-low py-2.5 pr-4 pl-10 text-body-md text-on-surface shadow-inner placeholder:text-outline/70 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/30 focus:outline-none aria-invalid:ring-2 aria-invalid:ring-error/40";
+  "w-full min-h-[44px] rounded-lg bg-surface-container-low py-3 pr-4 pl-10 text-[16px] sm:text-body-md text-on-surface shadow-inner placeholder:text-outline/70 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/30 focus:outline-none aria-invalid:ring-2 aria-invalid:ring-error/40";
 const errorClass = "text-body-sm text-error";
 
 function Field({
@@ -99,7 +99,7 @@ export default function ContactForm() {
                 aria-checked={selected}
                 onClick={() => setValue("category", value)}
                 className={cn(
-                  "rounded-full px-3.5 py-1.5 text-label-md transition-all duration-200",
+                  "flex min-h-[40px] items-center justify-center rounded-full px-4 py-2 text-label-md transition-all duration-200 active:scale-95",
                   selected
                     ? "bg-roasted-terracotta text-pure-parchment shadow-sm"
                     : "bg-surface-container text-on-surface-variant hover:bg-surface-container-high"

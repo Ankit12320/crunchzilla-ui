@@ -26,6 +26,9 @@
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   vertical-align: middle;
   line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 @utility icon-filled {
@@ -35,8 +38,16 @@
 @utility no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Single-finger horizontal touch scroll */
+@utility touch-scroll-x {
+  overflow-x: auto;
+  touch-action: pan-x pan-y;
+  -webkit-overflow-scrolling: touch;
 }

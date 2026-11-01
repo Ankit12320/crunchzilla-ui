@@ -162,9 +162,9 @@ export default function CartView() {
                           )
                         }
                         aria-label="Decrease quantity"
-                        className="flex h-8 w-8 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container-high"
+                        className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container-high active:scale-95"
                       >
-                        <Icon name="remove" className="text-[16px]" />
+                        <Icon name="remove" className="text-[18px]" />
                       </button>
                       <span className="w-10 text-center text-label-lg font-bold text-on-surface">
                         {item.quantity}
@@ -179,9 +179,9 @@ export default function CartView() {
                           )
                         }
                         aria-label="Increase quantity"
-                        className="flex h-8 w-8 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container-high"
+                        className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container-high active:scale-95"
                       >
-                        <Icon name="add" className="text-[16px]" />
+                        <Icon name="add" className="text-[18px]" />
                       </button>
                     </div>
 
@@ -197,7 +197,7 @@ export default function CartView() {
                       type="button"
                       onClick={() => removeItem(item.slug, item.variantId)}
                       aria-label={`Remove ${item.name}`}
-                      className="p-1.5 text-on-surface-variant transition-colors hover:text-error"
+                      className="flex h-10 w-10 items-center justify-center rounded-full text-on-surface-variant transition-colors hover:text-error hover:bg-surface-container-high active:scale-95"
                     >
                       <Icon name="delete" className="text-[20px]" />
                     </button>

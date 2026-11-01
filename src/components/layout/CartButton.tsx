@@ -23,7 +23,7 @@ export default function CartButton() {
       type="button"
       onClick={openCart}
       aria-label={`Shopping cart, ${displayCount} items`}
-      className="relative flex h-10 w-10 items-center justify-center rounded-full text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-on-surface"
+      className="relative flex h-11 w-11 items-center justify-center rounded-full text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-on-surface active:scale-95"
     >
       <Icon name="shopping_bag" className="text-[22px]" />
       {displayCount > 0 && (

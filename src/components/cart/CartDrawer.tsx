@@ -117,9 +117,9 @@ export default function CartDrawer() {
                           type="button"
                           onClick={() => removeItem(item.slug, item.variantId)}
                           aria-label={`Remove ${item.name}`}
-                          className="text-on-surface-variant transition-colors hover:text-error p-1"
+                          className="flex h-9 w-9 items-center justify-center rounded-full text-on-surface-variant transition-colors hover:text-error hover:bg-surface-container-high active:scale-95"
                         >
-                          <Icon name="delete" className="text-[18px]" />
+                          <Icon name="delete" className="text-[20px]" />
                         </button>
                       </div>
 
@@ -136,9 +136,9 @@ export default function CartDrawer() {
                               )
                             }
                             aria-label="Decrease quantity"
-                            className="flex h-7 w-7 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container-high"
+                            className="flex h-9 w-9 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container-high active:scale-95"
                           >
-                            <Icon name="remove" className="text-[16px]" />
+                            <Icon name="remove" className="text-[18px]" />
                           </button>
                           <span className="w-8 text-center text-label-md font-bold text-on-surface">
                             {item.quantity}
@@ -153,9 +153,9 @@ export default function CartDrawer() {
                               )
                             }
                             aria-label="Increase quantity"
-                            className="flex h-7 w-7 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container-high"
+                            className="flex h-9 w-9 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container-high active:scale-95"
                           >
-                            <Icon name="add" className="text-[16px]" />
+                            <Icon name="add" className="text-[18px]" />
                           </button>
                         </div>
 

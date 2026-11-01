@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import CartDrawer from "@/components/cart/CartDrawer";
 import Toaster from "@/components/common/Toaster";
@@ -29,6 +29,15 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  viewportFit: "cover",
+  themeColor: "#903f00",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -37,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jakarta.variable} ${playfair.variable} scroll-smooth`}
+      className={`${jakarta.variable} ${playfair.variable}`}
     >
       <head>
         <link

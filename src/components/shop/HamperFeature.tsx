@@ -61,7 +61,7 @@ export default function HamperFeature({ hamper }: { hamper: Hamper }) {
                     variantLabel: "Hamper",
                     image: IMAGES.catalog[hamper.images[0]],
                   }}
-                  className="flex h-12 flex-1 min-w-[200px] items-center justify-center gap-2 rounded-full bg-roasted-terracotta px-6 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-primary"
+                  className="flex h-12 flex-1 min-w-[200px] items-center justify-center gap-2 rounded-full bg-roasted-terracotta px-6 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-primary active:scale-95"
                 >
                   <Icon name="shopping_bag" className="text-[20px]" />
                   Add to Cart
@@ -74,7 +74,7 @@ export default function HamperFeature({ hamper }: { hamper: Hamper }) {
                   })}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-12 flex-1 min-w-[200px] items-center justify-center gap-2 rounded-full bg-whatsapp-emerald px-6 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-secondary"
+                  className="flex h-12 flex-1 min-w-[200px] items-center justify-center gap-2 rounded-full bg-whatsapp-emerald px-6 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-secondary active:scale-95"
                 >
                   <Icon name="chat" className="text-[20px]" />
                   Order Hamper on WhatsApp

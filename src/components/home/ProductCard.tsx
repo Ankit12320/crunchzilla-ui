@@ -85,7 +85,7 @@ export default function ProductCard({ product }: { product: Product }) {
                     aria-checked={selected}
                     onClick={() => setVariantId(v.id)}
                     className={cn(
-                      "rounded-full px-3 py-1 text-xs transition-colors",
+                      "flex min-h-[36px] items-center justify-center rounded-full px-3.5 py-1.5 text-xs transition-colors active:scale-95",
                       selected
                         ? "bg-primary font-semibold text-on-primary"
                         : "bg-surface-container text-on-surface hover:bg-surface-container-high"
