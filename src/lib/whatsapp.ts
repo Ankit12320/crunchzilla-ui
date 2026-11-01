@@ -1,85 +1,110 @@
 import { SITE } from "@/constants/site";
-import type { CartItem } from "@/types/cart";
 
-/** Builds a wa.me link, optionally pre-filled with a message. */
+export interface OrderItem {
+  name: string;
+  variantLabel: string;
+  price: number;
+  quantity?: number;
+}
+
+/** Builds a wa.me link, optionally pre-filled with an encoded message. */
 export function whatsappLink(message?: string): string {
   const base = `https://wa.me/${SITE.whatsappNumber}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
 
-/** Formats a clean WhatsApp message containing ONLY the details and summary from a single product card. */
-export function buildProductCardWhatsAppMessage({
-  name,
-  variantLabel,
-  price,
-  summary,
-}: {
-  name: string;
-  variantLabel: string;
-  price: number;
-  summary?: string;
-}): string {
-  const lines = [
-    `Hi ${SITE.name}, I want to order:`,
-    ``,
-    `• Product: ${name}`,
-    `• Size: ${variantLabel}`,
-    `• Price: ₹${price}`,
-  ];
+/** Formats a structured WhatsApp message strictly following the required order format. */
+export function buildWhatsAppOrderMessage(
+  items: OrderItem[],
+  totalOverride?: number
+): string {
+  // Include only products added/selected by the customer with valid prices and quantities
+  const validItems = (items || []).filter(
+    (item) => typeof item.price === "number" && item.price > 0 && (item.quantity ?? 1) > 0
+  );
 
-  if (summary) {
-    lines.push(`• Summary: ${summary}`);
+  if (validItems.length === 0) {
+    return [
+      `Hello ${SITE.name},`,
+      ``,
+      `I would like to place an order:`,
+      ``,
+      `Please confirm availability.`,
+      ``,
+      `Thank you!`,
+    ].join("\n");
   }
 
-  return lines.join("\n");
-}
+  let calculatedTotal = 0;
+  const itemLines = validItems.map((item, index) => {
+    const qty = item.quantity && item.quantity > 0 ? item.quantity : 1;
+    const subtotal = qty * item.price;
+    calculatedTotal += subtotal;
 
-/** Builds the WhatsApp link for ordering a single product card directly. */
-export function buildProductCardWhatsAppLink(options: {
-  name: string;
-  variantLabel: string;
-  price: number;
-  summary?: string;
-}): string {
-  const message = buildProductCardWhatsAppMessage(options);
-  return whatsappLink(message);
-}
+    const qtyString = qty > 1 ? ` (Qty: ${qty})` : "";
+    return `${index + 1}. ${item.name} – ${item.variantLabel}${qtyString} × ₹${item.price} = ₹${subtotal}`;
+  });
 
-/** Formats a structured WhatsApp message for placing a full cart order (only products in cart). */
-export function buildCartOrderWhatsAppMessage(
-  items: CartItem[],
-  total: number
-): string {
-  const itemLines = items
-    .map(
-      (item, index) =>
-        `${index + 1}. *${item.name}* (${item.variantLabel})\n   Qty: ${item.quantity} × ₹${item.price} = *₹${item.quantity * item.price}*`
-    )
-    .join("\n\n");
+  const finalTotal = typeof totalOverride === "number" && totalOverride > 0 ? totalOverride : calculatedTotal;
 
   return [
-    `🌾 *New Order Request - ${SITE.name}*`,
-    `--------------------------------`,
-    `*Products in Order:*`,
-    itemLines,
-    `--------------------------------`,
-    `*Total Amount:* *₹${total}*`,
-    `--------------------------------`,
-    `📍 *Delivery Details:*`,
-    `• Name: `,
-    `• Phone Number: `,
-    `• Delivery Address: `,
-    `• City, State & Pincode: `,
+    `Hello ${SITE.name},`,
     ``,
-    `Please confirm availability and share payment details (UPI/Card/COD). Thank you!`,
+    `I would like to place an order:`,
+    ``,
+    ...itemLines,
+    ``,
+    `Total Amount: ₹${finalTotal}`,
+    ``,
+    `Please confirm my order.`,
+    ``,
+    `Thank you!`,
   ].join("\n");
 }
 
 /** Builds the WhatsApp link with pre-filled cart order details. */
 export function buildCartOrderWhatsAppLink(
-  items: CartItem[],
-  total: number
+  items: OrderItem[],
+  total?: number
 ): string {
-  const message = buildCartOrderWhatsAppMessage(items, total);
+  const message = buildWhatsAppOrderMessage(items, total);
+  return whatsappLink(message);
+}
+
+/** Formats message for cart orders (alias for buildWhatsAppOrderMessage). */
+export function buildCartOrderWhatsAppMessage(
+  items: OrderItem[],
+  total?: number
+): string {
+  return buildWhatsAppOrderMessage(items, total);
+}
+
+/** Formats message for single product card orders (strictly that card only). */
+export function buildProductCardWhatsAppMessage(options: {
+  name: string;
+  variantLabel: string;
+  price: number;
+  quantity?: number;
+  summary?: string;
+}): string {
+  return buildWhatsAppOrderMessage([
+    {
+      name: options.name,
+      variantLabel: options.variantLabel,
+      price: options.price,
+      quantity: options.quantity ?? 1,
+    },
+  ]);
+}
+
+/** Builds the WhatsApp link for ordering from a single product card. */
+export function buildProductCardWhatsAppLink(options: {
+  name: string;
+  variantLabel: string;
+  price: number;
+  quantity?: number;
+  summary?: string;
+}): string {
+  const message = buildProductCardWhatsAppMessage(options);
   return whatsappLink(message);
 }

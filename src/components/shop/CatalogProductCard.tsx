@@ -139,16 +139,15 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
                 name: product.name,
                 variantLabel: variant.label,
                 price: variant.price,
-                summary: product.eyebrow,
               })}
               target="_blank"
               rel="noopener noreferrer"
-              title="Order via WhatsApp"
-              className="flex items-center gap-1 rounded-full bg-whatsapp-emerald px-3.5 py-2 text-label-sm text-pure-parchment shadow-sm transition-all hover:bg-secondary"
+              aria-label={`Order ${product.name} on WhatsApp`}
+              title="Order on WhatsApp"
+              className="flex items-center gap-1.5 rounded-full bg-whatsapp-emerald px-3.5 py-2 text-label-sm text-pure-parchment shadow-sm transition-all hover:bg-secondary whitespace-nowrap"
             >
               <Icon name="chat" className="text-[16px]" />
-              <span className="hidden sm:inline">Buy</span>
-              <span className="sr-only sm:hidden">Buy on WhatsApp</span>
+              <span>Order on WhatsApp</span>
             </a>
             <button
               type="button"

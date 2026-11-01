@@ -112,13 +112,14 @@ export default function ProductCard({ product }: { product: Product }) {
                 name: product.name,
                 variantLabel: variant.label,
                 price: activePrice,
-                summary: product.subtitle,
               })}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center rounded-full bg-roasted-terracotta py-2.5 text-title-sm text-on-primary shadow-sm transition-all hover:bg-primary"
+              aria-label={`Order ${product.name} on WhatsApp`}
+              className="flex w-full items-center justify-center gap-1.5 rounded-full bg-whatsapp-emerald py-2.5 text-title-sm text-pure-parchment shadow-sm transition-all hover:bg-secondary"
             >
-              Quick Buy
+              <Icon name="chat" className="text-[18px]" />
+              Order on WhatsApp
             </a>
           </div>
         </div>

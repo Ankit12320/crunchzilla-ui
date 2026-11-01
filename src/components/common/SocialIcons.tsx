@@ -30,3 +30,4 @@ export function InstagramIcon({ className = "h-5 w-5", size }: SocialIconProps) 
     </svg>
   );
 }
+

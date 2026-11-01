@@ -3,7 +3,7 @@ import Icon from "@/components/common/Icon";
 import { MAKHANA_STATS, TONE_TEXT } from "@/constants/home";
 import { IMAGES } from "@/constants/images";
 import { SITE } from "@/constants/site";
-import { whatsappLink } from "@/lib/whatsapp";
+import { buildProductCardWhatsAppLink } from "@/lib/whatsapp";
 
 export default function MakhanaSpotlight() {
   return (
@@ -72,13 +72,17 @@ export default function MakhanaSpotlight() {
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href={whatsappLink("Hi, I would like to order Fresh Makhana.")}
+              href={buildProductCardWhatsAppLink({
+                name: "Artisanal Roasted Makhana",
+                variantLabel: "500 gm Jumbo",
+                price: 800,
+              })}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-title-sm text-on-primary shadow-md transition-colors hover:bg-roasted-terracotta"
+              className="flex items-center gap-2 rounded-full bg-whatsapp-emerald px-8 py-3.5 text-title-sm text-pure-parchment shadow-md transition-all hover:bg-secondary"
             >
-              Shop Fresh Makhana
-              <Icon name="shopping_cart" className="text-[18px]" />
+              <Icon name="chat" className="text-[18px]" />
+              Order Makhana on WhatsApp
             </a>
             <span className="flex items-center gap-1 text-body-sm text-on-surface-variant">
               <Icon name="check" className="text-[16px] text-whatsapp-emerald" />

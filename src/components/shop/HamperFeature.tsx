@@ -57,7 +57,6 @@ export default function HamperFeature({ hamper }: { hamper: Hamper }) {
                     name: hamper.name,
                     variantLabel: "Heritage Hamper Box",
                     price: hamper.price,
-                    summary: hamper.tag,
                   })}
                   target="_blank"
                   rel="noopener noreferrer"
