@@ -7,8 +7,8 @@
 
 @theme inline {
   /* ── Fonts (loaded via next/font in app/layout.tsx) ── */
-  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: var(--font-playfair), var(--font-jakarta), ui-serif, Georgia, serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
 
   /* ── shadcn/ui bridge ── */
   --color-background: var(--background);
@@ -30,99 +30,96 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 12px;
-  --radius-2xl: 12px;
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
 
-  /* ── MD3 surfaces (Off-white / cream #FAF8F2) ── */
-  --color-surface: #faf8f2;
-  --color-surface-dim: #ede7dc;
-  --color-surface-bright: #faf8f2;
-  --color-surface-variant: #f2ece1;
+  /* ── MD3 surfaces ── */
+  --color-surface: #fbf9f6;
+  --color-surface-dim: #dbdad7;
+  --color-surface-bright: #fbf9f6;
+  --color-surface-variant: #e4e2df;
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f5f1e8;
-  --color-surface-container: #ede7dc;
-  --color-surface-container-high: #e4ddcf;
-  --color-surface-container-highest: #dbd3c5;
-  --color-on-surface: #444444;
-  --color-on-surface-variant: #555555;
-  --color-inverse-surface: #244b35;
-  --color-inverse-on-surface: #faf8f2;
+  --color-surface-container-low: #f5f3f0;
+  --color-surface-container: #efeeeb;
+  --color-surface-container-high: #eae8e5;
+  --color-surface-container-highest: #e4e2df;
+  --color-on-surface: #1b1c1a;
+  --color-on-surface-variant: #564338;
+  --color-inverse-surface: #30312f;
+  --color-inverse-on-surface: #f2f0ed;
   --color-outline: #897267;
-  --color-outline-variant: #e6dfd5;
+  --color-outline-variant: #ddc1b3;
 
-  /* ── Primary brand: Deep green (#244B35) ── */
+  /* ── MD3 primary (roasted brown) ── */
   --color-on-primary: #ffffff;
-  --color-primary-container: #244b35;
-  --color-on-primary-container: #ffffff;
-  --color-primary-fixed: #e8ded1;
-  --color-primary-fixed-dim: #dbd3c5;
-  --color-on-primary-fixed: #244b35;
+  --color-primary-container: #b45309;
+  --color-on-primary-container: #fff1eb;
+  --color-primary-fixed: #ffdbca;
+  --color-primary-fixed-dim: #ffb68e;
+  --color-on-primary-fixed: #331200;
 
-  /* ── Secondary brand: Warm beige (#E8DED1) ── */
-  --color-on-secondary: #244b35;
-  --color-secondary-container: #e8ded1;
-  --color-on-secondary-container: #244b35;
-  --color-secondary-fixed: #e8ded1;
-  --color-on-secondary-fixed: #244b35;
+  /* ── MD3 secondary (leaf green) ── */
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #bdefbf;
+  --color-on-secondary-container: #426e48;
+  --color-secondary-fixed: #bdefbf;
+  --color-on-secondary-fixed: #002109;
 
-  /* ── Tertiary brand ── */
-  --color-tertiary: #244b35;
-  --color-tertiary-container: #1b3b29;
-  --color-on-tertiary-container: #ffffff;
-  --color-tertiary-fixed: #e8ded1;
-  --color-on-tertiary-fixed: #244b35;
+  /* ── MD3 tertiary ── */
+  --color-tertiary: #884400;
+  --color-tertiary-container: #ad5800;
+  --color-on-tertiary-container: #fff1e9;
+  --color-tertiary-fixed: #ffdcc5;
+  --color-on-tertiary-fixed: #301400;
 
   /* ── MD3 error ── */
   --color-error: #ba1a1a;
   --color-error-container: #ffdad6;
   --color-on-error-container: #93000a;
 
-  /* ── Unified Brand Palette ── */
-  --color-golden-sand: #e8ded1;
-  --color-warm-cream: #faf8f2;
+  /* ── Brand palette ── */
+  --color-golden-sand: #faf4de;
+  --color-warm-cream: #faf8f5;
   --color-pure-parchment: #ffffff;
-  --color-cardamom-light: #e8ded1;
-  --color-roasted-terracotta: #244b35;
+  --color-cardamom-light: #e8f0ea;
+  --color-roasted-terracotta: #b45309;
   --color-warm-amber: #d97706;
-  --color-spiced-tangerine: #244b35;
-  --color-botanical-forest: #244b35;
-  --color-charcoal-bark: #444444;
+  --color-spiced-tangerine: #e67e22;
+  --color-botanical-forest: #2e5a36;
+  --color-charcoal-bark: #1f2937;
   --color-whatsapp-emerald: #25d366;
 
-  /* ── Type scale (Standardized sizes) ── */
-  /* H1: 40–48px desktop, 30–34px mobile */
-  --text-display: clamp(2.5rem, 4vw, 3rem);
-  --text-display--line-height: 1.2;
+  /* ── Type scale ── */
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.15;
   --text-display--letter-spacing: -0.02em;
-  --text-display--font-weight: 700;
+  --text-display--font-weight: 600;
 
-  --text-display-mobile: clamp(1.875rem, 3.5vw, 2.125rem);
+  --text-display-mobile: 2.25rem;
   --text-display-mobile--line-height: 1.2;
   --text-display-mobile--letter-spacing: -0.01em;
-  --text-display-mobile--font-weight: 700;
+  --text-display-mobile--font-weight: 600;
 
-  --text-headline-lg: clamp(2.5rem, 4vw, 3rem);
+  --text-headline-lg: 2.5rem;
   --text-headline-lg--line-height: 1.2;
   --text-headline-lg--letter-spacing: -0.015em;
-  --text-headline-lg--font-weight: 700;
+  --text-headline-lg--font-weight: 600;
 
-  --text-headline-lg-mobile: clamp(1.875rem, 3.5vw, 2.125rem);
+  --text-headline-lg-mobile: 1.75rem;
   --text-headline-lg-mobile--line-height: 1.25;
   --text-headline-lg-mobile--letter-spacing: -0.01em;
-  --text-headline-lg-mobile--font-weight: 700;
+  --text-headline-lg-mobile--font-weight: 600;
 
-  /* H2: 30–36px desktop, 24–28px mobile */
-  --text-headline-md: clamp(1.5rem, 3vw, 2.25rem);
-  --text-headline-md--line-height: 1.25;
-  --text-headline-md--font-weight: 600;
+  --text-headline-md: 1.875rem;
+  --text-headline-md--line-height: 1.3;
+  --text-headline-md--font-weight: 500;
 
-  /* H3: 20–24px */
-  --text-headline-sm: clamp(1.25rem, 2.5vw, 1.5rem);
-  --text-headline-sm--line-height: 1.3;
-  --text-headline-sm--font-weight: 600;
+  --text-headline-sm: 1.375rem;
+  --text-headline-sm--line-height: 1.35;
+  --text-headline-sm--font-weight: 500;
 
   --text-title-lg: 1.25rem;
   --text-title-lg--line-height: 1.4;
@@ -139,12 +136,11 @@
   --text-body-lg: 1.125rem;
   --text-body-lg--line-height: 1.6;
 
-  /* Body text: 16px (1rem), 1.6 line height */
-  --text-body-md: 1rem;
-  --text-body-md--line-height: 1.6;
+  --text-body-md: 0.9375rem;
+  --text-body-md--line-height: 1.55;
 
-  --text-body-sm: 0.875rem;
-  --text-body-sm--line-height: 1.55;
+  --text-body-sm: 0.8125rem;
+  --text-body-sm--line-height: 1.5;
 
   --text-label-lg: 0.875rem;
   --text-label-lg--line-height: 1.2;
@@ -162,28 +158,28 @@
   --text-label-sm--font-weight: 700;
 }
 
-/* Design System Standards Mapped onto Semantic Variables */
+/* shadcn/ui semantic variables mapped onto the brand palette */
 :root {
-  --background: #faf8f2;
-  --foreground: #444444;
+  --background: #fbf9f6;
+  --foreground: #1b1c1a;
   --card: #ffffff;
-  --card-foreground: #444444;
+  --card-foreground: #1b1c1a;
   --popover: #ffffff;
-  --popover-foreground: #444444;
-  --primary: #244b35;
+  --popover-foreground: #1b1c1a;
+  --primary: #903f00;
   --primary-foreground: #ffffff;
-  --secondary: #e8ded1;
-  --secondary-foreground: #244b35;
-  --muted: #f5f1e8;
-  --muted-foreground: #666666;
-  --accent: #ede7dc;
-  --accent-foreground: #244b35;
+  --secondary: #3c6843;
+  --secondary-foreground: #ffffff;
+  --muted: #efeeeb;
+  --muted-foreground: #564338;
+  --accent: #eae8e5;
+  --accent-foreground: #1b1c1a;
   --destructive: #ba1a1a;
-  --border: #e6dfd5;
-  --input: #e6dfd5;
-  --ring: #244b35;
-  --radius: 12px;
+  --border: #ddc1b3;
+  --input: #ddc1b3;
+  --ring: #903f00;
+  --radius: 0.5rem;
 
-  /* Sticky header = 5rem nav row */
+  /* Sticky header = 5rem nav row (announcement bar disabled) */
   --header-height: 5rem;
 }

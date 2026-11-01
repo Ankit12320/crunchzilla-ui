@@ -1,75 +1,14 @@
-/* Element-level defaults & Global Design System Standards */
+/* Element-level defaults */
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    box-sizing: border-box;
   }
-
   html {
     @apply font-sans;
-    background-color: #faf8f2;
-    color: #444444;
   }
-
   body {
-    @apply bg-surface font-sans text-on-surface;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #444444;
-    background-color: #faf8f2;
+    @apply bg-surface text-body-md text-on-surface;
     overscroll-behavior: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  /* ── Consistent Headings (Dark green #244B35) ── */
-  h1, .h1 {
-    color: #244b35;
-    font-size: clamp(30px, 4vw, 48px);
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-  }
-
-  h2, .h2 {
-    color: #244b35;
-    font-size: clamp(24px, 3vw, 36px);
-    line-height: 1.25;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  h3, .h3 {
-    color: #244b35;
-    font-size: clamp(20px, 2.5vw, 24px);
-    line-height: 1.3;
-    font-weight: 600;
-  }
-
-  /* ── Body text (Dark grey #444444, 16px) ── */
-  p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #444444;
-  }
-
-  /* ── Pictures: Consistent image style, rounded corners (12px) ── */
-  img {
-    border-radius: 12px;
-  }
-
-  /* ── Cards: Consistent border (1px #E6DFD5), 12px radius, padding (20-24px) ── */
-  article,
-  figure,
-  [data-slot="card"] {
-    border-radius: 12px;
-  }
-
-  /* ── Buttons & Interactive Elements ── */
-  button,
-  .btn {
-    border-radius: 12px;
-    transition: all 0.2s ease-in-out;
   }
 }
