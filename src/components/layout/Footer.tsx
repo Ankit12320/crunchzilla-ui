@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Icon from "@/components/common/Icon";
+import { FacebookIcon, InstagramIcon } from "@/components/common/SocialIcons";
 import { FOOTER_CATEGORIES, LEGAL_LINKS, NAV_LINKS, SITE } from "@/constants/site";
 import { whatsappLink } from "@/lib/whatsapp";
 
@@ -35,6 +36,31 @@ export default function Footer() {
           <div className="flex items-center gap-2 text-label-sm text-on-surface-variant">
             <Icon name="favorite" className="text-[18px] text-primary" />
             Made with Pride in India
+          </div>
+          <div className="flex items-center gap-3 pt-2">
+            <span className="text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">
+              Follow Us:
+            </span>
+            <a
+              href={SITE.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Crunchzilla on Facebook"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-surface-container-high text-on-surface shadow-xs transition-all duration-200 hover:bg-[#1877F2] hover:text-white hover:scale-110 active:scale-95"
+              title="Facebook"
+            >
+              <FacebookIcon className="h-4.5 w-4.5" />
+            </a>
+            <a
+              href={SITE.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Crunchzilla on Instagram"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-surface-container-high text-on-surface shadow-xs transition-all duration-200 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white hover:scale-110 active:scale-95"
+              title="Instagram"
+            >
+              <InstagramIcon className="h-4.5 w-4.5" />
+            </a>
           </div>
         </div>
 
@@ -87,10 +113,35 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="container-page flex flex-col items-center justify-between gap-2 border-t border-outline-variant/30 pt-4 text-label-sm text-on-surface-variant md:flex-row">
+      <div className="container-page flex flex-col items-center justify-between gap-4 border-t border-outline-variant/30 pt-4 text-label-sm text-on-surface-variant md:flex-row">
         <p>
           © {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
         </p>
+        <div className="flex items-center gap-2">
+          <span className="text-label-xs font-semibold uppercase tracking-wider text-on-surface-variant">
+            Connect:
+          </span>
+          <a
+            href={SITE.facebookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Crunchzilla on Facebook"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all duration-200 hover:bg-[#1877F2] hover:text-white hover:scale-110 active:scale-95"
+            title="Facebook"
+          >
+            <FacebookIcon className="h-4 w-4" />
+          </a>
+          <a
+            href={SITE.instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Crunchzilla on Instagram"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all duration-200 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white hover:scale-110 active:scale-95"
+            title="Instagram"
+          >
+            <InstagramIcon className="h-4 w-4" />
+          </a>
+        </div>
         <div className="flex flex-wrap items-center justify-center gap-4">
           {LEGAL_LINKS.map(({ label, href }) => (
             <Link key={label} href={href} className={linkClass}>

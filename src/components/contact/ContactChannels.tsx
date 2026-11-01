@@ -1,4 +1,5 @@
 import Icon from "@/components/common/Icon";
+import { FacebookIcon, InstagramIcon } from "@/components/common/SocialIcons";
 import { SITE } from "@/constants/site";
 
 const labelClass = "text-label-sm uppercase tracking-wider text-on-surface-variant";
@@ -60,11 +61,11 @@ export default function ContactChannels() {
         <span className={labelClass}>Community &amp; Stories</span>
         <div className="flex flex-wrap items-center gap-3 pt-1">
           <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className={socialClass}>
-            <Icon name="photo_camera" className="text-[16px]" />
+            <InstagramIcon className="h-4 w-4 text-[#E4405F]" />
             {SITE.instagramHandle}
           </a>
           <a href={SITE.facebookUrl} target="_blank" rel="noopener noreferrer" className={socialClass}>
-            <Icon name="public" className="text-[16px]" />
+            <FacebookIcon className="h-4 w-4 text-[#1877F2]" />
             Facebook
           </a>
         </div>
