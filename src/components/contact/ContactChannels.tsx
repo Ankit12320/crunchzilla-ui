@@ -1,5 +1,4 @@
 import Icon from "@/components/common/Icon";
-import { FacebookIcon, InstagramIcon } from "@/components/common/SocialIcons";
 import { SITE } from "@/constants/site";
 
 const labelClass = "text-label-sm uppercase tracking-wider text-on-surface-variant";
@@ -22,9 +21,6 @@ function Channel({
     </div>
   );
 }
-
-const socialClass =
-  "inline-flex items-center gap-1.5 rounded-full bg-surface-container-high px-3 py-1.5 text-label-md text-on-surface transition-colors hover:bg-primary-fixed-dim";
 
 export default function ContactChannels() {
   return (
@@ -55,20 +51,6 @@ export default function ContactChannels() {
           Hand-roasted at regional origins with dual-hub air express packaging for peak aroma and
           freshness.
         </p>
-      </Channel>
-
-      <Channel icon="share" iconClass="bg-surface-container text-primary">
-        <span className={labelClass}>Community &amp; Stories</span>
-        <div className="flex flex-wrap items-center gap-3 pt-1">
-          <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className={socialClass}>
-            <InstagramIcon className="h-4 w-4 text-[#E4405F]" />
-            {SITE.instagramHandle}
-          </a>
-          <a href={SITE.facebookUrl} target="_blank" rel="noopener noreferrer" className={socialClass}>
-            <FacebookIcon className="h-4 w-4 text-[#1877F2]" />
-            Facebook
-          </a>
-        </div>
       </Channel>
     </div>
   );

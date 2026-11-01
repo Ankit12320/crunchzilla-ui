@@ -13,10 +13,6 @@ export const SITE = {
   supportHours: "24*7",
   freeShippingAbove: 499,
   fulfillmentHubs: "Patna / Bihar & Bengaluru, Karnataka",
-  instagramHandle: "@crunchzilla02",
-  instagramUrl: "https://www.instagram.com/crunchzilla02/",
-  facebookUrl:
-    "https://www.facebook.com/profile.php?id=61580215401129&sk=directory_intro",
   fssaiLicense: "21225192003493",
   rating: "4.9/5",
   happyHouseholds: "500+",
