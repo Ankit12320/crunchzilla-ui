@@ -276,6 +276,17 @@ export default function CartDrawer() {
                 Place Order on WhatsApp (₹{grandTotal})
               </a>
 
+              <div className="flex items-center justify-center pt-1">
+                <Link
+                  href="/cart"
+                  onClick={closeCart}
+                  className="inline-flex items-center gap-1 text-label-md text-primary transition-colors hover:underline"
+                >
+                  View full cart page
+                  <Icon name="arrow_forward" className="text-[16px]" />
+                </Link>
+              </div>
+
               <p className="text-center text-[12px] text-on-surface-variant flex items-center justify-center gap-1.5">
                 <Icon
                   name="verified_user"
