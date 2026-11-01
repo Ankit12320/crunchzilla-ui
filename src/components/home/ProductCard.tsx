@@ -60,7 +60,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <div className="mb-1 flex items-baseline justify-between">
             <h3 className="font-display text-headline-sm font-bold text-primary">{product.name}</h3>
             <span className="font-display text-headline-sm font-bold text-on-surface">
-              ₹{product.price}
+              {product.price}
             </span>
           </div>
           <p className="mb-2 text-label-sm uppercase tracking-wider text-secondary">
@@ -107,7 +107,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </button>
             <a
               href={whatsappLink(
-                `Hi, I want to buy ${product.name} ${variant.label} (₹${product.price})`
+                `Hi, I want to buy ${product.name} ${variant.label}`
               )}
               target="_blank"
               rel="noopener noreferrer"

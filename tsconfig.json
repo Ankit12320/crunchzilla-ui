@@ -1,4 +1,4 @@
-{
+  {
   "compilerOptions": {
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/components/home/HeroSection.js"  ],
   "exclude": ["node_modules"]
 }

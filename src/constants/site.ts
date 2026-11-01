@@ -23,10 +23,10 @@ export const SITE = {
     "https://docs.google.com/forms/d/e/1FAIpQLSeGD9Iz1jcNwF1c6OV9tbsogCtNUzc5mE0yqmbENUVkvkEa9w/viewform?usp=header",
 } as const;
 
-export const ANNOUNCEMENTS = [
-  `Free Shipping across India on orders above ₹${SITE.freeShippingAbove}`,
-  "Authentic Homemade Taste",
-] as const;
+// export const ANNOUNCEMENTS = [
+//   `Free Shipping across India on orders above ₹${SITE.freeShippingAbove}`,
+//   "Authentic Homemade Taste",
+// ] as const;
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },

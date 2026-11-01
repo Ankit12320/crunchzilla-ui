@@ -330,7 +330,7 @@ The two pages were designed with different card layouts, so they use different d
   "popularity": 100,                   // 0–100, used by "Bestsellers First" sort
   "variantLabel": "Select Weight",
   "variants": [
-    { "id": "400g", "label": "400g", "price": 249, "mrp": 299 },  // mrp = struck-through price (optional)
+    { "id": "400g", "label": "500g", "mrp": 299 },  // mrp = struck-through price (optional)
     { "id": "800g", "label": "800g Twin Pack", "price": 469 }
   ]
 }

@@ -117,7 +117,7 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
                       : "bg-surface-container text-on-surface-variant hover:bg-surface-variant"
                   )}
                 >
-                  {v.label} (₹{v.price})
+                  {v.label} {v.price}
                 </button>
               );
             })}
@@ -132,7 +132,7 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
                 ₹{variant.mrp}
               </span>
             )}
-            <span className="text-title-lg leading-none text-primary">₹{variant.price}</span>
+            {/* <span className="text-title-lg leading-none text-primary">₹{variant.price}</span> */}
           </div>
           <div className="flex items-center gap-2">
             <a

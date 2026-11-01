@@ -21,7 +21,7 @@ export default function PantryBanner() {
           Heritage Pantry Collection
         </span>
         <h3 className="font-display text-headline-md font-bold text-on-surface">
-          Katarni Chura, Basmati Poha &amp; Pure Jaggery (Gud)
+          Katarni Chura, Basmati Poha
         </h3>
         <p className="text-body-md text-on-surface-variant">
           Expand your kitchen with Eastern India’s most aromatic, artisanal pantry essentials.
