@@ -71,6 +71,7 @@ export default function HamperFeature({ hamper }: { hamper: Hamper }) {
                     price: hamper.price,
                     variantId: "box",
                     variantLabel: "Hamper",
+                    image: IMAGES.catalog[hamper.images[0]],
                   }}
                   className="flex items-center gap-2 rounded-full bg-roasted-terracotta px-5 py-3 text-label-lg text-pure-parchment shadow-md transition-all hover:bg-primary"
                 >

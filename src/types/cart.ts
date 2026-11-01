@@ -5,4 +5,5 @@ export interface CartItem {
   variantId: string;
   variantLabel: string;
   quantity: number;
+  image?: string;
 }

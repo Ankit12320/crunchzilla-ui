@@ -27,11 +27,14 @@
     "variants": [
       {
         "id": "400g",
-        "label": "400g"
+        "label": "400g",
+        "price": 249,
+        "mrp": 299
       },
       {
         "id": "800g",
-        "label": "800g Twin Pack"
+        "label": "800g Twin Pack",
+        "price": 469
       }
     ]
   },
@@ -63,11 +66,14 @@
     "variants": [
       {
         "id": "200g",
-        "label": "200g Jumbo"
+        "label": "200g Jumbo",
+        "price": 299,
+        "mrp": 350
       },
       {
         "id": "400g",
-        "label": "400g Family"
+        "label": "400g Family",
+        "price": 549
       }
     ]
   },
@@ -99,19 +105,22 @@
     "variants": [
       {
         "id": "500g",
-        "label": "500g"
+        "label": "500g",
+        "price": 189,
+        "mrp": 220
       },
       {
         "id": "1kg",
-        "label": "1kg Saver"
+        "label": "1kg Saver",
+        "price": 349
       }
     ]
   },
   {
     "slug": "katarni-chura",
-    "name": "Bhagalpuri Katarni Chura",
+    "name": "Artisanal Katarni Chura",
     "category": "chura",
-    "eyebrow": "Artisanal Poha / Chura",
+    "eyebrow": "Indigenous Grain",
     "description": "Famous for its distinctive natural fragrance and feather-soft texture when paired with sweet curd (Dahi-Chura) or roasted savoury snacks.",
     "image": "katarniChura",
     "imageAlt": "Crunchzilla traditional flattened Katarni grains in artisanal spoon",
@@ -135,19 +144,22 @@
     "variants": [
       {
         "id": "500g",
-        "label": "500g"
+        "label": "500g",
+        "price": 149,
+        "mrp": 180
       },
       {
         "id": "1kg",
-        "label": "1kg Pack"
+        "label": "1kg Pack",
+        "price": 279
       }
     ]
   },
   {
     "slug": "basmati-poha",
-    "name": "Premium Basmati Poha",
+    "name": "Medium Basmati Poha",
     "category": "chura",
-    "eyebrow": "Pantry Essential",
+    "eyebrow": "Quick Clean Meal",
     "description": "Delicate, aromatic rice flakes gently flattened for effortless morning poha bowls, wholesome cutlets, and crunchy tea-time chivda.",
     "image": "basmatiPoha",
     "imageAlt": "Thin golden Basmati poha flakes on a handmade ceramic plate with cardamom pods",
@@ -171,19 +183,22 @@
     "variants": [
       {
         "id": "500g",
-        "label": "500g"
+        "label": "500g",
+        "price": 129,
+        "mrp": 160
       },
       {
         "id": "1kg",
-        "label": "1kg Family"
+        "label": "1kg Family",
+        "price": 239
       }
     ]
   },
   {
     "slug": "jaggery-cubes",
-    "name": "Organic Sugarcane Gud Cubes",
+    "name": "Organic Jaggery (Gud) Cubes",
     "category": "jaggery",
-    "eyebrow": "Natural Sweetener",
+    "eyebrow": "Mineral Sweetener",
     "description": "Clarified without sulphur or artificial bleaching chemicals. Deep caramel notes ideal for tea, desserts, festive sweetmaking, or post-meal digestion.",
     "image": "jaggeryCubes",
     "imageAlt": "Dark golden organic sugarcane jaggery cubes on a rustic wood block",
@@ -207,11 +222,14 @@
     "variants": [
       {
         "id": "500g",
-        "label": "500g"
+        "label": "500g",
+        "price": 160,
+        "mrp": 200
       },
       {
         "id": "1kg",
-        "label": "1kg Jar"
+        "label": "1kg Jar",
+        "price": 299
       }
     ]
   }

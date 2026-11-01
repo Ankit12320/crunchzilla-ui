@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import CartDrawer from "@/components/cart/CartDrawer";
 import Toaster from "@/components/common/Toaster";
 import WhatsAppFab from "@/components/common/WhatsAppFab";
 import { IMAGES } from "@/constants/images";
@@ -48,6 +49,7 @@ export default function RootLayout({
         {children}
         <WhatsAppFab />
         <Toaster />
+        <CartDrawer />
       </body>
     </html>
   );

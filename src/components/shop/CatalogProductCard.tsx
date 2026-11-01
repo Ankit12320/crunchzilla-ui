@@ -117,7 +117,7 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
                       : "bg-surface-container text-on-surface-variant hover:bg-surface-variant"
                   )}
                 >
-                  {v.label} {v.price}
+                  {v.label} {v.price ? `(₹${v.price})` : ""}
                 </button>
               );
             })}
@@ -132,7 +132,7 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
                 ₹{variant.mrp}
               </span>
             )}
-            {/* <span className="text-title-lg leading-none text-primary">₹{variant.price}</span> */}
+            <span className="text-title-lg font-bold leading-none text-primary">₹{variant.price}</span>
           </div>
           <div className="flex items-center gap-2">
             <a
@@ -155,6 +155,7 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
                   price: variant.price,
                   variantId: variant.id,
                   variantLabel: variant.label,
+                  image: image,
                 })
               }
               className="flex items-center gap-1.5 rounded-full bg-roasted-terracotta px-4 py-2 text-label-sm text-pure-parchment shadow-sm transition-all hover:bg-primary"
