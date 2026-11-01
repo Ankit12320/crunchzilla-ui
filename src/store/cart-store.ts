@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { SITE } from "@/constants/site";
 import type { CartItem } from "@/types/cart";
 
 interface CartState {
@@ -73,18 +72,13 @@ export const useCartStore = create<CartState>()(
   )
 );
 
+/** Total quantity of items in the cart */
 export const selectCartCount = (state: CartState) =>
   state.items.reduce((sum, i) => sum + i.quantity, 0);
 
-export const selectCartSubtotal = (state: CartState) =>
+/** Total price calculated purely from the products in the cart */
+export const selectCartTotal = (state: CartState) =>
   state.items.reduce((sum, i) => sum + (Number(i.price) || 0) * i.quantity, 0);
 
-export const selectShippingFee = (subtotal: number) => {
-  if (subtotal === 0 || subtotal >= SITE.freeShippingAbove) {
-    return 0;
-  }
-  return 50; // Standard nominal shipping charge for orders below threshold
-};
-
-export const selectCartTotal = (subtotal: number) =>
-  subtotal + selectShippingFee(subtotal);
+/** Alias for selectCartTotal */
+export const selectCartSubtotal = selectCartTotal;

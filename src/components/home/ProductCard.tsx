@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Icon from "@/components/common/Icon";
 import { IMAGES } from "@/constants/images";
-import { whatsappLink } from "@/lib/whatsapp";
+import { buildSingleProductOrderWhatsAppLink } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
 import { useAddToCart } from "@/hooks/use-add-to-cart";
 import type { BadgeTone, Product } from "@/types/product";
@@ -108,8 +108,11 @@ export default function ProductCard({ product }: { product: Product }) {
               Add to Cart
             </button>
             <a
-              href={whatsappLink(
-                `Hi, I want to buy ${product.name} (${variant.label}) for ₹${activePrice}`
+              href={buildSingleProductOrderWhatsAppLink(
+                product.name,
+                variant.label,
+                activePrice,
+                1
               )}
               target="_blank"
               rel="noopener noreferrer"

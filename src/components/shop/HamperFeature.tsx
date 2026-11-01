@@ -2,8 +2,7 @@ import Image from "next/image";
 import AddToCartButton from "@/components/common/AddToCartButton";
 import Icon from "@/components/common/Icon";
 import { IMAGES } from "@/constants/images";
-import { SITE } from "@/constants/site";
-import { whatsappLink } from "@/lib/whatsapp";
+import { buildSingleProductOrderWhatsAppLink } from "@/lib/whatsapp";
 import type { Hamper } from "@/types/catalog";
 
 const PERK_TONE = {
@@ -54,8 +53,11 @@ export default function HamperFeature({ hamper }: { hamper: Hamper }) {
                   </span>
                 </div>
                 <a
-                  href={whatsappLink(
-                    `Hi ${SITE.name}, I would like to order the ${hamper.name} for Rs ${hamper.price}`
+                  href={buildSingleProductOrderWhatsAppLink(
+                    hamper.name,
+                    "Heritage Hamper Box",
+                    hamper.price,
+                    1
                   )}
                   target="_blank"
                   rel="noopener noreferrer"

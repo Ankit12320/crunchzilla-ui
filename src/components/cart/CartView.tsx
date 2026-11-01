@@ -4,11 +4,8 @@ import { useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/common/Icon";
-import { SITE } from "@/constants/site";
 import {
   selectCartCount,
-  selectCartSubtotal,
-  selectShippingFee,
   selectCartTotal,
   useCartStore,
 } from "@/store/cart-store";
@@ -29,9 +26,7 @@ export default function CartView() {
   const clearCart = useCartStore((s) => s.clearCart);
 
   const count = useCartStore(selectCartCount);
-  const subtotal = useCartStore(selectCartSubtotal);
-  const shippingFee = selectShippingFee(subtotal);
-  const grandTotal = selectCartTotal(subtotal);
+  const total = useCartStore(selectCartTotal);
 
   if (!isMounted) {
     return (
@@ -41,22 +36,7 @@ export default function CartView() {
     );
   }
 
-  const freeShippingThreshold = SITE.freeShippingAbove;
-  const amountNeededForFreeShipping = Math.max(
-    0,
-    freeShippingThreshold - subtotal
-  );
-  const freeShippingProgress = Math.min(
-    100,
-    Math.round((subtotal / freeShippingThreshold) * 100)
-  );
-
-  const whatsappOrderUrl = buildCartOrderWhatsAppLink(
-    items,
-    subtotal,
-    shippingFee,
-    grandTotal
-  );
+  const whatsappOrderUrl = buildCartOrderWhatsAppLink(items, total);
 
   if (items.length === 0) {
     return (
@@ -121,40 +101,6 @@ export default function CartView() {
               Clear entire cart
             </button>
           </div>
-        </div>
-
-        {/* Free Delivery Bar */}
-        <div className="mb-8 rounded-2xl bg-surface-container-low p-4 sm:p-5 border border-surface-container-high">
-          {amountNeededForFreeShipping > 0 ? (
-            <div className="space-y-2">
-              <div className="flex flex-wrap items-center justify-between gap-2 text-body-md text-on-surface">
-                <span>
-                  Add items worth{" "}
-                  <strong className="text-primary font-bold">
-                    ₹{amountNeededForFreeShipping}
-                  </strong>{" "}
-                  more to get <strong>FREE Delivery</strong> across India!
-                </span>
-                <span className="text-label-md font-bold text-secondary">
-                  {freeShippingProgress}% achieved
-                </span>
-              </div>
-              <div className="h-2 w-full overflow-hidden rounded-full bg-surface-container-highest">
-                <div
-                  className="h-full rounded-full bg-secondary transition-all duration-300"
-                  style={{ width: `${freeShippingProgress}%` }}
-                />
-              </div>
-            </div>
-          ) : (
-            <div className="flex items-center gap-2.5 text-title-sm font-bold text-secondary">
-              <Icon name="check_circle" filled className="text-[22px]" />
-              <span>
-                🎉 Congratulations! Your order qualifies for{" "}
-                <strong>FREE Delivery</strong> anywhere in India.
-              </span>
-            </div>
-          )}
         </div>
 
         {/* Cart Content: Items & Summary */}
@@ -280,33 +226,21 @@ export default function CartView() {
 
               <div className="space-y-3 text-body-md">
                 <div className="flex justify-between text-on-surface-variant">
-                  <span>Subtotal ({count} items)</span>
+                  <span>Total Items</span>
                   <span className="font-semibold text-on-surface">
-                    ₹{subtotal}
-                  </span>
-                </div>
-                <div className="flex justify-between text-on-surface-variant">
-                  <span>Delivery Charges</span>
-                  <span
-                    className={
-                      shippingFee === 0
-                        ? "font-bold text-secondary"
-                        : "font-semibold text-on-surface"
-                    }
-                  >
-                    {shippingFee === 0 ? "FREE" : `₹${shippingFee}`}
+                    {count} {count === 1 ? "item" : "items"}
                   </span>
                 </div>
                 <div className="border-t border-surface-container pt-3 flex items-baseline justify-between">
                   <span className="font-display text-title-lg font-bold text-on-surface">
-                    Grand Total
+                    Total Amount
                   </span>
                   <div className="text-right">
                     <span className="font-display text-headline-md font-bold text-primary">
-                      ₹{grandTotal}
+                      ₹{total}
                     </span>
                     <span className="block text-label-sm text-on-surface-variant">
-                      Inclusive of all taxes
+                      Direct product calculation
                     </span>
                   </div>
                 </div>
@@ -321,11 +255,11 @@ export default function CartView() {
                   className="flex w-full items-center justify-center gap-2.5 rounded-full bg-whatsapp-emerald py-4 px-6 text-title-md font-bold text-pure-parchment shadow-md transition-all duration-200 hover:bg-secondary hover:shadow-lg active:scale-[0.99]"
                 >
                   <Icon name="chat" className="text-[24px]" />
-                  Place Order on WhatsApp
+                  Place Order on WhatsApp (₹{total})
                 </a>
 
                 <p className="text-center text-label-sm text-on-surface-variant">
-                  Clicking will open WhatsApp with your itemized order details pre-filled.
+                  Opens WhatsApp with your complete order details ready to send.
                 </p>
               </div>
 
@@ -337,11 +271,7 @@ export default function CartView() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Icon name="payments" className="text-[18px] text-secondary" />
-                  <span>Secure UPI, Cards & NetBanking payments</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Icon name="local_shipping" className="text-[18px] text-secondary" />
-                  <span>Safe break-free packaging across India</span>
+                  <span>Direct order • Pay via UPI/Card • Fresh batches</span>
                 </div>
               </div>
             </div>
@@ -351,4 +281,3 @@ export default function CartView() {
     </section>
   );
 }
-

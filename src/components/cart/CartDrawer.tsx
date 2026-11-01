@@ -10,11 +10,8 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { SITE } from "@/constants/site";
 import {
   selectCartCount,
-  selectCartSubtotal,
-  selectShippingFee,
   selectCartTotal,
   useCartStore,
 } from "@/store/cart-store";
@@ -37,30 +34,13 @@ export default function CartDrawer() {
   const clearCart = useCartStore((s) => s.clearCart);
 
   const count = useCartStore(selectCartCount);
-  const subtotal = useCartStore(selectCartSubtotal);
-  const shippingFee = selectShippingFee(subtotal);
-  const grandTotal = selectCartTotal(subtotal);
+  const total = useCartStore(selectCartTotal);
 
   if (!isMounted) {
     return null;
   }
 
-  const freeShippingThreshold = SITE.freeShippingAbove;
-  const amountNeededForFreeShipping = Math.max(
-    0,
-    freeShippingThreshold - subtotal
-  );
-  const freeShippingProgress = Math.min(
-    100,
-    Math.round((subtotal / freeShippingThreshold) * 100)
-  );
-
-  const whatsappOrderUrl = buildCartOrderWhatsAppLink(
-    items,
-    subtotal,
-    shippingFee,
-    grandTotal
-  );
+  const whatsappOrderUrl = buildCartOrderWhatsAppLink(items, total);
 
   return (
     <Sheet open={isOpen} onOpenChange={(open) => !open && closeCart()}>
@@ -96,40 +76,6 @@ export default function CartDrawer() {
 
         {items.length > 0 ? (
           <>
-            {/* Free Shipping Progress Ribbon */}
-            <div className="bg-surface-container-low px-6 py-3 border-b border-surface-container-high">
-              {amountNeededForFreeShipping > 0 ? (
-                <div className="space-y-1.5">
-                  <div className="flex items-center justify-between text-body-sm text-on-surface-variant">
-                    <span>
-                      Add{" "}
-                      <strong className="text-primary font-bold">
-                        ₹{amountNeededForFreeShipping}
-                      </strong>{" "}
-                      more for <strong>FREE Delivery</strong>
-                    </span>
-                    <span className="font-bold text-secondary">
-                      {freeShippingProgress}%
-                    </span>
-                  </div>
-                  <div className="h-1.5 w-full overflow-hidden rounded-full bg-surface-container-highest">
-                    <div
-                      className="h-full rounded-full bg-secondary transition-all duration-300"
-                      style={{ width: `${freeShippingProgress}%` }}
-                    />
-                  </div>
-                </div>
-              ) : (
-                <div className="flex items-center gap-2 text-label-md font-bold text-secondary">
-                  <Icon name="check_circle" filled className="text-[18px]" />
-                  <span>
-                    🎉 You have unlocked <strong>FREE Delivery</strong> across
-                    India!
-                  </span>
-                </div>
-              )}
-            </div>
-
             {/* Scrollable Items List */}
             <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
               {items.map((item) => {
@@ -233,21 +179,9 @@ export default function CartDrawer() {
             <div className="border-t border-surface-container-high bg-pure-parchment p-6 space-y-4 shadow-lg">
               <div className="space-y-1.5 text-body-sm">
                 <div className="flex justify-between text-on-surface-variant">
-                  <span>Subtotal ({count} items)</span>
+                  <span>Total Items</span>
                   <span className="font-medium text-on-surface">
-                    ₹{subtotal}
-                  </span>
-                </div>
-                <div className="flex justify-between text-on-surface-variant">
-                  <span>Delivery Charges</span>
-                  <span
-                    className={
-                      shippingFee === 0
-                        ? "font-bold text-secondary"
-                        : "font-medium text-on-surface"
-                    }
-                  >
-                    {shippingFee === 0 ? "FREE" : `₹${shippingFee}`}
+                    {count} {count === 1 ? "item" : "items"}
                   </span>
                 </div>
                 <div className="border-t border-surface-container pt-2 flex items-baseline justify-between">
@@ -256,10 +190,10 @@ export default function CartDrawer() {
                   </span>
                   <div className="text-right">
                     <span className="font-display text-headline-sm font-bold text-primary">
-                      ₹{grandTotal}
+                      ₹{total}
                     </span>
                     <span className="block text-[11px] text-on-surface-variant">
-                      Inclusive of all taxes
+                      Direct product calculation
                     </span>
                   </div>
                 </div>
@@ -273,7 +207,7 @@ export default function CartDrawer() {
                 className="flex w-full items-center justify-center gap-2.5 rounded-full bg-whatsapp-emerald py-3.5 px-6 text-title-sm font-bold text-pure-parchment shadow-md transition-all duration-200 hover:bg-secondary hover:shadow-lg active:scale-[0.99]"
               >
                 <Icon name="chat" className="text-[22px]" />
-                Place Order on WhatsApp (₹{grandTotal})
+                Place Order on WhatsApp (₹{total})
               </a>
 
               <div className="flex items-center justify-center pt-1">
@@ -292,7 +226,7 @@ export default function CartDrawer() {
                   name="verified_user"
                   className="text-[15px] text-secondary"
                 />
-                Direct Order • Pay via UPI/Card • Fresh Batch Guaranteed
+                Direct Order on WhatsApp • Pay via UPI/Card • Fresh Batches
               </p>
             </div>
           </>
