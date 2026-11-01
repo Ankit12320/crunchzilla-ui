@@ -26,15 +26,15 @@
     "variantLabel": "Select Weight",
     "variants": [
       {
-        "id": "400g",
-        "label": "400g",
-        "price": 249,
-        "mrp": 299
+        "id": "500g",
+        "label": "500g",
+        "price": 450,
+        "mrp": 499
       },
       {
-        "id": "800g",
-        "label": "800g Twin Pack",
-        "price": 469
+        "id": "1kg",
+        "label": "1kg Twin Pack",
+        "price": 850
       }
     ]
   },
@@ -67,13 +67,13 @@
       {
         "id": "200g",
         "label": "200g Jumbo",
-        "price": 299,
-        "mrp": 350
+        "price": 800,
+        "mrp": 899
       },
       {
         "id": "400g",
         "label": "400g Family",
-        "price": 549
+        "price": 1550
       }
     ]
   },
@@ -106,13 +106,13 @@
       {
         "id": "500g",
         "label": "500g",
-        "price": 189,
-        "mrp": 220
+        "price": 150,
+        "mrp": 180
       },
       {
         "id": "1kg",
         "label": "1kg Saver",
-        "price": 349
+        "price": 280
       }
     ]
   },
@@ -145,13 +145,13 @@
       {
         "id": "500g",
         "label": "500g",
-        "price": 149,
+        "price": 150,
         "mrp": 180
       },
       {
         "id": "1kg",
         "label": "1kg Pack",
-        "price": 279
+        "price": 280
       }
     ]
   },
@@ -184,13 +184,13 @@
       {
         "id": "500g",
         "label": "500g",
-        "price": 129,
-        "mrp": 160
+        "price": 150,
+        "mrp": 180
       },
       {
         "id": "1kg",
         "label": "1kg Family",
-        "price": 239
+        "price": 280
       }
     ]
   },
@@ -223,13 +223,13 @@
       {
         "id": "500g",
         "label": "500g",
-        "price": 160,
-        "mrp": 200
+        "price": 180,
+        "mrp": 220
       },
       {
         "id": "1kg",
         "label": "1kg Jar",
-        "price": 299
+        "price": 340
       }
     ]
   }
