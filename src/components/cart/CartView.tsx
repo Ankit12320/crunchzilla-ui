@@ -219,7 +219,7 @@ export default function CartView() {
 
           {/* Order Summary & WhatsApp CTA (Right 4 Cols / Bottom on Mobile) */}
           <div className="lg:col-span-4">
-            <div className="sticky top-header rounded-2xl bg-pure-parchment p-6 shadow-md border border-surface-container space-y-6">
+            <div className="static lg:sticky lg:top-header rounded-2xl bg-pure-parchment p-6 shadow-md border border-surface-container space-y-6">
               <h2 className="font-display text-headline-sm font-bold text-on-surface border-b border-surface-container pb-4">
                 Order Summary
               </h2>

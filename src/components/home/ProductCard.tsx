@@ -74,7 +74,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="space-y-3 pt-2">
           <div className="flex items-center gap-2">
             <span className="text-label-sm text-on-surface-variant">Size:</span>
-            <div className="flex items-center gap-1.5" role="radiogroup" aria-label="Size">
+            <div className="flex flex-wrap items-center gap-1.5" role="radiogroup" aria-label="Size">
               {product.variants.map((v) => {
                 const selected = v.id === variant.id;
                 return (
@@ -98,14 +98,14 @@ export default function ProductCard({ product }: { product: Product }) {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 pt-2">
+          <div className="grid grid-cols-2 gap-2 sm:gap-2.5 pt-2">
             <button
               type="button"
               onClick={handleAddToCart}
-              className="flex w-full items-center justify-center gap-1.5 rounded-full bg-surface-container-high py-2.5 text-title-sm text-on-surface transition-all hover:bg-primary-container hover:text-on-primary-container"
+              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-full bg-roasted-terracotta px-2 sm:px-3 text-label-sm font-bold text-pure-parchment shadow-sm transition-all hover:bg-primary active:scale-[0.98] whitespace-nowrap"
             >
               <Icon name="shopping_bag" className="text-[18px]" />
-              Add to Cart
+              <span>Add to Cart</span>
             </button>
             <a
               href={buildProductCardWhatsAppLink({
@@ -116,10 +116,10 @@ export default function ProductCard({ product }: { product: Product }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Order ${product.name} on WhatsApp`}
-              className="flex w-full items-center justify-center gap-1.5 rounded-full bg-whatsapp-emerald py-2.5 text-title-sm text-pure-parchment shadow-sm transition-all hover:bg-secondary"
+              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-full bg-whatsapp-emerald px-2 sm:px-3 text-label-sm font-bold text-pure-parchment shadow-sm transition-all hover:bg-secondary active:scale-[0.98] whitespace-nowrap"
             >
               <Icon name="chat" className="text-[18px]" />
-              Order on WhatsApp
+              <span>Order on WhatsApp</span>
             </a>
           </div>
         </div>

@@ -6,9 +6,12 @@
   }
   html {
     @apply font-sans;
+    overflow-x: hidden;
   }
   body {
     @apply bg-surface text-body-md text-on-surface;
     overscroll-behavior: none;
+    overflow-x: hidden;
+    min-width: 320px;
   }
 }

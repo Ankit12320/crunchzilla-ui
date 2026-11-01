@@ -136,7 +136,7 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
               <span className="text-title-lg font-bold leading-none text-primary">₹{variant.price}</span>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2.5">
+          <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
             <button
               type="button"
               onClick={() =>
@@ -149,9 +149,9 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
                   image: image,
                 })
               }
-              className="flex w-full items-center justify-center gap-1.5 rounded-full bg-roasted-terracotta py-2.5 px-3 text-label-sm font-semibold text-pure-parchment shadow-sm transition-all hover:bg-primary active:scale-[0.98]"
+              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-full bg-roasted-terracotta px-2 sm:px-3 text-label-sm font-bold text-pure-parchment shadow-sm transition-all hover:bg-primary active:scale-[0.98] whitespace-nowrap"
             >
-              <Icon name="shopping_bag" className="text-[16px]" />
+              <Icon name="shopping_bag" className="text-[18px]" />
               <span>Add to Cart</span>
             </button>
             <a
@@ -164,9 +164,9 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
               rel="noopener noreferrer"
               aria-label={`Order ${product.name} on WhatsApp`}
               title="Order on WhatsApp"
-              className="flex w-full items-center justify-center gap-1.5 rounded-full bg-whatsapp-emerald py-2.5 px-3 text-label-sm font-semibold text-pure-parchment shadow-sm transition-all hover:bg-secondary whitespace-nowrap active:scale-[0.98]"
+              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-full bg-whatsapp-emerald px-2 sm:px-3 text-label-sm font-bold text-pure-parchment shadow-sm transition-all hover:bg-secondary active:scale-[0.98] whitespace-nowrap"
             >
-              <Icon name="chat" className="text-[16px]" />
+              <Icon name="chat" className="text-[18px]" />
               <span>Order on WhatsApp</span>
             </a>
           </div>

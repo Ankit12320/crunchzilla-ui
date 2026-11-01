@@ -79,7 +79,7 @@ export default function MakhanaSpotlight() {
               })}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full bg-whatsapp-emerald px-8 py-3.5 text-title-sm text-pure-parchment shadow-md transition-all hover:bg-secondary"
+              className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-whatsapp-emerald px-8 py-3.5 text-title-sm text-pure-parchment shadow-md transition-all hover:bg-secondary"
             >
               <Icon name="chat" className="text-[18px]" />
               Order Makhana on WhatsApp
