@@ -65,15 +65,15 @@
     "variantLabel": "Select Pack Size",
     "variants": [
       {
-        "id": "200g",
-        "label": "200g Jumbo",
+        "id": "500g",
+        "label": "500g Jumbo",
         "price": 800,
         "mrp": 899
       },
       {
-        "id": "400g",
-        "label": "400g Family",
-        "price": 1550
+        "id": "1kg",
+        "label": "1kg Family",
+        "price": 1600
       }
     ]
   },

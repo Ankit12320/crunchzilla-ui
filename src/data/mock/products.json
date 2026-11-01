@@ -27,8 +27,8 @@
     "rating": 4.8,
     "reviewCount": "950+",
     "variants": [
-      { "id": "200g", "label": "200g Jumbo" },
-      { "id": "400g", "label": "400g (Family Pack)" }
+      { "id": "500g", "label": "500g Jumbo" },
+      { "id": "1kg", "label": "1kg (Family Pack)" }
     ]
   },
   {
