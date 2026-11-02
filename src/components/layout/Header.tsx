@@ -3,6 +3,7 @@ import Link from "next/link";
 import Icon from "@/components/common/Icon";
 //import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import CartButton from "@/components/layout/CartButton";
+import AccountButton from "@/components/layout/AccountButton";
 import MobileNav from "@/components/layout/MobileNav";
 import NavLinks from "@/components/layout/NavLinks";
 import { IMAGES } from "@/constants/images";
@@ -45,6 +46,7 @@ export default function Header() {
             <Icon name="chat" className="text-[18px]" />
             WhatsApp Order
           </a>
+          <AccountButton />
           <CartButton />
           <MobileNav />
         </div>

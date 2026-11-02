@@ -90,7 +90,7 @@ export default function HamperFeature({ hamper }: { hamper: Hamper }) {
                   <div key={key} className="relative aspect-square overflow-hidden rounded-xl shadow-md">
                     <Image
                       src={src}
-                      alt=""
+                      alt="Crunchzilla authentic pantry item included in heritage discovery gift hamper"
                       fill
                       unoptimized={src.endsWith(".gif")}
                       sizes="(min-width: 1024px) 20vw, 50vw"

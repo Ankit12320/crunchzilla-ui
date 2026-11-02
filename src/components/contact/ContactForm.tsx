@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Icon from "@/components/common/Icon";
@@ -61,7 +61,7 @@ export default function ContactForm() {
     register,
     handleSubmit,
     reset,
-    watch,
+    control,
     setValue,
     formState: { errors, isSubmitting },
   } = useForm<ContactValues>({
@@ -69,7 +69,11 @@ export default function ContactForm() {
     defaultValues: { category: INQUIRY_CATEGORIES[0] },
   });
 
-  const category = watch("category");
+  const category = useWatch({
+    control,
+    name: "category",
+    defaultValue: INQUIRY_CATEGORIES[0],
+  });
 
   useEffect(() => {
     if (!submitted) return;

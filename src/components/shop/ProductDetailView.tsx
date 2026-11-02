@@ -266,7 +266,7 @@ export default function ProductDetailView({
                       aria-checked={selected}
                       onClick={() => setVariantId(v.id)}
                       className={cn(
-                        "flex min-h-[44px] items-center justify-center rounded-full px-5 py-2 text-label-md font-semibold transition-all active:scale-95",
+                        "flex min-h-[44px] items-center justify-center rounded-full px-5 py-2 text-label-md font-semibold transition-all active:scale-95 whitespace-nowrap",
                         selected
                           ? "bg-roasted-terracotta text-pure-parchment shadow-md ring-2 ring-roasted-terracotta ring-offset-2"
                           : "bg-surface-container text-on-surface-variant hover:bg-surface-variant"

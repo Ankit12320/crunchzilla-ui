@@ -119,7 +119,7 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
                   aria-checked={selected}
                   onClick={() => setVariantId(v.id)}
                   className={cn(
-                    "flex min-h-[36px] items-center justify-center rounded-full px-3.5 py-1.5 text-label-sm transition-all active:scale-95",
+                    "flex min-h-[36px] items-center justify-center rounded-full px-3.5 py-1.5 text-label-sm transition-all active:scale-95 whitespace-nowrap",
                     selected
                       ? "bg-roasted-terracotta text-pure-parchment"
                       : "bg-surface-container text-on-surface-variant hover:bg-surface-variant"
@@ -160,7 +160,7 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
               }
               className="flex h-11 w-full items-center justify-center gap-1.5 rounded-full bg-roasted-terracotta px-2 sm:px-3 text-label-sm font-bold text-pure-parchment shadow-sm transition-all hover:bg-primary active:scale-[0.98] whitespace-nowrap"
             >
-              <Icon name="shopping_bag" className="text-[18px]" />
+              <Icon name="shopping_bag" className="text-[18px] shrink-0" />
               <span>Add to Cart</span>
             </button>
             <a
@@ -175,8 +175,9 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
               title="Order on WhatsApp"
               className="flex h-11 w-full items-center justify-center gap-1.5 rounded-full bg-whatsapp-emerald px-2 sm:px-3 text-label-sm font-bold text-pure-parchment shadow-sm transition-all hover:bg-secondary active:scale-[0.98] whitespace-nowrap"
             >
-              <Icon name="chat" className="text-[18px]" />
-              <span>Order on WhatsApp</span>
+              <Icon name="chat" className="text-[18px] shrink-0" />
+              <span className="hidden sm:inline">Order on WhatsApp</span>
+              <span className="sm:hidden">WhatsApp</span>
             </a>
           </div>
         </div>

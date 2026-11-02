@@ -1,15 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Icon from "@/components/common/Icon";
 import { FacebookIcon, InstagramIcon } from "@/components/common/SocialIcons";
 import NavLinks from "@/components/layout/NavLinks";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { SITE } from "@/constants/site";
 import { whatsappLink } from "@/lib/whatsapp";
+import { useAuthStore } from "@/store/auth-store";
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
+  const user = useAuthStore((s) => s.user);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -28,6 +31,17 @@ export default function MobileNav() {
             className="flex flex-col items-start gap-3 text-title-md"
             onNavigate={() => setOpen(false)}
           />
+
+          <div className="border-t border-surface-container pt-3">
+            <Link
+              href="/login"
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-2.5 rounded-xl bg-surface-container px-3.5 py-2.5 text-title-sm font-semibold text-primary transition-colors hover:bg-surface-container-high"
+            >
+              <Icon name="person" className="text-[20px]" />
+              <span>{user ? `Account: ${user.name}` : "My Account / Login"}</span>
+            </Link>
+          </div>
 
           <div className="border-t border-surface-container pt-4 space-y-3">
             <a
