@@ -12,9 +12,9 @@ import { whatsappLink } from "@/lib/whatsapp";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-surface/90 shadow-[0_1px_8px_rgba(45,30,15,0.05)] backdrop-blur-xl">
+    <header className="sticky top-0 z-40 bg-surface/90 shadow-[0_1px_8px_rgba(45,30,15,0.05)] backdrop-blur-xl pt-[env(safe-area-inset-top,0px)]">
       {/* //<AnnouncementBar /> */}
-      <div className="container-page flex h-20 items-center justify-between gap-6">
+      <div className="container-page flex h-20 items-center justify-between gap-4 sm:gap-6">
         <Link
           href="/"
           className="group flex items-center gap-3 transition-opacity hover:opacity-95"

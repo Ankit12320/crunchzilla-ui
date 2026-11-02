@@ -157,7 +157,7 @@ export default function HeroSection() {
             </div>
 
             {/* Quality badge */}
-            <div className="absolute -top-4 -right-4 flex items-center gap-2 rounded-2xl bg-botanical-forest px-4 py-2.5 text-on-secondary shadow-lg">
+            <div className="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 flex items-center gap-2 rounded-2xl bg-botanical-forest px-3.5 py-2 sm:px-4 sm:py-2.5 text-on-secondary shadow-lg">
               <Icon name="workspace_premium" className="text-[20px]" />
               <div className="text-left">
                 <span className="block text-label-sm uppercase leading-tight tracking-wider opacity-80">

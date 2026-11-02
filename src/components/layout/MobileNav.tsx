@@ -24,7 +24,7 @@ export default function MobileNav() {
       >
         <Icon name="menu" className="text-[24px]" />
       </SheetTrigger>
-      <SheetContent side="right" className="flex flex-col justify-between bg-surface p-6 overflow-y-auto">
+      <SheetContent side="right" className="flex flex-col justify-between bg-surface p-6 pt-[max(1.5rem,env(safe-area-inset-top,0px))] pr-[max(1.5rem,env(safe-area-inset-right,0px))] pb-[max(1.5rem,env(safe-area-inset-bottom,0px))] overflow-y-auto">
         <div className="space-y-6">
           <div className="flex items-center gap-3">
             <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full shadow-xs ring-1 ring-black/5 bg-surface-container-low">

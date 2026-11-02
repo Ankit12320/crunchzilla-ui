@@ -87,7 +87,7 @@ export default function CartDrawer() {
     <Sheet open={isOpen} onOpenChange={(open) => !open && closeCart()}>
       <SheetContent
         side="right"
-        className="flex h-full w-full flex-col bg-surface p-0 sm:max-w-md"
+        className="flex h-full w-full flex-col bg-surface p-0 sm:max-w-md pt-[env(safe-area-inset-top,0px)] pr-[env(safe-area-inset-right,0px)]"
       >
         {/* Drawer Header */}
         <SheetHeader className="border-b border-surface-container-high px-6 py-4">

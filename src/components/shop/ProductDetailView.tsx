@@ -314,7 +314,7 @@ export default function ProductDetailView({
 
             {/* Scrollable Thumbnail Strip (when multiple images) */}
             {galleryImages.length > 1 && (
-              <div className="mt-3.5 flex items-center gap-3 overflow-x-auto pb-1 scrollbar-none snap-x">
+              <div className="mt-3.5 flex items-center gap-3 overflow-x-auto pb-1 no-scrollbar touch-scroll-x snap-x">
                 {galleryImages.map((img, idx) => (
                   <button
                     key={img.src}
@@ -374,7 +374,9 @@ export default function ProductDetailView({
                     {product.rating.toFixed(1)}
                   </span>
                   <span className="text-label-sm text-on-surface-variant">
-                    ({product.reviewCount} Verified Patron Reviews)
+                    ({product.reviewCount}
+                    <span className="hidden sm:inline"> Verified Patron Reviews</span>
+                    <span className="sm:hidden"> reviews</span>)
                   </span>
                 </div>
               </div>

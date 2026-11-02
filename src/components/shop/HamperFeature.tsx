@@ -43,7 +43,7 @@ export default function HamperFeature({ hamper }: { hamper: Hamper }) {
                 ))}
               </div>
 
-              <div className="flex flex-wrap items-center gap-4 pt-3">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:flex-wrap gap-4 pt-3">
                 <div className="flex flex-col">
                   <span className="text-label-sm text-on-surface-variant line-through">
                     ₹{hamper.value} Value
@@ -61,7 +61,7 @@ export default function HamperFeature({ hamper }: { hamper: Hamper }) {
                     variantLabel: "Hamper",
                     image: IMAGES.catalog[hamper.images[0]],
                   }}
-                  className="flex h-12 flex-1 min-w-[200px] items-center justify-center gap-2 rounded-full bg-roasted-terracotta px-6 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-primary active:scale-95"
+                  className="flex h-12 w-full sm:w-auto sm:flex-1 items-center justify-center gap-2 rounded-full bg-roasted-terracotta px-6 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-primary active:scale-95 whitespace-nowrap"
                 >
                   <Icon name="shopping_bag" className="text-[20px]" />
                   Add to Cart
@@ -74,7 +74,7 @@ export default function HamperFeature({ hamper }: { hamper: Hamper }) {
                   })}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-12 flex-1 min-w-[200px] items-center justify-center gap-2 rounded-full bg-whatsapp-emerald px-6 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-secondary active:scale-95"
+                  className="flex h-12 w-full sm:w-auto sm:flex-1 items-center justify-center gap-2 rounded-full bg-whatsapp-emerald px-6 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-secondary active:scale-95 whitespace-nowrap"
                 >
                   <Icon name="chat" className="text-[20px]" />
                   Order Hamper on WhatsApp
