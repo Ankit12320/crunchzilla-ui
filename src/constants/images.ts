@@ -11,6 +11,10 @@ const hero = {
 
 const products = {
   tilkut: "/images/products/tilkut.jpg",
+  tilkutStackBoxes: "/images/products/tilkut-stack-boxes.jpg",
+  tilkutBoxPacks: "/images/products/tilkut-box-packs.jpg",
+  tilkutHamperCollection: "/images/products/tilkut-hamper-collection.jpg",
+  tilkutDeliveryBoxes: "/images/products/tilkut-delivery-boxes.jpg",
   makhana: "/images/products/makhana.jpg",
   makhanaPackets: "/images/products/makhana-packets-bowl.jpg",
   sattu: "/images/products/sattu.jpg",

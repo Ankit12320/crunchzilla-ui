@@ -98,6 +98,14 @@ const PRODUCT_HERITAGE_INFO: Record<
 };
 
 const DEFAULT_PRODUCT_GALLERIES: Record<string, string[]> = {
+  "gaya-tilkut": [
+    "/images/hero/tilkut-hero.gif",
+    "/images/products/tilkut-stack-boxes.jpg",
+    "/images/products/tilkut-box-packs.jpg",
+    "/images/products/tilkut-hamper-collection.jpg",
+    "/images/products/tilkut-delivery-boxes.jpg",
+    "/images/products/tilkut.jpg",
+  ],
   "roasted-makhana": [
     "/images/products/makhana.jpg",
     "/images/products/makhana-packets-bowl.jpg",
@@ -132,14 +140,33 @@ export default function ProductDetailView({
       ? product.images
       : DEFAULT_PRODUCT_GALLERIES[product.slug] ?? [IMAGES.catalog[product.image]];
 
+  const getProductImageAlt = (slug: string, idx: number, fallback: string) => {
+    if (idx === 0) return fallback;
+    if (slug === "gaya-tilkut") {
+      const tilkutAlts = [
+        fallback,
+        "Fresh handcrafted Gaya Tilkut discs stacked in packaging with Crunchzilla delivery boxes",
+        "Crunchzilla Made To Be Loved gift box with pure Gud Tilkut and Black Sesame Tilkut pouches",
+        "Crunchzilla traditional festival hamper with Gaya Tilkut, Makhana, Sattu, Chura, and Desi Gud",
+        "Crunchzilla secure tamper-proof delivery boxes for express shipping across India",
+        "Authentic Gaya Tilkut golden sesame discs close-up",
+      ];
+      return tilkutAlts[idx] ?? `${product.name} - View ${idx + 1}`;
+    }
+    if (slug === "roasted-makhana") {
+      const makhanaAlts = [
+        fallback,
+        "Crunchzilla Artisanal Roasted Makhana premium harvest pouches and fresh pops in bowl",
+        "Makhana foxnuts served alongside hot Indian spiced chai",
+      ];
+      return makhanaAlts[idx] ?? `${product.name} - View ${idx + 1}`;
+    }
+    return `${product.name} - View ${idx + 1}`;
+  };
+
   const galleryImages: { src: string; alt: string }[] = rawImageList.map((src, idx) => ({
     src,
-    alt:
-      idx === 0
-        ? product.imageAlt
-        : idx === 1 && product.slug === "roasted-makhana"
-        ? "Crunchzilla Artisanal Roasted Makhana premium harvest pouches and fresh pops in bowl"
-        : `${product.name} - View ${idx + 1}`,
+    alt: getProductImageAlt(product.slug, idx, product.imageAlt),
   }));
 
   const currentImage = galleryImages[selectedImageIndex] ?? galleryImages[0];
@@ -207,6 +234,12 @@ export default function ProductDetailView({
               onTouchEnd={handleTouchEnd}
               className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-surface-container-low shadow-md select-none"
             >
+              {/* Blurred Ambient Background for seamless fill across portrait/landscape ratios */}
+              <div
+                className="absolute inset-0 bg-cover bg-center blur-2xl opacity-20 scale-110 pointer-events-none"
+                style={{ backgroundImage: `url(${currentImage.src})` }}
+                aria-hidden="true"
+              />
               <Image
                 key={currentImage.src}
                 src={currentImage.src}
@@ -215,7 +248,7 @@ export default function ProductDetailView({
                 priority={selectedImageIndex === 0}
                 unoptimized={currentImage.src.endsWith(".gif")}
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                className="relative z-1 object-contain transition-transform duration-500 ease-out group-hover:scale-105"
               />
 
               {/* Badges */}

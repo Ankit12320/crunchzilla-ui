@@ -7,6 +7,14 @@
     "description": "Traditional melt-in-mouth confection hand-pounded using slow-roasted white sesame seeds and unrefined sugarcane molasses.",
     "image": "tilkut",
     "imageAlt": "Crunchzilla Gaya Heritage Tilkut authentic hand-pressed roasted sesame seed treat",
+    "images": [
+      "/images/hero/tilkut-hero.gif",
+      "/images/products/tilkut-stack-boxes.jpg",
+      "/images/products/tilkut-box-packs.jpg",
+      "/images/products/tilkut-hamper-collection.jpg",
+      "/images/products/tilkut-delivery-boxes.jpg",
+      "/images/products/tilkut.jpg"
+    ],
     "primaryBadge": {
       "icon": "stars",
       "label": "Bestseller",
