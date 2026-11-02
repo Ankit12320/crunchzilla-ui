@@ -1,5 +1,12 @@
 [
   {
+    "id": "ruchi",
+    "name": "Ruchi",
+    "purchase": "Festival Specialties",
+    "rating": 5,
+    "quote": "We sincerely appreciate your efforts in bringing the essence of our native place through the supply of authentic, homemade festival specialties. The products were delicious and thoughtfully packaged, reflecting great care and quality. We look forward to placing more orders in the future and wish you all the very best for your startup’s continued success."
+  },
+  {
     "id": "mayuri",
     "name": "Mayuri",
     "purchase": "Artisanal Roasted Makhana",
