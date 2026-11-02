@@ -23,7 +23,7 @@ export default function CatalogFilterBar({
   onSortChange,
 }: CatalogFilterBarProps) {
   return (
-    <section className="sticky top-[calc(var(--header-height,5rem)+env(safe-area-inset-top,0px))] z-30 w-full border-y border-surface-container-high bg-surface/95 backdrop-blur-md py-2.5 shadow-[0_2px_8px_rgba(45,30,15,0.05)] sm:py-3.5 transition-all">
+    <section className="sticky top-[calc(var(--header-height,5rem)+env(safe-area-inset-top,0px))] z-30 w-full border-y border-surface-container-high/60 bg-surface/95 backdrop-blur-xl py-2.5 shadow-premium-sm sm:py-3.5 transition-all">
       <div className="container-page flex flex-col items-stretch justify-between gap-4 lg:flex-row lg:items-center">
         {/* Category Pills */}
         <div
@@ -40,10 +40,10 @@ export default function CatalogFilterBar({
                 aria-pressed={active}
                 onClick={() => onCategoryChange(id)}
                 className={cn(
-                  "flex min-h-[44px] shrink-0 items-center justify-center rounded-full px-4 py-2 text-label-md whitespace-nowrap transition-all active:scale-95",
+                  "flex min-h-[44px] shrink-0 items-center justify-center rounded-full px-4.5 py-2 text-label-md font-semibold whitespace-nowrap transition-all duration-200 active:scale-95",
                   active
-                    ? "bg-roasted-terracotta text-pure-parchment shadow-sm"
-                    : "bg-surface-container-high text-on-surface-variant hover:bg-surface-variant hover:text-on-surface"
+                    ? "bg-roasted-terracotta text-pure-parchment shadow-premium-sm"
+                    : "bg-surface-container/80 border border-amber-900/5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
                 )}
               >
                 {id === "all" ? `${label} (${totalCount})` : label}

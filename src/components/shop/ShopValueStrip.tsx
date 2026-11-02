@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 export default function ShopValueStrip() {
   return (
-    <section className="w-full bg-golden-sand py-3 shadow-sm">
+    <section className="w-full bg-gradient-to-r from-golden-sand via-[#fdf6e2] to-golden-sand border-y border-amber-900/10 py-3.5 shadow-xs">
       <div className="container-page flex flex-wrap items-center justify-between gap-4">
         {SHOP_VALUE_STRIP.map(({ icon, label, className }) => (
           <div key={label} className={cn("items-center gap-2", className)}>

@@ -25,7 +25,7 @@ type ContactValues = z.infer<typeof contactSchema>;
 
 const labelClass = "block text-label-sm uppercase tracking-wider text-on-surface-variant";
 const inputClass =
-  "w-full min-h-[44px] rounded-lg bg-surface-container-low py-3 pr-4 pl-10 text-[16px] sm:text-body-md text-on-surface shadow-inner placeholder:text-outline/70 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/30 focus:outline-none aria-invalid:ring-2 aria-invalid:ring-error/40";
+  "w-full min-h-[44px] rounded-xl bg-pure-parchment py-3 pr-4 pl-10 text-[16px] sm:text-body-md text-on-surface border border-amber-900/10 shadow-xs placeholder:text-outline/70 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none aria-invalid:ring-2 aria-invalid:ring-error/40 transition-all";
 const errorClass = "text-body-sm text-error";
 
 function Field({

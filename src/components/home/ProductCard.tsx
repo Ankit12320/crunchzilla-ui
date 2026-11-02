@@ -34,7 +34,7 @@ export default function ProductCard({ product }: { product: Product }) {
   };
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-xl bg-pure-parchment shadow-md transition-all duration-300 hover:shadow-xl">
+    <article className="group flex flex-col overflow-hidden rounded-2xl bg-pure-parchment border border-amber-900/10 shadow-premium-sm transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-1.5">
       <div className="relative h-72 overflow-hidden bg-surface-container-high">
         <Image
           src={IMAGES.products[product.image]}

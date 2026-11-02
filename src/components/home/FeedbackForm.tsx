@@ -16,7 +16,7 @@ const feedbackSchema = z.object({
 type FeedbackValues = z.infer<typeof feedbackSchema>;
 
 const fieldClass =
-  "w-full rounded-lg bg-pure-parchment px-4 py-2.5 text-body-md text-on-surface shadow-sm placeholder:text-on-surface-variant/50 focus:ring-2 focus:ring-primary focus:outline-none";
+  "w-full rounded-xl bg-pure-parchment px-4 py-3 text-body-md text-on-surface border border-amber-900/10 shadow-xs placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all";
 const labelClass = "mb-1 block text-label-sm font-semibold text-on-surface";
 const errorClass = "mt-1 text-body-sm text-error";
 

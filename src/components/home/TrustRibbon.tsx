@@ -4,7 +4,7 @@ import { SITE } from "@/constants/site";
 
 export default function TrustRibbon() {
   return (
-    <div className="bg-golden-sand px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-2.5">
+    <div className="bg-gradient-to-r from-golden-sand via-[#fdf6e2] to-golden-sand border-y border-amber-900/10 shadow-xs px-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-2.5">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 text-label-sm uppercase tracking-wider text-secondary">
         <div className="flex items-center gap-2 whitespace-nowrap">
           <Icon name="verified" className="text-[16px] text-spiced-tangerine shrink-0" />

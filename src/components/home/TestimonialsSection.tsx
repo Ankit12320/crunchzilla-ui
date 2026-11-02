@@ -17,16 +17,23 @@ export default function TestimonialsSection({ testimonials }: { testimonials: Te
           {testimonials.map(({ id, name, purchase, rating, quote }) => (
             <figure
               key={id}
-              className="flex flex-col justify-between space-y-4 rounded-xl bg-pure-parchment p-6 shadow-md transition-transform duration-300 hover:-translate-y-1"
+              className="group relative flex flex-col justify-between space-y-4 rounded-2xl bg-pure-parchment p-6 border border-amber-900/10 shadow-premium-sm transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-1.5"
             >
-              <div className="space-y-3">
-                <StarRating rating={rating} />
-                <blockquote className="text-body-md italic text-on-surface">“{quote}”</blockquote>
+              <div className="absolute top-4 right-4 text-warm-amber/15 font-display text-5xl leading-none select-none pointer-events-none">
+                “
               </div>
-              <figcaption className="flex items-center justify-between border-t border-surface-container pt-4">
+              <div className="space-y-3 relative z-1">
+                <StarRating rating={rating} />
+                <blockquote className="text-body-md italic text-on-surface leading-relaxed">
+                  “{quote}”
+                </blockquote>
+              </div>
+              <figcaption className="flex items-center justify-between border-t border-surface-container pt-4 relative z-1">
                 <div>
                   <p className="text-title-sm font-bold text-on-surface">{name}</p>
-                  <p className="text-label-sm text-on-surface-variant">Verified Buyer • {purchase}</p>
+                  <p className="text-label-sm font-medium text-on-surface-variant">
+                    Verified Buyer • {purchase}
+                  </p>
                 </div>
                 <Icon name="verified" className="text-[20px] text-whatsapp-emerald" />
               </figcaption>

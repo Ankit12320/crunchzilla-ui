@@ -124,7 +124,7 @@ export default function CartDrawer() {
                 return (
                   <div
                     key={`${item.slug}-${item.variantId}`}
-                    className="flex gap-3 rounded-xl bg-pure-parchment p-3.5 shadow-sm border border-surface-container"
+                    className="flex gap-3 rounded-2xl bg-pure-parchment p-3.5 shadow-premium-sm border border-amber-900/10"
                   >
                     {/* Item Thumbnail */}
                     <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-surface-container-low">

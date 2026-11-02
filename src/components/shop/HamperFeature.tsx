@@ -13,31 +13,33 @@ const PERK_TONE = {
 
 export default function HamperFeature({ hamper }: { hamper: Hamper }) {
   return (
-    <section className="w-full bg-warm-cream py-10">
+    <section className="w-full bg-gradient-to-b from-surface via-surface-container-low to-surface py-12">
       <div className="container-page">
-        <div className="relative overflow-hidden rounded-2xl bg-surface-container-low p-6 shadow-sm sm:p-10">
-          <div className="pointer-events-none absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-primary/5" />
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-golden-sand/40 via-surface-container to-golden-sand/20 p-6 sm:p-10 shadow-premium-md border border-amber-900/10 md:p-12">
+          <div className="pointer-events-none absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-primary/5 blur-2xl" />
 
           <div className="relative z-10 grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
             <div className="space-y-4 lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full bg-golden-sand px-3 py-1 text-label-sm text-tertiary">
+              <div className="inline-flex items-center gap-2 rounded-full bg-golden-sand/80 border border-amber-900/10 px-3.5 py-1 text-label-sm font-bold text-tertiary shadow-xs">
                 <Icon name="card_giftcard" className="text-[16px]" />
                 {hamper.tag}
               </div>
               <h2 className="font-display text-headline-md font-bold tracking-tight text-on-surface">
                 {hamper.name}
               </h2>
-              <p className="max-w-xl text-body-md text-on-surface-variant">{hamper.description}</p>
+              <p className="max-w-xl text-body-lg text-on-surface-variant leading-relaxed">
+                {hamper.description}
+              </p>
 
               <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-3">
                 {hamper.perks.map(({ label, value, tone }, i) => (
                   <div
                     key={label}
-                    className={`rounded-lg bg-pure-parchment p-3 shadow-sm ${
+                    className={`rounded-2xl bg-pure-parchment/90 border border-amber-900/5 p-3.5 shadow-premium-sm transition-all duration-200 hover:shadow-premium-md hover:-translate-y-0.5 ${
                       i === hamper.perks.length - 1 ? "col-span-2 sm:col-span-1" : ""
                     }`}
                   >
-                    <span className={`block text-label-sm uppercase ${PERK_TONE[tone]}`}>{label}</span>
+                    <span className={`block text-label-sm uppercase font-semibold ${PERK_TONE[tone]}`}>{label}</span>
                     <span className="text-title-sm font-bold text-on-surface">{value}</span>
                   </div>
                 ))}

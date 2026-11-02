@@ -343,17 +343,17 @@ export default function ProductDetailView({
 
             {/* Trust Points */}
             <div className="mt-6 grid grid-cols-3 gap-3">
-              <div className="flex flex-col items-center rounded-xl bg-surface-container-low p-3 text-center">
+              <div className="flex flex-col items-center rounded-2xl bg-pure-parchment/90 border border-amber-900/10 p-3.5 text-center shadow-premium-sm transition-all hover:shadow-premium-md hover:-translate-y-0.5">
                 <Icon name="verified" className="text-[22px] text-botanical-forest" />
                 <span className="mt-1 text-label-sm font-bold text-on-surface">100% Authentic</span>
                 <span className="text-[11px] text-on-surface-variant">{heritage.origin}</span>
               </div>
-              <div className="flex flex-col items-center rounded-xl bg-surface-container-low p-3 text-center">
+              <div className="flex flex-col items-center rounded-2xl bg-pure-parchment/90 border border-amber-900/10 p-3.5 text-center shadow-premium-sm transition-all hover:shadow-premium-md hover:-translate-y-0.5">
                 <Icon name="local_shipping" className="text-[22px] text-spiced-tangerine" />
                 <span className="mt-1 text-label-sm font-bold text-on-surface">Express Delivery</span>
                 <span className="text-[11px] text-on-surface-variant">Bangalore & Pan-India</span>
               </div>
-              <div className="flex flex-col items-center rounded-xl bg-surface-container-low p-3 text-center">
+              <div className="flex flex-col items-center rounded-2xl bg-pure-parchment/90 border border-amber-900/10 p-3.5 text-center shadow-premium-sm transition-all hover:shadow-premium-md hover:-translate-y-0.5">
                 <Icon name="eco" className="text-[22px] text-secondary" />
                 <span className="mt-1 text-label-sm font-bold text-on-surface">Zero Palm Oil</span>
                 <span className="text-[11px] text-on-surface-variant">Chemical-Free</span>
@@ -391,7 +391,7 @@ export default function ProductDetailView({
             </div>
 
             {/* Variant Selector */}
-            <div className="space-y-3 rounded-xl bg-surface-container-lowest p-5 shadow-sm border border-outline-variant/30">
+            <div className="space-y-3 rounded-2xl bg-pure-parchment p-5 sm:p-6 shadow-premium-sm border border-amber-900/10">
               <div className="flex items-center justify-between">
                 <span className="text-label-md font-bold uppercase tracking-wider text-on-surface">
                   {product.variantLabel}

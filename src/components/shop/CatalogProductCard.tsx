@@ -20,7 +20,7 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
   const image = IMAGES.catalog[product.image];
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-xl bg-pure-parchment shadow-sm transition-all duration-300 hover:shadow-xl">
+    <article className="group relative flex flex-col overflow-hidden rounded-2xl bg-pure-parchment border border-amber-900/10 shadow-premium-sm transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-1.5">
       {/* Image stage */}
       <div className="relative aspect-[4/3] overflow-hidden bg-surface-container-low">
         <Link
@@ -133,7 +133,7 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
         </div>
 
         {/* Action area */}
-        <div className="-mx-5 -mb-5 space-y-3 rounded-b-xl bg-surface-container-low p-5">
+        <div className="-mx-5 -mb-5 space-y-3 rounded-b-2xl bg-surface-container-low/80 border-t border-amber-900/5 p-5">
           <div className="flex items-baseline justify-between">
             <span className="text-label-sm font-medium text-on-surface-variant">Price</span>
             <div className="flex items-baseline gap-2">

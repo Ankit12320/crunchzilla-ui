@@ -155,7 +155,7 @@ export default function CartView() {
               return (
                 <article
                   key={`${item.slug}-${item.variantId}`}
-                  className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-2xl bg-pure-parchment p-4 sm:p-5 shadow-sm border border-surface-container transition-all hover:shadow-md"
+                  className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-2xl bg-pure-parchment p-4 sm:p-5 shadow-premium-sm border border-amber-900/10 transition-all hover:shadow-premium-md"
                 >
                   <div className="flex items-center gap-4">
                     {/* Thumbnail */}

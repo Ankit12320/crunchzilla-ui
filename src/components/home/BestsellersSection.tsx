@@ -4,11 +4,11 @@ import type { CatalogProduct } from "@/types/catalog";
 
 export default function BestsellersSection({ products }: { products: CatalogProduct[] }) {
   return (
-    <section id="bestsellers" className="w-full scroll-mt-header bg-surface-container-low py-16 md:py-20">
+    <section id="bestsellers" className="w-full scroll-mt-header bg-gradient-to-b from-surface via-surface-container-low to-surface py-16 md:py-20 border-b border-surface-container">
       <div className="container-page">
         <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <span className="mb-1 block text-label-md uppercase tracking-widest text-primary">
+            <span className="mb-2 inline-block rounded-full bg-golden-sand/80 border border-amber-900/10 px-3.5 py-1 text-label-xs font-bold uppercase tracking-widest text-primary shadow-xs">
               Traditional Bihar Food Products Online
             </span>
             <h2 className="font-display text-headline-lg-mobile font-bold text-on-surface md:text-headline-lg">
@@ -19,7 +19,7 @@ export default function BestsellersSection({ products }: { products: CatalogProd
               Shop slow-roasted Gaya Tilkut, organic Mithila Makhana, wood-fired Chana Sattu, and fragrant Katarni Chura — pure, chemical-free delicacies from Bihar shipped to Bangalore, Patna, and nationwide.
             </p>
           </div>
-          <span className="self-start rounded-full bg-golden-sand px-3.5 py-1.5 text-label-md text-primary md:self-auto whitespace-nowrap">
+          <span className="self-start rounded-full bg-golden-sand/90 border border-amber-900/10 px-4 py-1.5 text-label-sm font-bold text-primary shadow-xs md:self-auto whitespace-nowrap">
             Fresh Batches Ready to Ship
           </span>
         </div>

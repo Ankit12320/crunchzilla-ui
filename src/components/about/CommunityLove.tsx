@@ -7,7 +7,7 @@ export default function CommunityLove() {
   return (
     <section className="w-full bg-warm-cream py-10 lg:py-24">
       <div className="container-page">
-        <figure className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-pure-parchment p-8 shadow-lg lg:p-14">
+        <figure className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-pure-parchment p-8 shadow-premium-lg border border-amber-900/10 lg:p-14">
           <span
             aria-hidden="true"
             className="pointer-events-none absolute top-4 left-6 font-display text-[120px] leading-none text-roasted-terracotta/10 select-none"

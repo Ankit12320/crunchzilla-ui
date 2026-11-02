@@ -33,7 +33,7 @@ export default function VideoSection() {
     <section
       id="video-story"
       aria-label="Crunchzilla Video Story and Origin Stall"
-      className="relative w-full bg-surface-container-low py-14 sm:py-16 md:py-20 border-t border-surface-container"
+      className="relative w-full bg-gradient-to-b from-surface via-surface-container-low to-surface py-14 sm:py-16 md:py-20 border-t border-surface-container"
     >
       <div className="container-page">
         {/* Section Heading */}
@@ -49,7 +49,7 @@ export default function VideoSection() {
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
             {/* Left Column: Video Player & Brand Details (7 cols on lg) */}
             <div className="flex flex-col space-y-6 lg:col-span-7">
-              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-charcoal-bark shadow-2xl ring-1 ring-black/10 aspect-[816/464] w-full">
+              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-charcoal-bark shadow-premium-lg border border-amber-900/10 aspect-[816/464] w-full">
                 <video
                   ref={videoRef}
                   src="/videos/crunchzilla-story.mp4"
@@ -124,7 +124,7 @@ export default function VideoSection() {
 
             {/* Right Column: Full Actual Formatted Stall Photo (5 cols on lg) */}
             <div className="flex flex-col items-center justify-center lg:col-span-5">
-              <div className="w-full max-w-sm sm:max-w-md lg:max-w-none overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl ring-1 ring-black/10 bg-surface-container-high transition-transform duration-300 hover:scale-[1.01]">
+              <div className="w-full max-w-sm sm:max-w-md lg:max-w-none overflow-hidden rounded-2xl sm:rounded-3xl shadow-premium-lg border border-amber-900/10 bg-surface-container-high transition-transform duration-300 hover:scale-[1.01]">
                 <Image
                   src={IMAGES.brand.stall}
                   alt="Crunchzilla stall showing freshly packed Makhana bags, founder, and official exhibition banners"

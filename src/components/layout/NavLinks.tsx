@@ -24,10 +24,10 @@ export default function NavLinks({ className, onNavigate }: NavLinksProps) {
             onClick={onNavigate}
             aria-current={active ? "page" : undefined}
             className={cn(
-              "whitespace-nowrap rounded-full px-3 py-1.5 text-label-lg transition-colors",
+              "relative whitespace-nowrap rounded-full px-3.5 py-1.5 text-label-lg font-semibold transition-all duration-200 active:scale-95",
               active
-                ? "bg-primary-container text-on-primary-container"
-                : "text-on-surface-variant hover:text-on-surface"
+                ? "bg-primary text-pure-parchment shadow-xs"
+                : "text-on-surface-variant hover:text-primary hover:bg-surface-container"
             )}
           >
             {label}

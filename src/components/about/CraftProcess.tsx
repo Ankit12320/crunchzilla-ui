@@ -26,7 +26,7 @@ export default function CraftProcess() {
           {CRAFT_PROCESSES.map((process) => (
             <article
               key={process.id}
-              className="grid grid-cols-1 items-center gap-8 rounded-3xl bg-surface-container-lowest p-8 shadow-sm lg:grid-cols-12 lg:p-12"
+              className="grid grid-cols-1 items-center gap-8 rounded-3xl bg-pure-parchment/95 border border-amber-900/10 p-8 shadow-premium-sm lg:grid-cols-12 lg:p-12 transition-all duration-300 hover:shadow-premium-md"
             >
               <div className={cn("flex flex-col space-y-5 lg:col-span-6", process.imageFirst && "lg:order-2")}>
                 <div className={`inline-flex items-center gap-2 text-label-md uppercase tracking-wider ${process.eyebrowClass}`}>

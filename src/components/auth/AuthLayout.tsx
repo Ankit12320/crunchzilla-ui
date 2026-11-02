@@ -13,7 +13,7 @@ export default function AuthLayout({
   subtitle?: string;
 }) {
   return (
-    <div className="flex min-h-screen flex-col justify-between bg-surface-container-low text-on-surface">
+    <div className="flex min-h-screen flex-col justify-between bg-gradient-to-b from-surface via-surface-container-low to-surface text-on-surface">
       {/* Top Header Logo */}
       <header className="w-full py-6 text-center">
         <Link
@@ -39,7 +39,7 @@ export default function AuthLayout({
 
       {/* Main Content Box */}
       <main className="container-page flex flex-1 items-center justify-center py-6 sm:py-10">
-        <div className="w-full max-w-md rounded-2xl bg-pure-parchment p-6 sm:p-10 shadow-lg border border-surface-container">
+        <div className="w-full max-w-md rounded-3xl bg-pure-parchment p-6 sm:p-10 shadow-premium-lg border border-amber-900/10">
           <div className="mb-6 text-center">
             <h1 className="font-display text-headline-sm font-bold text-on-surface">
               {title}

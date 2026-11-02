@@ -24,7 +24,7 @@ export default function KitchenPillars() {
           {KITCHEN_PILLARS.map((p) => (
             <div
               key={p.title}
-              className="flex flex-col justify-between rounded-2xl bg-surface-container-lowest p-8 shadow-sm transition-all duration-300 hover:shadow-md"
+              className="flex flex-col justify-between rounded-2xl bg-pure-parchment/95 border border-amber-900/10 p-8 shadow-premium-sm transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-1.5"
             >
               <div>
                 <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl ${p.iconClass}`}>
