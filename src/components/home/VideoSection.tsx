@@ -44,11 +44,11 @@ export default function VideoSection() {
           description="Experience the journey of traditional flavors from Bihar—hand-roasted makhana, heritage sattu, and authentic delicacies crafted with pride."
         />
 
-        {/* Side-by-Side Showcase: Video Player (Left) + Stall Story (Right) */}
+        {/* Side-by-Side Showcase: Video (Left) + Full Formatted Stall Photo (Right) */}
         <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-12 lg:gap-8">
-            {/* Left Column: Video Player (7 cols) */}
-            <div className="flex flex-col lg:col-span-7">
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
+            {/* Left Column: Video Player & Brand Details (7 cols on lg) */}
+            <div className="flex flex-col space-y-6 lg:col-span-7">
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-charcoal-bark shadow-2xl ring-1 ring-black/10 aspect-[816/464] w-full">
                 <video
                   ref={videoRef}
@@ -84,80 +84,71 @@ export default function VideoSection() {
                   </button>
                 )}
               </div>
+
+              {/* Highlights & Trust Badges */}
+              <div className="flex flex-wrap items-center gap-2.5 text-body-sm text-on-surface-variant">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-cardamom-light/80 px-3 py-1 text-label-xs font-semibold text-botanical-forest whitespace-nowrap">
+                  <Icon name="verified" className="text-[15px] text-whatsapp-emerald" />
+                  100% Traditional Methods
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-container px-3 py-1 text-label-xs font-semibold text-on-surface-variant whitespace-nowrap">
+                  <Icon name="local_fire_department" className="text-[15px] text-spiced-tangerine" />
+                  Slow Air-Roasted • Zero Palm Oil
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-container px-3 py-1 text-label-xs font-semibold text-on-surface-variant whitespace-nowrap">
+                  <Icon name="local_shipping" className="text-[15px] text-primary" />
+                  Express Delivery Across India
+                </span>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-center gap-3.5 pt-1">
+                <Link
+                  href="/shop"
+                  className="inline-flex w-full sm:w-auto min-h-[44px] items-center justify-center gap-2 rounded-xl bg-primary px-6 py-2.5 text-label-md font-semibold text-pure-parchment shadow-md transition-all duration-200 hover:bg-roasted-terracotta hover:shadow-lg active:scale-98 whitespace-nowrap"
+                >
+                  <Icon name="storefront" className="text-[18px]" />
+                  Explore All Products
+                </Link>
+                <a
+                  href={whatsappLink("Hi Crunchzilla team! I just saw your video story and stall photos, and would like to order fresh traditional delicacies.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full sm:w-auto min-h-[44px] items-center justify-center gap-2 rounded-xl bg-whatsapp-emerald px-6 py-2.5 text-label-md font-semibold text-pure-parchment shadow-md transition-all duration-200 hover:bg-emerald-700 hover:shadow-lg active:scale-98 whitespace-nowrap"
+                >
+                  <Icon name="chat" className="text-[18px]" />
+                  Order on WhatsApp ({SITE.phoneDisplay})
+                </a>
+              </div>
             </div>
 
-            {/* Right Column: Founder & Origin Stall Showcase (5 cols) */}
-            <div className="flex flex-col lg:col-span-5">
-              <div className="group relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-full w-full min-h-[300px] overflow-hidden rounded-2xl sm:rounded-3xl bg-charcoal-bark shadow-2xl ring-1 ring-black/10">
+            {/* Right Column: Full Actual Formatted Stall Photo (5 cols on lg) */}
+            <div className="flex flex-col items-center justify-center lg:col-span-5">
+              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-none overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl ring-1 ring-black/10 bg-surface-container-high transition-transform duration-300 hover:shadow-3xl">
                 <Image
                   src={IMAGES.brand.stall}
-                  alt="Crunchzilla founder showcasing fresh artisanal Makhana pops and authentic Bihar delicacies at exhibition stall"
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                  className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                  alt="Crunchzilla stall showing freshly packed Makhana bags, founder, and official exhibition banners"
+                  width={576}
+                  height={1024}
+                  priority
+                  sizes="(min-width: 1024px) 42vw, (min-width: 640px) 70vw, 92vw"
+                  className="h-auto w-full object-contain block"
                 />
 
-                {/* Subtle gradient overlay for readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-bark/95 via-charcoal-bark/35 to-black/20" />
-
-                {/* Top Pill Badge */}
-                <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1 text-label-xs font-semibold text-pure-parchment backdrop-blur-md border border-white/10">
-                    <Icon name="storefront" className="text-[14px] text-spiced-tangerine" />
-                    Direct From Our Stalls
+                {/* Subtle caption pill at bottom */}
+                <div className="absolute bottom-3 inset-x-3 rounded-xl bg-black/65 px-3.5 py-2 backdrop-blur-md text-pure-parchment flex items-center justify-between gap-2 border border-white/10">
+                  <div className="flex items-center gap-2">
+                    <Icon name="storefront" className="text-[18px] text-spiced-tangerine" />
+                    <span className="text-label-xs sm:text-label-sm font-semibold tracking-wide">
+                      Our Exhibition Stall &amp; Fresh Harvest
+                    </span>
+                  </div>
+                  <span className="text-[10px] sm:text-label-xs font-bold text-spiced-tangerine uppercase tracking-wider whitespace-nowrap">
+                    100% Authentic
                   </span>
-                </div>
-
-                {/* Bottom Story Content */}
-                <div className="absolute right-4 bottom-4 left-4 z-10 space-y-1.5 text-pure-parchment">
-                  <span className="inline-block rounded-full bg-primary/80 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-pure-parchment">
-                    Real People • Real Purity
-                  </span>
-                  <h3 className="font-display text-title-md sm:text-headline-xs font-bold leading-tight drop-shadow-sm">
-                    Crafted with Pride, Shared with Love
-                  </h3>
-                  <p className="text-body-xs sm:text-body-sm text-pure-parchment/90 line-clamp-2">
-                    Every batch of our Makhana, Sattu, and Tilkut is packed fresh with zero shortcuts and genuine native warmth.
-                  </p>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Highlights & Badges below side-by-side showcase */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-body-sm text-on-surface-variant">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-cardamom-light/80 px-3 py-1 text-label-xs font-semibold text-botanical-forest whitespace-nowrap">
-              <Icon name="verified" className="text-[15px] text-whatsapp-emerald" />
-              100% Traditional Methods
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-container px-3 py-1 text-label-xs font-semibold text-on-surface-variant whitespace-nowrap">
-              <Icon name="local_fire_department" className="text-[15px] text-spiced-tangerine" />
-              Slow Air-Roasted • Zero Palm Oil
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-container px-3 py-1 text-label-xs font-semibold text-on-surface-variant whitespace-nowrap">
-              <Icon name="local_shipping" className="text-[15px] text-primary" />
-              Express Delivery Across India
-            </span>
-          </div>
-
-          {/* Call to action */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-            <Link
-              href="/shop"
-              className="inline-flex w-full sm:w-auto min-h-[44px] items-center justify-center gap-2 rounded-xl bg-primary px-6 py-2.5 text-label-md font-semibold text-pure-parchment shadow-md transition-all duration-200 hover:bg-roasted-terracotta hover:shadow-lg active:scale-98 whitespace-nowrap"
-            >
-              <Icon name="storefront" className="text-[18px]" />
-              Explore All Products
-            </Link>
-            <a
-              href={whatsappLink("Hi Crunchzilla team! I just saw your video story and stall photos, and would like to order fresh traditional delicacies.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full sm:w-auto min-h-[44px] items-center justify-center gap-2 rounded-xl bg-whatsapp-emerald px-6 py-2.5 text-label-md font-semibold text-pure-parchment shadow-md transition-all duration-200 hover:bg-emerald-700 hover:shadow-lg active:scale-98 whitespace-nowrap"
-            >
-              <Icon name="chat" className="text-[18px]" />
-              Order on WhatsApp ({SITE.phoneDisplay})
-            </a>
           </div>
         </div>
       </div>
