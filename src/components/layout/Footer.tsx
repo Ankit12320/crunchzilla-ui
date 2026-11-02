@@ -32,17 +32,28 @@ export default function Footer() {
     <footer className="w-full bg-surface-container-low pt-10 pb-6 text-on-surface shadow-[0_-1px_12px_rgba(45,30,15,0.03)]">
       <div className="container-page grid grid-cols-1 gap-10 pb-10 md:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
-          <p className="font-display text-headline-md font-bold tracking-tight text-primary">
-            {SITE.name}
-          </p>
+          <div>
+            <p className="font-display text-headline-md font-bold tracking-tight text-primary">
+              {SITE.brandName}
+            </p>
+            <p className="text-label-sm font-semibold uppercase tracking-wider text-roasted-terracotta">
+              {SITE.tagline}
+            </p>
+          </div>
           <p className="text-body-sm text-on-surface-variant">{SITE.footerBlurb}</p>
-          <div className="inline-flex items-center gap-2 rounded-full bg-cardamom-light px-3 py-1.5 text-label-sm text-botanical-forest">
-            <Icon name="verified" className="text-[16px]" />
-            FSSAI Lic No: {SITE.fssaiLicense}
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-cardamom-light px-3 py-1 text-label-xs text-botanical-forest font-medium">
+              <Icon name="verified" className="text-[14px]" />
+              FSSAI Lic: {SITE.fssaiLicense}
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-container px-3 py-1 text-label-xs text-on-surface-variant">
+              <Icon name="local_shipping" className="text-[14px] text-spiced-tangerine" />
+              Express to Bangalore &amp; Pan-India
+            </span>
           </div>
           <div className="flex items-center gap-2 text-label-sm text-on-surface-variant">
             <Icon name="favorite" className="text-[18px] text-primary" />
-            Made with Pride in India
+            Made with Pride in Bihar, India
           </div>
           <div className="pt-1">
             <a

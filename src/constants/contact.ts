@@ -49,6 +49,12 @@ export const FAQS: Faq[] = [
       "Never. Our founding philosophy is 100% clean kitchen food. We do not use palm oil, hydrogenated fats, chemical preservatives, or synthetic flavor boosters. Every ingredient list reads like a traditional grandmother’s pantry list: slow-roasted seeds, pure organic sugarcane jaggery, whole chickpeas, and pure regional botanicals.",
   },
   {
+    question: "Do you deliver authentic Bihar food products to Bangalore / Bengaluru?",
+    answer:
+      "Yes, absolutely! We provide express direct shipping across Bengaluru and Karnataka. Whether you are living in Whitefield, Koramangala, Indiranagar, HSR Layout, Electronic City, or anywhere in Bangalore, you can order authentic Gaya Tilkut, Pure Chana Sattu, Mithila Makhana, and Katarni Chura delivered straight to your door.",
+    emphasis: "express direct shipping across Bengaluru and Karnataka",
+  },
+  {
     question: "What is your policy for damaged packages or replacements?",
     answer:
       `If your parcel arrives damaged or seal broken during courier transit, simply share a quick photograph with us over WhatsApp (${SITE.phoneDisplay}) or email within 48 hours. We dispatch an instant replacement batch at zero cost, no questions asked.`,

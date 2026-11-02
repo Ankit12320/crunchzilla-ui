@@ -1,11 +1,13 @@
 export const SITE = {
   name: "Crunchzilla",
+  brandName: "CRUNCHZILLA",
   legalName: "Crunchzilla Foods Pvt Ltd",
-  tagline: "Artisanal Staples",
+  url: "https://crunchzilla.in",
+  tagline: "Authentic & Healthy Products from Bihar.",
   description:
-    "Wholesome staples and snacks made with care, authenticity, and everyday goodness.",
+    "Buy authentic traditional food products from Bihar online: Premium Makhana, Pure Chana Sattu, Gaya Tilkut, Katarni Chura, Basmati Poha & Organic Desi Gur. Fast delivery in Bangalore, Bihar & across India.",
   footerBlurb:
-    "Handcrafted, slow-roasted artisanal staples and regional heritage delicacies crafted with zero shortcuts, no palm oil, and genuine farm-fresh ingredients.",
+    "Handcrafted, slow-roasted artisanal staples and regional heritage delicacies from Bihar crafted with zero shortcuts, no palm oil, and genuine farm-fresh ingredients.",
   whatsappNumber: "917856019631",
   phoneDisplay: "+91 7856019631",
   email: "crunchzilla02@gmail.com",
@@ -18,9 +20,29 @@ export const SITE = {
   instagramUrl: "https://www.instagram.com/crunchzilla02/",
   fssaiLicense: "21225192003493",
   rating: "4.9/5",
+  ratingValue: 4.9,
+  reviewCount: 549,
   happyHouseholds: "500+",
   feedbackFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLSeGD9Iz1jcNwF1c6OV9tbsogCtNUzc5mE0yqmbENUVkvkEa9w/viewform?usp=header",
+  keywords: [
+    "Authentic food products from Bihar",
+    "Buy Makhana Online",
+    "Buy Sattu Online",
+    "Traditional Bihar Food Products",
+    "Bihar Special Food Products",
+    "Buy Gaya Tilkut Online",
+    "Bihar food products in Bangalore",
+    "Buy Makhana in Bangalore",
+    "Buy Sattu in Bangalore",
+    "Bihar traditional snacks online",
+    "Authentic Bihar products online",
+    "Pure Chana Sattu",
+    "Gaya Tilkut",
+    "Katarni Chura",
+    "Basmati Chura",
+    "Organic Jaggery Gud",
+  ],
 } as const;
 
 // export const ANNOUNCEMENTS = [

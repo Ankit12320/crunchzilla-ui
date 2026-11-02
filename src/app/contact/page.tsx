@@ -8,17 +8,49 @@ import PurityPledge from "@/components/contact/PurityPledge";
 import ContactForm from "@/components/contact/ContactForm";
 import GiftingBanner from "@/components/contact/GiftingBanner";
 import FaqAccordion from "@/components/contact/FaqAccordion";
+import JsonLd from "@/components/seo/JsonLd";
+import { FAQS } from "@/constants/contact";
+import { getBreadcrumbSchema, getFaqSchema } from "@/lib/seo-schemas";
 import { SITE } from "@/constants/site";
 
 export const metadata: Metadata = {
-  title: `Contact Us | ${SITE.name}`,
+  title: "Contact Us & Support | Buy Bihar Food Products in Bangalore & Pan-India",
   description:
-    "Questions about orders, bulk or corporate gifting? Reach Crunchzilla on WhatsApp, phone or email — or send us a message.",
+    "Questions about orders, bulk or corporate gifting? Contact Crunchzilla on WhatsApp, phone or email. 24/7 support with express shipping to Bangalore, Patna, and pan-India.",
+  alternates: {
+    canonical: `${SITE.url}/contact`,
+  },
+  keywords: [
+    "Contact Crunchzilla",
+    "Bihar food products in Bangalore",
+    "Buy Makhana in Bangalore",
+    "Buy Sattu in Bangalore",
+    "Crunchzilla customer care",
+    "Bulk corporate gifting Bihar snacks",
+  ],
+  openGraph: {
+    title: "Contact Crunchzilla | WhatsApp Orders & 24/7 Concierge Support",
+    description:
+      "Get in touch for instant WhatsApp ordering, bulk gift hampers, or questions regarding our authentic Bihar food products.",
+    url: `${SITE.url}/contact`,
+    siteName: SITE.brandName,
+  },
 };
 
 export default function ContactPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Contact Us", url: "/contact" },
+  ]);
+
+  const faqSchema = getFaqSchema(
+    FAQS.map((f) => ({ question: f.question, answer: f.answer }))
+  );
+
   return (
     <>
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={faqSchema} />
       <Header />
       <main className="flex w-full flex-col bg-surface">
         <ContactHero />

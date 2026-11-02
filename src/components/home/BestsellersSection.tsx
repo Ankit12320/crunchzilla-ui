@@ -9,14 +9,17 @@ export default function BestsellersSection({ products }: { products: CatalogProd
         <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <span className="mb-1 block text-label-md uppercase tracking-widest text-primary">
-              Shop Our Products
+              Traditional Bihar Food Products Online
             </span>
             <h2 className="font-display text-headline-lg-mobile font-bold text-on-surface md:text-headline-lg">
-              Rooted in Heritage.{" "}
-              <span className="italic text-primary">Made for Modern Living.</span>
+              Authentic Bihar Staples & Snacks.{" "}
+              <span className="italic text-primary">Rooted in Heritage.</span>
             </h2>
+            <p className="mt-2 max-w-2xl text-body-md text-on-surface-variant">
+              Shop slow-roasted Gaya Tilkut, organic Mithila Makhana, wood-fired Chana Sattu, and fragrant Katarni Chura — pure, chemical-free delicacies from Bihar shipped to Bangalore, Patna, and nationwide.
+            </p>
           </div>
-          <span className="self-start rounded-full bg-golden-sand px-3.5 py-1.5 text-label-md text-primary md:self-auto">
+          <span className="self-start rounded-full bg-golden-sand px-3.5 py-1.5 text-label-md text-primary md:self-auto whitespace-nowrap">
             Fresh Batches Ready to Ship
           </span>
         </div>

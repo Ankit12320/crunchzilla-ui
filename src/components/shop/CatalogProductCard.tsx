@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Icon from "@/components/common/Icon";
 import { IMAGES } from "@/constants/images";
 import { PRIMARY_BADGE_STYLES, SECONDARY_BADGE_STYLES } from "@/constants/shop";
@@ -22,14 +23,20 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
     <article className="group relative flex flex-col overflow-hidden rounded-xl bg-pure-parchment shadow-sm transition-all duration-300 hover:shadow-xl">
       {/* Image stage */}
       <div className="relative aspect-[4/3] overflow-hidden bg-surface-container-low">
-        <Image
-          src={image}
-          alt={product.imageAlt}
-          fill
-          unoptimized={image.endsWith(".gif")}
-          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-        />
+        <Link
+          href={`/shop/${product.slug}`}
+          aria-label={`View ${product.name} details and options`}
+          className="block h-full w-full"
+        >
+          <Image
+            src={image}
+            alt={product.imageAlt}
+            fill
+            unoptimized={image.endsWith(".gif")}
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          />
+        </Link>
 
         <div className="absolute top-3 left-3 flex flex-col items-start gap-1.5">
           <span
@@ -88,7 +95,9 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
             </div>
           </div>
           <h2 className="font-display text-headline-sm font-bold text-on-surface transition-colors group-hover:text-primary">
-            {product.name}
+            <Link href={`/shop/${product.slug}`} className="hover:underline">
+              {product.name}
+            </Link>
           </h2>
           <p className="mt-1.5 line-clamp-2 text-body-sm text-on-surface-variant">
             {product.description}

@@ -31,14 +31,14 @@ export default function CatalogHeader({ productCount }: { productCount: number }
         <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12">
           <div className="lg:col-span-8">
             <p className="mb-1.5 text-label-lg uppercase tracking-widest text-roasted-terracotta">
-              Handcrafted Indian Pantry Essentials
+              Authentic Food Products from Bihar • Regional Heritage
             </p>
             <h1 className="font-display text-headline-lg-mobile tracking-tight text-on-surface md:text-headline-lg">
-              Wholesome Staples &amp; Roasted Treats
+              Traditional Bihar Food Products &amp; Artisanal Staples
             </h1>
             <p className="mt-2.5 max-w-2xl text-body-lg text-on-surface-variant">
-              100% natural, slow-roasted, chemical-free ingredients sourced directly from regional
-              artisanal clusters in Bihar. Pure, honest nutrition for daily modern living.
+              100% natural, slow-roasted, chemical-free ingredients sourced directly from heritage
+              artisanal clusters in Gaya, Mithila, and Bhagalpur. Buy pure Makhana, roasted Sattu, Tilkut, Katarni Chura, and Organic Jaggery online with fast shipping to Bangalore and nationwide.
             </p>
           </div>
 

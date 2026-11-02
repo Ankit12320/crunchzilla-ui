@@ -23,27 +23,25 @@ export default function HeroSection() {
         <div className="z-10 flex flex-col items-start gap-6 lg:col-span-7">
           <div className="inline-flex flex-wrap items-center gap-2 rounded-full bg-surface-container-highest p-1.5">
             <span className="rounded-full bg-primary px-3 py-1 text-label-sm uppercase tracking-wider text-on-primary">
-              Heritage Recipe
+              Authentic Bihar Heritage
             </span>
             <span className="px-2 text-label-sm text-on-surface-variant">
-              Gaya • Mithila • Traditional Pantry
+              Gaya • Mithila • Darbhanga • Bengaluru Express Delivery
             </span>
           </div>
 
           <div className="space-y-3">
             <h1 className="font-display text-display-mobile font-bold tracking-tight text-primary md:text-display">
-              Wholesome Staples and Snacks
+              Authentic & Healthy Food Products from Bihar
             </h1>
             <p className="font-display text-headline-sm italic text-on-surface-variant">
-              made with care, authenticity, and everyday goodness.
+              Traditional recipes made with care, authenticity, and everyday goodness.
             </p>
           </div>
 
           <p className="max-w-xl text-body-lg text-on-surface">
-            From festive sweets to daily essentials, {SITE.name} brings you
-            India’s time-honored recipes in fresh, premium form. Every batch is
-            slow-roasted using simple, natural ingredients packed with authentic
-            taste.
+            From winter festive Gaya Tilkut to daily roasted Chana Sattu and jumbo Mithila Makhana, {SITE.brandName} brings you
+            Bihar’s authentic regional food delicacies fresh, chemical-free, and crafted with zero palm oil. Delivered fresh across Bangalore, Bihar, and all over India.
           </p>
 
           <div className="grid w-full grid-cols-2 gap-2 pt-2 sm:grid-cols-4">
