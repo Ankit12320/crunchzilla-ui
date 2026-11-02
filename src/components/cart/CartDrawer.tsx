@@ -217,7 +217,7 @@ export default function CartDrawer() {
             </div>
 
             {/* Sticky Order Summary & WhatsApp CTA */}
-            <div className="border-t border-surface-container-high bg-pure-parchment p-6 space-y-4 shadow-lg">
+            <div className="border-t border-surface-container-high bg-pure-parchment p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))] space-y-4 shadow-lg">
               <div className="space-y-1.5 text-body-sm">
                 <div className="flex justify-between text-on-surface-variant">
                   <span>Total Items</span>

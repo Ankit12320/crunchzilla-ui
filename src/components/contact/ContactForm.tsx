@@ -103,7 +103,7 @@ export default function ContactForm() {
                 aria-checked={selected}
                 onClick={() => setValue("category", value)}
                 className={cn(
-                  "flex min-h-[40px] items-center justify-center rounded-full px-4 py-2 text-label-md transition-all duration-200 active:scale-95",
+                  "flex min-h-[44px] items-center justify-center rounded-full px-4 py-2 text-label-md transition-all duration-200 active:scale-95",
                   selected
                     ? "bg-roasted-terracotta text-pure-parchment shadow-sm"
                     : "bg-surface-container text-on-surface-variant hover:bg-surface-container-high"

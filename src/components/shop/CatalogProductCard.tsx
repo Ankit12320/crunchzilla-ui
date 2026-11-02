@@ -119,7 +119,7 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
                   aria-checked={selected}
                   onClick={() => setVariantId(v.id)}
                   className={cn(
-                    "flex min-h-[36px] items-center justify-center rounded-full px-3.5 py-1.5 text-label-sm transition-all active:scale-95 whitespace-nowrap",
+                    "flex min-h-[42px] sm:min-h-[38px] items-center justify-center rounded-full px-3.5 py-2 text-label-sm transition-all active:scale-95 whitespace-nowrap",
                     selected
                       ? "bg-roasted-terracotta text-pure-parchment"
                       : "bg-surface-container text-on-surface-variant hover:bg-surface-variant"

@@ -489,14 +489,17 @@ export default function ProductDetailView({
 
             {/* Detailed Tabs Section */}
             <div className="pt-4 border-t border-outline-variant/30">
-              <div className="flex border-b border-surface-container gap-2" role="tablist">
+              <div
+                className="no-scrollbar touch-scroll-x flex border-b border-surface-container gap-4 sm:gap-6 overflow-x-auto pb-0.5"
+                role="tablist"
+              >
                 <button
                   type="button"
                   role="tab"
                   aria-selected={activeTab === "heritage"}
                   onClick={() => setActiveTab("heritage")}
                   className={cn(
-                    "pb-3 text-label-md font-bold transition-colors border-b-2",
+                    "flex min-h-[44px] items-center pb-3 text-label-md font-bold transition-colors border-b-2 whitespace-nowrap shrink-0",
                     activeTab === "heritage"
                       ? "border-primary text-primary"
                       : "border-transparent text-on-surface-variant hover:text-on-surface"
@@ -510,7 +513,7 @@ export default function ProductDetailView({
                   aria-selected={activeTab === "nutrition"}
                   onClick={() => setActiveTab("nutrition")}
                   className={cn(
-                    "pb-3 text-label-md font-bold transition-colors border-b-2",
+                    "flex min-h-[44px] items-center pb-3 text-label-md font-bold transition-colors border-b-2 whitespace-nowrap shrink-0",
                     activeTab === "nutrition"
                       ? "border-primary text-primary"
                       : "border-transparent text-on-surface-variant hover:text-on-surface"
@@ -524,7 +527,7 @@ export default function ProductDetailView({
                   aria-selected={activeTab === "delivery"}
                   onClick={() => setActiveTab("delivery")}
                   className={cn(
-                    "pb-3 text-label-md font-bold transition-colors border-b-2",
+                    "flex min-h-[44px] items-center pb-3 text-label-md font-bold transition-colors border-b-2 whitespace-nowrap shrink-0",
                     activeTab === "delivery"
                       ? "border-primary text-primary"
                       : "border-transparent text-on-surface-variant hover:text-on-surface"

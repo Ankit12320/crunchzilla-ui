@@ -40,7 +40,7 @@ export default function CatalogFilterBar({
                 aria-pressed={active}
                 onClick={() => onCategoryChange(id)}
                 className={cn(
-                  "flex min-h-[40px] shrink-0 items-center justify-center rounded-full px-4 py-2 text-label-md whitespace-nowrap transition-all active:scale-95",
+                  "flex min-h-[44px] shrink-0 items-center justify-center rounded-full px-4 py-2 text-label-md whitespace-nowrap transition-all active:scale-95",
                   active
                     ? "bg-roasted-terracotta text-pure-parchment shadow-sm"
                     : "bg-surface-container-high text-on-surface-variant hover:bg-surface-variant hover:text-on-surface"

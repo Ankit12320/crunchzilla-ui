@@ -85,7 +85,7 @@ export default function ProductCard({ product }: { product: Product }) {
                     aria-checked={selected}
                     onClick={() => setVariantId(v.id)}
                     className={cn(
-                      "flex min-h-[36px] items-center justify-center rounded-full px-3.5 py-1.5 text-xs transition-colors active:scale-95",
+                      "flex min-h-[42px] sm:min-h-[38px] items-center justify-center rounded-full px-3.5 py-2 text-xs transition-colors active:scale-95",
                       selected
                         ? "bg-primary font-semibold text-on-primary"
                         : "bg-surface-container text-on-surface hover:bg-surface-container-high"
@@ -118,8 +118,9 @@ export default function ProductCard({ product }: { product: Product }) {
               aria-label={`Order ${product.name} on WhatsApp`}
               className="flex h-11 w-full items-center justify-center gap-1.5 rounded-full bg-whatsapp-emerald px-2 sm:px-3 text-label-sm font-bold text-pure-parchment shadow-sm transition-all hover:bg-secondary active:scale-[0.98] whitespace-nowrap"
             >
-              <Icon name="chat" className="text-[18px]" />
-              <span>Order on WhatsApp</span>
+              <Icon name="chat" className="text-[18px] shrink-0" />
+              <span className="hidden sm:inline">Order on WhatsApp</span>
+              <span className="sm:hidden">WhatsApp</span>
             </a>
           </div>
         </div>

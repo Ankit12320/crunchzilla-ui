@@ -82,11 +82,11 @@ export default function FeedbackForm() {
         {errors.message && <p className={errorClass}>{errors.message.message}</p>}
       </div>
 
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-4">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="rounded-full bg-roasted-terracotta px-8 py-3 text-title-sm text-on-primary shadow-md transition-all hover:bg-primary disabled:opacity-60"
+          className="flex min-h-[44px] w-full sm:w-auto items-center justify-center rounded-full bg-roasted-terracotta px-8 py-3 text-title-sm font-semibold text-on-primary shadow-md transition-all hover:bg-primary active:scale-[0.98] disabled:opacity-60"
         >
           Submit Feedback
         </button>
@@ -94,7 +94,7 @@ export default function FeedbackForm() {
           href={SITE.feedbackFormUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1 text-label-md text-primary hover:underline"
+          className="inline-flex min-h-[44px] items-center justify-center gap-1 text-label-md text-primary hover:underline text-center"
         >
           Or open Google Feedback Form
           <Icon name="open_in_new" className="text-[16px]" />
