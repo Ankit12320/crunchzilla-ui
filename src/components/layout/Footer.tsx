@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/common/Icon";
 import { FacebookIcon, InstagramIcon } from "@/components/common/SocialIcons";
+import { IMAGES } from "@/constants/images";
 import { FOOTER_CATEGORIES, LEGAL_LINKS, NAV_LINKS, SITE } from "@/constants/site";
 import { whatsappLink } from "@/lib/whatsapp";
 
@@ -32,14 +34,29 @@ export default function Footer() {
     <footer className="w-full bg-surface-container-low pt-10 pb-8 sm:pb-10 text-on-surface shadow-[0_-1px_12px_rgba(45,30,15,0.03)]">
       <div className="container-page grid grid-cols-1 gap-10 pb-10 md:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
-          <div>
-            <p className="font-display text-headline-md font-bold tracking-tight text-primary">
-              {SITE.brandName}
-            </p>
-            <p className="text-label-sm font-semibold uppercase tracking-wider text-roasted-terracotta">
-              {SITE.tagline}
-            </p>
-          </div>
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-3.5 transition-opacity hover:opacity-95"
+            aria-label="Crunchzilla Homepage"
+          >
+            <div className="relative h-12 w-12 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full shadow-xs ring-1 ring-black/5 bg-surface-container transition-transform duration-200 group-hover:scale-105">
+              <Image
+                src={IMAGES.brand.logo}
+                alt="Crunchzilla – Authentic & Healthy Products from Bihar"
+                width={56}
+                height={56}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div>
+              <p className="font-display text-headline-md font-bold tracking-tight text-primary transition-colors group-hover:text-roasted-terracotta">
+                {SITE.brandName}
+              </p>
+              <p className="text-label-sm font-semibold uppercase tracking-wider text-roasted-terracotta">
+                {SITE.tagline}
+              </p>
+            </div>
+          </Link>
           <p className="text-body-sm text-on-surface-variant">{SITE.footerBlurb}</p>
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-cardamom-light px-3 py-1 text-label-xs font-medium text-botanical-forest whitespace-nowrap">

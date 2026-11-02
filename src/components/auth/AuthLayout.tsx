@@ -21,14 +21,16 @@ export default function AuthLayout({
           className="inline-flex items-center gap-3 transition-opacity hover:opacity-90"
           aria-label="Crunchzilla Home"
         >
-          <Image
-            src={IMAGES.brand.logo}
-            alt={`${SITE.name} Logo`}
-            width={44}
-            height={44}
-            className="h-11 w-auto object-contain"
-            priority
-          />
+          <div className="relative h-11 w-11 sm:h-12 sm:w-12 shrink-0 overflow-hidden rounded-full shadow-xs ring-1 ring-black/5 bg-surface-container-low">
+            <Image
+              src={IMAGES.brand.logo}
+              alt="Crunchzilla – Authentic & Healthy Products from Bihar"
+              width={48}
+              height={48}
+              priority
+              className="h-full w-full object-cover"
+            />
+          </div>
           <span className="font-display text-headline-md font-bold tracking-tight text-primary">
             {SITE.brandName}
           </span>

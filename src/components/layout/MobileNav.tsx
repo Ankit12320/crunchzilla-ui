@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/common/Icon";
 import { FacebookIcon, InstagramIcon } from "@/components/common/SocialIcons";
 import NavLinks from "@/components/layout/NavLinks";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { IMAGES } from "@/constants/images";
 import { SITE } from "@/constants/site";
 import { whatsappLink } from "@/lib/whatsapp";
 import { useAuthStore } from "@/store/auth-store";
@@ -24,9 +26,20 @@ export default function MobileNav() {
       </SheetTrigger>
       <SheetContent side="right" className="flex flex-col justify-between bg-surface p-6 overflow-y-auto">
         <div className="space-y-6">
-          <SheetTitle className="font-display text-headline-sm font-bold text-primary">
-            {SITE.name}
-          </SheetTitle>
+          <div className="flex items-center gap-3">
+            <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full shadow-xs ring-1 ring-black/5 bg-surface-container-low">
+              <Image
+                src={IMAGES.brand.logo}
+                alt="Crunchzilla – Authentic & Healthy Products from Bihar"
+                width={40}
+                height={40}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <SheetTitle className="font-display text-headline-sm font-bold text-primary">
+              {SITE.name}
+            </SheetTitle>
+          </div>
           <NavLinks
             className="flex flex-col items-start gap-3 text-title-md"
             onNavigate={() => setOpen(false)}
