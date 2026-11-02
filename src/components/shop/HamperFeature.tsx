@@ -65,7 +65,6 @@ export default function HamperFeature({ hamper }: { hamper: Hamper }) {
                   }}
                   className="flex h-12 w-full sm:w-auto sm:flex-1 items-center justify-center gap-2 rounded-full bg-roasted-terracotta px-6 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-primary active:scale-95 whitespace-nowrap"
                 >
-                  <Icon name="shopping_bag" className="text-[20px]" />
                   Add to Cart
                 </AddToCartButton>
                 <a

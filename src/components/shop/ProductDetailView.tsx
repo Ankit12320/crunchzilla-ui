@@ -9,6 +9,7 @@ import { IMAGES } from "@/constants/images";
 import { PRIMARY_BADGE_STYLES, SECONDARY_BADGE_STYLES } from "@/constants/shop";
 import { SITE } from "@/constants/site";
 import { useAddToCart } from "@/hooks/use-add-to-cart";
+import { useCartStore } from "@/store/cart-store";
 import { cn } from "@/lib/utils";
 import { buildProductCardWhatsAppLink } from "@/lib/whatsapp";
 import type { CatalogProduct } from "@/types/catalog";
@@ -125,8 +126,10 @@ export default function ProductDetailView({
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
   const addToCart = useAddToCart();
+  const items = useCartStore((s) => s.items);
 
   const variant = product.variants.find((v) => v.id === variantId) ?? product.variants[0];
+  const isInCart = items.some((i) => i.slug === product.slug && i.variantId === variant.id);
   const heritage = PRODUCT_HERITAGE_INFO[product.slug] ?? {
     origin: "Bihar, India",
     tradition: product.description,
@@ -463,10 +466,15 @@ export default function ProductDetailView({
                     image: galleryImages[0].src,
                   })
                 }
-                className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-roasted-terracotta px-6 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-primary active:scale-[0.98]"
+                className={cn(
+                  "flex h-12 w-full items-center justify-center gap-2 rounded-full px-6 text-label-lg font-bold text-pure-parchment shadow-md transition-all active:scale-[0.98] whitespace-nowrap",
+                  isInCart
+                    ? "bg-botanical-forest hover:bg-secondary"
+                    : "bg-roasted-terracotta hover:bg-primary"
+                )}
               >
-                <Icon name="shopping_bag" className="text-[20px]" />
-                <span>Add to Shopping Cart</span>
+                <Icon name={isInCart ? "check_circle" : "shopping_bag"} className="text-[20px] shrink-0" />
+                <span>{isInCart ? "In Cart • View Cart" : "Add to Shopping Cart"}</span>
               </button>
 
               <a

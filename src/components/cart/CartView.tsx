@@ -180,11 +180,11 @@ export default function CartView() {
                       <h2 className="font-display text-title-md font-bold text-on-surface">
                         {item.name}
                       </h2>
-                      <div className="mt-1 flex items-center gap-2">
-                        <span className="rounded-full bg-surface-container px-2.5 py-0.5 text-label-sm text-on-surface-variant font-medium">
+                      <div className="mt-1 flex flex-wrap items-center gap-2">
+                        <span className="rounded-full bg-surface-container px-2.5 py-0.5 text-label-sm text-on-surface-variant font-medium whitespace-nowrap">
                           {item.variantLabel}
                         </span>
-                        <span className="text-body-sm text-on-surface-variant">
+                        <span className="text-body-sm text-on-surface-variant whitespace-nowrap">
                           ₹{item.price} each
                         </span>
                       </div>
@@ -229,8 +229,8 @@ export default function CartView() {
                     </div>
 
                     {/* Item Total */}
-                    <div className="text-right min-w-[80px]">
-                      <span className="block font-display text-title-lg font-bold text-primary">
+                    <div className="text-right min-w-[70px] shrink-0">
+                      <span className="block font-display text-title-lg font-bold text-primary whitespace-nowrap">
                         ₹{itemTotal}
                       </span>
                     </div>
@@ -275,14 +275,14 @@ export default function CartView() {
                   </span>
                 </div>
                 <div className="border-t border-surface-container pt-3 flex items-baseline justify-between">
-                  <span className="font-display text-title-lg font-bold text-on-surface">
+                  <span className="font-display text-title-lg font-bold text-on-surface whitespace-nowrap">
                     Total Amount
                   </span>
                   <div className="text-right">
-                    <span className="font-display text-headline-md font-bold text-primary">
+                    <span className="font-display text-headline-md font-bold text-primary whitespace-nowrap">
                       ₹{total}
                     </span>
-                    <span className="block text-label-sm text-on-surface-variant">
+                    <span className="block text-label-sm text-on-surface-variant whitespace-nowrap">
                       Direct product calculation
                     </span>
                   </div>

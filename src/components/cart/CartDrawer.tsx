@@ -150,7 +150,7 @@ export default function CartDrawer() {
                           <h4 className="font-display text-title-sm font-bold text-on-surface line-clamp-1">
                             {item.name}
                           </h4>
-                          <span className="inline-block rounded bg-surface-container px-2 py-0.5 text-label-sm text-on-surface-variant">
+                          <span className="inline-block rounded bg-surface-container px-2 py-0.5 text-label-sm text-on-surface-variant font-medium whitespace-nowrap">
                             {item.variantLabel}
                           </span>
                         </div>
@@ -202,10 +202,10 @@ export default function CartDrawer() {
 
                         {/* Price & Subtotal */}
                         <div className="text-right">
-                          <span className="text-label-sm text-on-surface-variant block">
+                          <span className="text-label-sm text-on-surface-variant block whitespace-nowrap">
                             ₹{item.price} each
                           </span>
-                          <span className="font-display text-title-sm font-bold text-primary">
+                          <span className="font-display text-title-sm font-bold text-primary whitespace-nowrap">
                             ₹{itemTotal}
                           </span>
                         </div>

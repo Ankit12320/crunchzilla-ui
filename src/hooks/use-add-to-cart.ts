@@ -12,8 +12,12 @@ export function useAddToCart() {
 
   return useCallback(
     (item: Omit<CartItem, "quantity">) => {
-      addItem(item);
-      showToast(`Added ${item.name} (₹${item.price}) to your cart!`);
+      const isNew = addItem(item);
+      if (isNew) {
+        showToast(`Added ${item.name} (${item.variantLabel}) to your cart!`);
+      } else {
+        showToast(`${item.name} (${item.variantLabel}) is already in your cart!`);
+      }
     },
     [addItem, showToast]
   );

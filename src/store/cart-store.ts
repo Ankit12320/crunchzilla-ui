@@ -8,7 +8,7 @@ interface CartState {
   openCart: () => void;
   closeCart: () => void;
   toggleCart: () => void;
-  addItem: (item: Omit<CartItem, "quantity">) => void;
+  addItem: (item: Omit<CartItem, "quantity">) => boolean;
   removeItem: (slug: string, variantId: string) => void;
   updateQuantity: (slug: string, variantId: string, quantity: number) => void;
   clearCart: () => void;
@@ -22,24 +22,24 @@ export const useCartStore = create<CartState>()(
       openCart: () => set({ isOpen: true }),
       closeCart: () => set({ isOpen: false }),
       toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
-      addItem: (item) =>
+      addItem: (item) => {
+        let isNewItem = false;
         set((state) => {
           const existing = state.items.find(
             (i) => i.slug === item.slug && i.variantId === item.variantId
           );
           if (existing) {
-            return {
-              isOpen: true,
-              items: state.items.map((i) =>
-                i === existing ? { ...i, quantity: i.quantity + 1 } : i
-              ),
-            };
+            // Repeat product: do NOT duplicate or increment quantity
+            return { isOpen: true };
           }
+          isNewItem = true;
           return {
             isOpen: true,
             items: [...state.items, { ...item, quantity: 1 }],
           };
-        }),
+        });
+        return isNewItem;
+      },
       removeItem: (slug, variantId) =>
         set((state) => ({
           items: state.items.filter(

@@ -27,6 +27,32 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overscroll-behavior-y: auto;
+    word-break: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+  }
+
+  /* Prevent awkward mid-word breaking and single-word orphans in headings and content */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-break: normal;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+  }
+
+  p,
+  span,
+  a,
+  button,
+  li {
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   /* Optimize touch responsiveness for all interactive elements */

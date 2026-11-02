@@ -7,6 +7,7 @@ import Icon from "@/components/common/Icon";
 import { IMAGES } from "@/constants/images";
 import { PRIMARY_BADGE_STYLES, SECONDARY_BADGE_STYLES } from "@/constants/shop";
 import { useAddToCart } from "@/hooks/use-add-to-cart";
+import { useCartStore } from "@/store/cart-store";
 import { cn } from "@/lib/utils";
 import { buildProductCardWhatsAppLink } from "@/lib/whatsapp";
 import type { CatalogProduct } from "@/types/catalog";
@@ -15,9 +16,11 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
   const [variantId, setVariantId] = useState(product.variants[0].id);
   const [wishlisted, setWishlisted] = useState(false);
   const addToCart = useAddToCart();
+  const items = useCartStore((s) => s.items);
 
   const variant = product.variants.find((v) => v.id === variantId) ?? product.variants[0];
   const image = IMAGES.catalog[product.image];
+  const isInCart = items.some((i) => i.slug === product.slug && i.variantId === variant.id);
 
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-2xl bg-pure-parchment border border-amber-900/10 shadow-premium-sm transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-1.5">
@@ -158,10 +161,15 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
                   image: image,
                 })
               }
-              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-full bg-roasted-terracotta px-2 sm:px-3 text-label-sm font-bold text-pure-parchment shadow-sm transition-all hover:bg-primary active:scale-[0.98] whitespace-nowrap"
+              className={cn(
+                "flex h-11 w-full items-center justify-center gap-1.5 rounded-full px-2 sm:px-3 text-label-sm font-bold text-pure-parchment shadow-sm transition-all active:scale-[0.98] whitespace-nowrap",
+                isInCart
+                  ? "bg-botanical-forest hover:bg-secondary"
+                  : "bg-roasted-terracotta hover:bg-primary"
+              )}
             >
-              <Icon name="shopping_bag" className="text-[18px] shrink-0" />
-              <span>Add to Cart</span>
+              <Icon name={isInCart ? "check" : "shopping_bag"} className="text-[18px] shrink-0" />
+              <span>{isInCart ? "In Cart" : "Add to Cart"}</span>
             </button>
             <a
               href={buildProductCardWhatsAppLink({

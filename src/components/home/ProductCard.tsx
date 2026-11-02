@@ -7,6 +7,7 @@ import { IMAGES } from "@/constants/images";
 import { buildProductCardWhatsAppLink } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
 import { useAddToCart } from "@/hooks/use-add-to-cart";
+import { useCartStore } from "@/store/cart-store";
 import type { BadgeTone, Product } from "@/types/product";
 
 const BADGE_STYLES: Record<BadgeTone, string> = {
@@ -18,9 +19,11 @@ const BADGE_STYLES: Record<BadgeTone, string> = {
 export default function ProductCard({ product }: { product: Product }) {
   const [variantId, setVariantId] = useState(product.variants[0]?.id);
   const addToCart = useAddToCart();
+  const items = useCartStore((s) => s.items);
 
   const variant = product.variants.find((v) => v.id === variantId) ?? product.variants[0];
   const activePrice = variant?.price ?? product.price;
+  const isInCart = items.some((i) => i.slug === product.slug && i.variantId === variant.id);
 
   const handleAddToCart = () => {
     addToCart({
@@ -102,10 +105,15 @@ export default function ProductCard({ product }: { product: Product }) {
             <button
               type="button"
               onClick={handleAddToCart}
-              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-full bg-roasted-terracotta px-2 sm:px-3 text-label-sm font-bold text-pure-parchment shadow-sm transition-all hover:bg-primary active:scale-[0.98] whitespace-nowrap"
+              className={cn(
+                "flex h-11 w-full items-center justify-center gap-1.5 rounded-full px-2 sm:px-3 text-label-sm font-bold text-pure-parchment shadow-sm transition-all active:scale-[0.98] whitespace-nowrap",
+                isInCart
+                  ? "bg-botanical-forest hover:bg-secondary"
+                  : "bg-roasted-terracotta hover:bg-primary"
+              )}
             >
-              <Icon name="shopping_bag" className="text-[18px]" />
-              <span>Add to Cart</span>
+              <Icon name={isInCart ? "check" : "shopping_bag"} className="text-[18px] shrink-0" />
+              <span>{isInCart ? "In Cart" : "Add to Cart"}</span>
             </button>
             <a
               href={buildProductCardWhatsAppLink({
