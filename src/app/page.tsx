@@ -8,6 +8,7 @@ import BestsellersSection from "@/components/home/BestsellersSection";
 import MakhanaSpotlight from "@/components/home/MakhanaSpotlight";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import FeedbackSection from "@/components/home/FeedbackSection";
+import VideoSection from "@/components/home/VideoSection";
 import { fetchCatalog } from "@/lib/catalog";
 import { fetchTestimonials } from "@/lib/testimonials";
 import { SITE } from "@/constants/site";
@@ -58,6 +59,7 @@ export default async function Home() {
         <MakhanaSpotlight />
         <TestimonialsSection testimonials={testimonials} />
         <FeedbackSection />
+        <VideoSection />
       </main>
       <Footer />
     </>
