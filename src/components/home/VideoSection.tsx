@@ -124,7 +124,7 @@ export default function VideoSection() {
 
             {/* Right Column: Full Actual Formatted Stall Photo (5 cols on lg) */}
             <div className="flex flex-col items-center justify-center lg:col-span-5">
-              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-none overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl ring-1 ring-black/10 bg-surface-container-high transition-transform duration-300 hover:shadow-3xl">
+              <div className="w-full max-w-sm sm:max-w-md lg:max-w-none overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl ring-1 ring-black/10 bg-surface-container-high transition-transform duration-300 hover:scale-[1.01]">
                 <Image
                   src={IMAGES.brand.stall}
                   alt="Crunchzilla stall showing freshly packed Makhana bags, founder, and official exhibition banners"
@@ -134,19 +134,6 @@ export default function VideoSection() {
                   sizes="(min-width: 1024px) 42vw, (min-width: 640px) 70vw, 92vw"
                   className="h-auto w-full object-contain block"
                 />
-
-                {/* Subtle caption pill at bottom */}
-                <div className="absolute bottom-3 inset-x-3 rounded-xl bg-black/65 px-3.5 py-2 backdrop-blur-md text-pure-parchment flex items-center justify-between gap-2 border border-white/10">
-                  <div className="flex items-center gap-2">
-                    <Icon name="storefront" className="text-[18px] text-spiced-tangerine" />
-                    <span className="text-label-xs sm:text-label-sm font-semibold tracking-wide">
-                      Our Exhibition Stall &amp; Fresh Harvest
-                    </span>
-                  </div>
-                  <span className="text-[10px] sm:text-label-xs font-bold text-spiced-tangerine uppercase tracking-wider whitespace-nowrap">
-                    100% Authentic
-                  </span>
-                </div>
               </div>
             </div>
           </div>
