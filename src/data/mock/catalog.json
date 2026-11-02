@@ -46,6 +46,11 @@
     "description": "Naturally hand-harvested lotus pops, roasted in micro-batches with zero palm oil. Fluffy, exceptionally crunchy, and mineral rich.",
     "image": "makhana",
     "imageAlt": "Crunchzilla artisanal golden roasted Makhana foxnuts",
+    "images": [
+      "/images/products/makhana.jpg",
+      "/images/products/makhana-packets-bowl.jpg",
+      "/images/hero/makhana-chai.jpg"
+    ],
     "primaryBadge": {
       "icon": "eco",
       "label": "Superfood",

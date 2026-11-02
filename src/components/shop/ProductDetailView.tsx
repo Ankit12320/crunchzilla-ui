@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/common/Icon";
@@ -97,6 +97,14 @@ const PRODUCT_HERITAGE_INFO: Record<
   },
 };
 
+const DEFAULT_PRODUCT_GALLERIES: Record<string, string[]> = {
+  "roasted-makhana": [
+    "/images/products/makhana.jpg",
+    "/images/products/makhana-packets-bowl.jpg",
+    "/images/hero/makhana-chai.jpg",
+  ],
+};
+
 export default function ProductDetailView({
   product,
   relatedProducts,
@@ -106,16 +114,60 @@ export default function ProductDetailView({
 }) {
   const [variantId, setVariantId] = useState(product.variants[0].id);
   const [activeTab, setActiveTab] = useState<"heritage" | "nutrition" | "delivery">("heritage");
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
   const addToCart = useAddToCart();
 
   const variant = product.variants.find((v) => v.id === variantId) ?? product.variants[0];
-  const image = IMAGES.catalog[product.image];
   const heritage = PRODUCT_HERITAGE_INFO[product.slug] ?? {
     origin: "Bihar, India",
     tradition: product.description,
     nutrition: ["100% Natural, zero artificial preservatives", "Wholesome traditional staple"],
     storage: "Store in a cool, dry, airtight container.",
     ingredients: product.name,
+  };
+
+  const rawImageList =
+    product.images && product.images.length > 0
+      ? product.images
+      : DEFAULT_PRODUCT_GALLERIES[product.slug] ?? [IMAGES.catalog[product.image]];
+
+  const galleryImages: { src: string; alt: string }[] = rawImageList.map((src, idx) => ({
+    src,
+    alt:
+      idx === 0
+        ? product.imageAlt
+        : idx === 1 && product.slug === "roasted-makhana"
+        ? "Crunchzilla Artisanal Roasted Makhana premium harvest pouches and fresh pops in bowl"
+        : `${product.name} - View ${idx + 1}`,
+  }));
+
+  const currentImage = galleryImages[selectedImageIndex] ?? galleryImages[0];
+
+  const handlePrevImage = () => {
+    setSelectedImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
+  const handleNextImage = () => {
+    setSelectedImageIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        handleNextImage();
+      } else {
+        handlePrevImage();
+      }
+    }
+    touchStartX.current = null;
   };
 
   const discountPercent =
@@ -150,19 +202,24 @@ export default function ProductDetailView({
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-14">
           {/* Left: Image Gallery / Stage */}
           <div className="lg:col-span-6">
-            <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-surface-container-low shadow-md">
+            <div
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-surface-container-low shadow-md select-none"
+            >
               <Image
-                src={image}
-                alt={product.imageAlt}
+                key={currentImage.src}
+                src={currentImage.src}
+                alt={currentImage.alt}
                 fill
-                priority
-                unoptimized={image.endsWith(".gif")}
+                priority={selectedImageIndex === 0}
+                unoptimized={currentImage.src.endsWith(".gif")}
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
               />
 
               {/* Badges */}
-              <div className="absolute top-4 left-4 flex flex-col items-start gap-2">
+              <div className="pointer-events-none absolute top-4 left-4 flex flex-col items-start gap-2 z-10">
                 <span
                   className={cn(
                     "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1 text-label-md font-semibold shadow-sm backdrop-blur-md",
@@ -182,8 +239,37 @@ export default function ProductDetailView({
                 </span>
               </div>
 
+              {/* Counter Indicator (when multiple images) */}
+              {galleryImages.length > 1 && (
+                <div className="absolute top-4 right-4 z-10 rounded-full bg-black/60 px-3 py-1 text-label-xs font-semibold text-pure-parchment backdrop-blur-md">
+                  {selectedImageIndex + 1} / {galleryImages.length}
+                </div>
+              )}
+
+              {/* Prev / Next Chevrons (when multiple images) */}
+              {galleryImages.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={handlePrevImage}
+                    aria-label="Previous image"
+                    className="absolute left-3 top-1/2 z-10 -translate-y-1/2 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-black/45 text-white shadow-md backdrop-blur-xs transition-all duration-200 hover:bg-black/75 hover:scale-110 active:scale-95"
+                  >
+                    <Icon name="chevron_left" className="text-[24px]" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleNextImage}
+                    aria-label="Next image"
+                    className="absolute right-3 top-1/2 z-10 -translate-y-1/2 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-black/45 text-white shadow-md backdrop-blur-xs transition-all duration-200 hover:bg-black/75 hover:scale-110 active:scale-95"
+                  >
+                    <Icon name="chevron_right" className="text-[24px]" />
+                  </button>
+                </>
+              )}
+
               {/* Highlight Ribbon */}
-              <div className="absolute right-4 bottom-4 left-4 flex items-center justify-between rounded-xl bg-surface/95 px-4 py-2.5 shadow-md backdrop-blur-md">
+              <div className="pointer-events-none absolute right-4 bottom-4 left-4 flex items-center justify-between rounded-xl bg-surface/95 px-4 py-2.5 shadow-md backdrop-blur-md z-10">
                 <span className="text-label-md font-bold uppercase tracking-wider text-roasted-terracotta">
                   {product.highlight.left}
                 </span>
@@ -192,6 +278,35 @@ export default function ProductDetailView({
                 </span>
               </div>
             </div>
+
+            {/* Scrollable Thumbnail Strip (when multiple images) */}
+            {galleryImages.length > 1 && (
+              <div className="mt-3.5 flex items-center gap-3 overflow-x-auto pb-1 scrollbar-none snap-x">
+                {galleryImages.map((img, idx) => (
+                  <button
+                    key={img.src}
+                    type="button"
+                    onClick={() => setSelectedImageIndex(idx)}
+                    aria-label={`View image ${idx + 1}`}
+                    className={cn(
+                      "relative h-16 w-20 sm:h-18 sm:w-24 shrink-0 overflow-hidden rounded-xl border-2 transition-all duration-200 snap-start focus:outline-hidden",
+                      selectedImageIndex === idx
+                        ? "border-primary ring-2 ring-primary/40 shadow-md scale-[1.02]"
+                        : "border-transparent opacity-65 hover:opacity-100 hover:border-surface-container-high"
+                    )}
+                  >
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      unoptimized={img.src.endsWith(".gif")}
+                      sizes="96px"
+                      className="object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
 
             {/* Trust Points */}
             <div className="mt-6 grid grid-cols-3 gap-3">
@@ -310,7 +425,7 @@ export default function ProductDetailView({
                     price: variant.price,
                     variantId: variant.id,
                     variantLabel: variant.label,
-                    image: image,
+                    image: galleryImages[0].src,
                   })
                 }
                 className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-roasted-terracotta px-6 text-label-lg font-bold text-pure-parchment shadow-md transition-all hover:bg-primary active:scale-[0.98]"

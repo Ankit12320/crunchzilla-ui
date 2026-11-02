@@ -25,6 +25,7 @@ export interface CatalogProduct {
   description: string;
   image: CatalogImageKey;
   imageAlt: string;
+  images?: string[];
   primaryBadge: { icon: string; label: string; tone: PrimaryBadgeTone };
   secondaryBadge: { label: string; tone: SecondaryBadgeTone };
   highlight: { left: string; right: string };

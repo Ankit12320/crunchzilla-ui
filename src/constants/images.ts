@@ -12,6 +12,7 @@ const hero = {
 const products = {
   tilkut: "/images/products/tilkut.jpg",
   makhana: "/images/products/makhana.jpg",
+  makhanaPackets: "/images/products/makhana-packets-bowl.jpg",
   sattu: "/images/products/sattu.jpg",
   basmatiPoha: "/images/products/basmati-poha.jpg",
   jaggeryCubes: "/images/products/jaggery-cubes.jpg",
