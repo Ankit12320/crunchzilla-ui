@@ -1,5 +1,12 @@
 [
   {
+    "id": "mayuri",
+    "name": "Mayuri",
+    "purchase": "Artisanal Roasted Makhana",
+    "rating": 5,
+    "quote": "Thank you @Ankit Adarsh for delivering me the best makhana 😊"
+  },
+  {
     "id": "prem",
     "name": "Prem",
     "purchase": "Authentic Bihar Specialties",
