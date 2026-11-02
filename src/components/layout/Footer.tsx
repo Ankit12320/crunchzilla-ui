@@ -29,7 +29,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-surface-container-low pt-10 pb-6 text-on-surface shadow-[0_-1px_12px_rgba(45,30,15,0.03)]">
+    <footer className="w-full bg-surface-container-low pt-10 pb-8 sm:pb-10 text-on-surface shadow-[0_-1px_12px_rgba(45,30,15,0.03)]">
       <div className="container-page grid grid-cols-1 gap-10 pb-10 md:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
           <div>
