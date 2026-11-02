@@ -23,7 +23,7 @@ export default function CatalogFilterBar({
   onSortChange,
 }: CatalogFilterBarProps) {
   return (
-    <section className="relative w-full border-y border-surface-container-high bg-surface py-4">
+    <section className="sticky top-[var(--header-height,5rem)] z-30 w-full border-y border-surface-container-high bg-surface/95 backdrop-blur-md py-2.5 shadow-[0_2px_8px_rgba(45,30,15,0.05)] sm:py-3.5 transition-all">
       <div className="container-page flex flex-col items-stretch justify-between gap-4 lg:flex-row lg:items-center">
         {/* Category Pills */}
         <div
