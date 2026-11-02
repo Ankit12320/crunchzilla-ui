@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/common/Icon";
@@ -15,7 +15,11 @@ import {
   selectCartTotal,
   useCartStore,
 } from "@/store/cart-store";
-import { buildCartOrderWhatsAppLink } from "@/lib/whatsapp";
+import {
+  buildCartOrderWhatsAppLink,
+  whatsappWebLink,
+  buildWhatsAppOrderMessage,
+} from "@/lib/whatsapp";
 
 const subscribe = () => () => {};
 
@@ -36,11 +40,48 @@ export default function CartDrawer() {
   const count = useCartStore(selectCartCount);
   const total = useCartStore(selectCartTotal);
 
+  const [isOpening, setIsOpening] = useState(false);
+  const [orderStatus, setOrderStatus] = useState<"idle" | "opening" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   if (!isMounted) {
     return null;
   }
 
+  const messageText = buildWhatsAppOrderMessage(items, total);
   const whatsappOrderUrl = buildCartOrderWhatsAppLink(items, total);
+  const whatsappWebUrl = whatsappWebLink(messageText);
+
+  const handlePlaceOrder = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (isOpening) return; // Prevent duplicate clicks
+
+    if (items.length === 0) {
+      setErrorMessage("Your shopping cart is empty. Please add items to your cart.");
+      setOrderStatus("error");
+      return;
+    }
+
+    setIsOpening(true);
+    setErrorMessage(null);
+    setOrderStatus("opening");
+
+    try {
+      const newTab = window.open(whatsappOrderUrl, "_blank", "noopener,noreferrer");
+      if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
+        window.location.assign(whatsappOrderUrl);
+      }
+    } catch {
+      setErrorMessage(
+        "Could not launch WhatsApp automatically. Please use the direct links below to open in WhatsApp or WhatsApp Web."
+      );
+      setOrderStatus("error");
+    } finally {
+      setTimeout(() => {
+        setIsOpening(false);
+      }, 1500);
+    }
+  };
 
   return (
     <Sheet open={isOpen} onOpenChange={(open) => !open && closeCart()}>
@@ -199,16 +240,101 @@ export default function CartDrawer() {
                 </div>
               </div>
 
+              {/* Persistent Error Message Banner */}
+              {errorMessage && (
+                <div
+                  role="alert"
+                  className="rounded-xl border border-error/40 bg-error-container/20 p-3 text-on-surface"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-center gap-1.5 font-bold text-error text-label-sm">
+                      <Icon name="error" className="text-[18px]" />
+                      <span>Order Notice</span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setErrorMessage(null)}
+                      aria-label="Dismiss error notice"
+                      className="text-on-surface-variant hover:text-on-surface"
+                    >
+                      <Icon name="close" className="text-[16px]" />
+                    </button>
+                  </div>
+                  <p className="mt-1 text-body-xs text-on-surface">{errorMessage}</p>
+                  <div className="mt-2.5 flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      onClick={() => handlePlaceOrder()}
+                      className="rounded-full bg-primary px-3 py-1 text-label-xs font-bold text-pure-parchment transition-opacity hover:opacity-90"
+                    >
+                      Retry
+                    </button>
+                    <a
+                      href={whatsappWebUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full bg-surface-container px-3 py-1 text-label-xs font-bold text-primary transition-colors hover:bg-surface-container-high"
+                    >
+                      Use WhatsApp Web
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Opening WhatsApp Confirmation Banner */}
+              {orderStatus === "opening" && (
+                <div className="rounded-xl border border-whatsapp-emerald/40 bg-whatsapp-emerald/10 p-3 text-on-surface">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-center gap-1.5 font-bold text-whatsapp-emerald text-label-sm">
+                      <Icon name="chat" className="text-[18px] animate-pulse" />
+                      <span>Opening WhatsApp...</span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setOrderStatus("idle")}
+                      aria-label="Close notification"
+                      className="text-on-surface-variant hover:text-on-surface"
+                    >
+                      <Icon name="close" className="text-[16px]" />
+                    </button>
+                  </div>
+                  <p className="mt-1 text-body-xs text-on-surface">
+                    Order details prepared. Please tap <strong>Send</strong> in WhatsApp to confirm. Your cart items are saved.
+                  </p>
+                  <div className="mt-2 flex flex-wrap items-center gap-2 border-t border-whatsapp-emerald/20 pt-2 text-label-xs">
+                    <a
+                      href={whatsappOrderUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-whatsapp-emerald underline"
+                    >
+                      Launch WhatsApp
+                    </a>
+                    <span className="text-outline-variant">•</span>
+                    <a
+                      href={whatsappWebUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-secondary underline"
+                    >
+                      WhatsApp Web
+                    </a>
+                  </div>
+                </div>
+              )}
+
               {/* Order via WhatsApp CTA */}
-              <a
-                href={whatsappOrderUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex w-full items-center justify-center gap-2.5 rounded-full bg-whatsapp-emerald py-3.5 px-6 text-title-sm font-bold text-pure-parchment shadow-md transition-all duration-200 hover:bg-secondary hover:shadow-lg active:scale-[0.99]"
+              <button
+                type="button"
+                onClick={() => handlePlaceOrder()}
+                disabled={isOpening}
+                className="flex w-full items-center justify-center gap-2.5 rounded-full bg-whatsapp-emerald py-3.5 px-6 text-title-sm font-bold text-pure-parchment shadow-md transition-all duration-200 hover:bg-secondary hover:shadow-lg active:scale-[0.99] disabled:opacity-75 disabled:pointer-events-none"
               >
                 <Icon name="chat" className="text-[22px]" />
-                Place Order on WhatsApp (₹{total})
-              </a>
+                <span>
+                  {isOpening ? "Opening WhatsApp..." : `Place Order on WhatsApp (₹${total})`}
+                </span>
+              </button>
 
               <div className="flex items-center justify-center pt-1">
                 <Link

@@ -192,3 +192,4 @@ export function getFaqSchema(faqs: { question: string; answer: string }[]) {
     })),
   };
 }
+
