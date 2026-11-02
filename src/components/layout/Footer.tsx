@@ -42,11 +42,11 @@ export default function Footer() {
           </div>
           <p className="text-body-sm text-on-surface-variant">{SITE.footerBlurb}</p>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-cardamom-light px-3 py-1 text-label-xs text-botanical-forest font-medium">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-cardamom-light px-3 py-1 text-label-xs font-medium text-botanical-forest whitespace-nowrap">
               <Icon name="verified" className="text-[14px]" />
               FSSAI Lic: {SITE.fssaiLicense}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-container px-3 py-1 text-label-xs text-on-surface-variant">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-container px-3 py-1 text-label-xs text-on-surface-variant whitespace-nowrap">
               <Icon name="local_shipping" className="text-[14px] text-spiced-tangerine" />
               Express to Bangalore &amp; Pan-India
             </span>
