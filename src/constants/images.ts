@@ -2,6 +2,7 @@
 
 const brand = {
   logo: "/images/brand/logo.png",
+  stall: "/images/brand/crunchzilla-stall.jpg",
 } as const;
 
 const hero = {
