@@ -179,9 +179,9 @@ export default function ExploreMakhanaSection() {
           </p>
         </div>
 
-        {/* 3 Makhana Grade Cards */}
+        {/* 3 Makhana Grade Cards with Window Opening Stagger */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-          {MAKHANA_GRADES.map((grade) => {
+          {MAKHANA_GRADES.map((grade, idx) => {
             const activeVariantId = selectedVariants[grade.id] || grade.variants[0].id;
             const activeVariant =
               grade.variants.find((v) => v.id === activeVariantId) || grade.variants[0];
@@ -210,8 +210,24 @@ export default function ExploreMakhanaSection() {
             return (
               <article
                 key={grade.id}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-pure-parchment border border-amber-900/10 shadow-premium-sm transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-1.5"
+                style={{ animationDelay: `${idx * 160}ms` }}
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-pure-parchment border border-amber-900/15 shadow-premium-sm transition-all duration-500 hover:shadow-premium-hover hover:-translate-y-2 animate-window-card"
               >
+                {/* Subtle Window Header Strip */}
+                <div className="flex items-center justify-between border-b border-surface-container bg-surface-container-low/70 px-3.5 py-1.5 text-[11px] text-on-surface-variant">
+                  <div className="flex items-center gap-1.5" aria-hidden="true">
+                    <span className="h-2 w-2 rounded-full bg-roasted-terracotta/60" />
+                    <span className="h-2 w-2 rounded-full bg-warm-amber/60" />
+                    <span className="h-2 w-2 rounded-full bg-botanical-forest/60" />
+                    <span className="ml-1 font-semibold uppercase tracking-wider text-[10px] text-primary/70">
+                      Window {idx + 1} • {grade.gradeBadge}
+                    </span>
+                  </div>
+                  <span className="text-[10px] uppercase font-bold text-roasted-terracotta">
+                    GI Mithila
+                  </span>
+                </div>
+
                 {/* Visual Image Stage */}
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface-container-low">
                   <Link

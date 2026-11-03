@@ -29,27 +29,39 @@ export default function MakhanaHeroSection() {
       {/* Elegant Rain of Makhana Visual Effect */}
       <MakhanaRain />
 
-      <div className="container-page">
-        {/* Minimal, High-End Centered Introduction */}
-        <div className="mx-auto max-w-3xl text-center space-y-4 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 rounded-full bg-golden-sand/80 border border-amber-900/10 px-4 py-1.5 shadow-xs backdrop-blur-xs">
+      <div className="container-page relative z-20">
+        {/* Minimal, High-End Centered Introduction with Sequential Window Opening */}
+        <div className="mx-auto max-w-3xl text-center space-y-4">
+          <div
+            style={{ animationDelay: "100ms" }}
+            className="inline-flex items-center gap-2 rounded-full bg-golden-sand/90 border border-amber-900/15 px-4 py-1.5 shadow-xs backdrop-blur-xs animate-window-card"
+          >
             <Icon name="spa" className="text-[17px] text-secondary" />
             <span className="text-label-sm font-bold uppercase tracking-wider text-primary">
               Mithila Origin • 100% Hand-Harvested
             </span>
           </div>
 
-          <h1 className="font-display text-display-mobile sm:text-headline-lg md:text-display font-bold tracking-tight text-primary">
+          <h1
+            style={{ animationDelay: "200ms" }}
+            className="font-display text-display-mobile sm:text-headline-lg md:text-display font-bold tracking-tight text-primary animate-window-card"
+          >
             Artisanal Mithila Makhana
           </h1>
 
-          <p className="mx-auto max-w-2xl text-body-lg sm:text-title-md text-on-surface-variant font-normal leading-relaxed">
+          <p
+            style={{ animationDelay: "300ms" }}
+            className="mx-auto max-w-2xl text-body-lg sm:text-title-md text-on-surface-variant font-normal leading-relaxed animate-window-card"
+          >
             Slow air-roasted lotus pops crafted with zero palm oil. Fluffy, snow-white,
             and rich in natural plant protein—direct from the heritage wetlands of North Bihar.
           </p>
 
           {/* Minimal Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
+          <div
+            style={{ animationDelay: "400ms" }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2 animate-window-card"
+          >
             <button
               type="button"
               onClick={scrollToExplore}
@@ -73,41 +85,64 @@ export default function MakhanaHeroSection() {
           </div>
         </div>
 
-        {/* Large, Visually Prominent Makhana Hero Photography */}
-        <div className="mt-8 sm:mt-12 mx-auto max-w-5xl animate-fade-in-up">
-          <div className="group relative overflow-hidden rounded-3xl bg-pure-parchment p-3 sm:p-4 shadow-premium-lg border border-amber-900/10 transition-all duration-700 hover:shadow-premium-hover animate-float-gentle">
-            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden rounded-2xl bg-surface-container-low">
-              <Image
-                src={IMAGES.hero.makhanaHeroAi}
-                alt="Premium natural Makhana from Crunchzilla"
-                fill
-                priority
-                sizes="(min-width: 1280px) 1024px, (min-width: 1024px) 90vw, 100vw"
-                className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-[1.04]"
-              />
-
-              {/* Floating Quality Credentials Glass Badges */}
-              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex flex-col gap-2 z-10 pointer-events-none">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-pure-parchment/95 border border-amber-900/10 px-3.5 py-1.5 text-label-sm font-bold text-botanical-forest shadow-xs backdrop-blur-md">
-                  <Icon name="verified" className="text-[16px] text-whatsapp-emerald" />
-                  Jumbo 6+ HP Hand-Picked
-                </span>
-                <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-pure-parchment/90 border border-amber-900/10 px-3 py-1 text-label-xs font-semibold text-secondary shadow-xs backdrop-blur-md">
-                  <Icon name="local_fire_department" className="text-[15px] text-spiced-tangerine" />
-                  100% Air Roasted • Zero Palm Oil
+        {/* Large, Visually Prominent Makhana Hero Window Stage */}
+        <div
+          style={{ animationDelay: "500ms" }}
+          className="mt-8 sm:mt-12 mx-auto max-w-5xl animate-window-reveal"
+        >
+          <div className="group relative overflow-hidden rounded-3xl bg-pure-parchment border border-amber-900/15 shadow-2xl transition-all duration-700 hover:shadow-premium-hover animate-float-gentle">
+            {/* Subtle Window Header Bar */}
+            <div className="flex items-center justify-between border-b border-surface-container bg-surface-container-low/80 px-4 sm:px-6 py-2.5 text-label-xs text-on-surface-variant">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5" aria-hidden="true">
+                  <span className="h-2.5 w-2.5 rounded-full bg-roasted-terracotta/70" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-warm-amber/70" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-botanical-forest/70" />
+                </div>
+                <span className="font-semibold uppercase tracking-wider text-[11px] text-primary/80 ml-1">
+                  Crunchzilla Origin Window • Darbhanga & Madhubani
                 </span>
               </div>
+              <span className="hidden sm:inline-flex items-center gap-1 font-medium text-whatsapp-emerald text-[11px]">
+                <Icon name="check_circle" className="text-[13px]" />
+                Fresh Harvest Batch Ready
+              </span>
+            </div>
 
-              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-10 pointer-events-none">
-                <div className="inline-flex items-center gap-2 rounded-2xl bg-pure-parchment/95 border border-amber-900/10 px-4 py-2 text-on-surface shadow-premium-sm backdrop-blur-md">
-                  <Icon name="workspace_premium" className="text-[22px] text-warm-amber" />
-                  <div className="text-left">
-                    <span className="block text-[10px] uppercase font-bold tracking-wider text-on-surface-variant">
-                      Purity Guarantee
-                    </span>
-                    <span className="text-label-sm font-bold text-primary">
-                      16g Protein / 100g
-                    </span>
+            <div className="p-2 sm:p-3 bg-surface-container-low/40">
+              <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden rounded-2xl bg-surface-container-low">
+                <Image
+                  src={IMAGES.hero.makhanaHeroAi}
+                  alt="Premium natural Makhana from Crunchzilla"
+                  fill
+                  priority
+                  sizes="(min-width: 1280px) 1024px, (min-width: 1024px) 90vw, 100vw"
+                  className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-[1.03]"
+                />
+
+                {/* Floating Quality Credentials Glass Badges */}
+                <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex flex-col gap-2 z-10 pointer-events-none">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-pure-parchment/95 border border-amber-900/15 px-3.5 py-1.5 text-label-sm font-bold text-botanical-forest shadow-xs backdrop-blur-md">
+                    <Icon name="verified" className="text-[16px] text-whatsapp-emerald" />
+                    Jumbo 6+ HP Hand-Picked
+                  </span>
+                  <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-pure-parchment/90 border border-amber-900/15 px-3 py-1 text-label-xs font-semibold text-secondary shadow-xs backdrop-blur-md">
+                    <Icon name="local_fire_department" className="text-[15px] text-spiced-tangerine" />
+                    100% Air Roasted • Zero Palm Oil
+                  </span>
+                </div>
+
+                <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-10 pointer-events-none">
+                  <div className="inline-flex items-center gap-2 rounded-2xl bg-pure-parchment/95 border border-amber-900/15 px-4 py-2 text-on-surface shadow-premium-sm backdrop-blur-md">
+                    <Icon name="workspace_premium" className="text-[22px] text-warm-amber" />
+                    <div className="text-left">
+                      <span className="block text-[10px] uppercase font-bold tracking-wider text-on-surface-variant">
+                        Purity Guarantee
+                      </span>
+                      <span className="text-label-sm font-bold text-primary">
+                        16g Protein / 100g
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

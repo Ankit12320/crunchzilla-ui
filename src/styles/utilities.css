@@ -177,3 +177,77 @@
     display: none !important;
   }
 }
+
+/* ── Modern Window Opening UI Experience ── */
+@keyframes windowReveal {
+  0% {
+    opacity: 0;
+    transform: perspective(1200px) translateY(28px) scale(0.96) rotateX(1.8deg);
+  }
+  70% {
+    opacity: 1;
+    transform: perspective(1200px) translateY(-2px) scale(1.004) rotateX(-0.4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) translateY(0) scale(1) rotateX(0deg);
+  }
+}
+
+@keyframes windowCardPop {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes windowModalPop {
+  0% {
+    opacity: 0;
+    transform: perspective(1000px) scale(0.93) translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1000px) scale(1) translateY(0);
+  }
+}
+
+@utility animate-window-reveal {
+  animation: windowReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility animate-window-card {
+  animation: windowCardPop 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility animate-window-modal {
+  animation: windowModalPop 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility window-frame {
+  background: #fcfaf6;
+  border: 1px solid rgba(144, 63, 0, 0.1);
+  box-shadow: 0 20px 48px -12px rgba(45, 30, 15, 0.08), 0 2px 6px rgba(45, 30, 15, 0.04);
+}
+
+@utility window-glass {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(144, 63, 0, 0.08);
+  box-shadow: 0 16px 36px -8px rgba(45, 30, 15, 0.08), 0 1px 3px rgba(45, 30, 15, 0.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-window-reveal,
+  .animate-window-card,
+  .animate-window-modal {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
