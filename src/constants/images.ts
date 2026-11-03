@@ -35,12 +35,17 @@ const effects = {
   makhana4: "/images/effects/makhana-4.webp",
 } as const;
 
+const testimonials = {
+  gugulDash: "/images/testimonials/gugul-dash-review.webp",
+} as const;
+
 export const IMAGES = {
   brand,
   hero,
   products,
   pantry,
   effects,
+  testimonials,
   // Shop catalog card images (reuse the files above — no duplicates on disk)
   catalog: {
     tilkut: hero.tilkut,

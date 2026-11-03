@@ -4,4 +4,6 @@ export interface Testimonial {
   purchase: string;
   rating: number;
   quote: string;
+  image?: string;
+  imageAlt?: string;
 }

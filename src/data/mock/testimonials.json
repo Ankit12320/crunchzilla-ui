@@ -1,5 +1,14 @@
 [
   {
+    "id": "gugul-dash",
+    "name": "Gugul Dash",
+    "purchase": "Fresh Roasted Makhana • Express 1-Hour Delivery",
+    "rating": 5,
+    "quote": "Thank you, @Ankit Adarsh for delivering such fresh and delicious Makhana! I received my order within just an hour, and the freshness was amazing. The authentic Bihar flavour brought back the taste of home! Highly impressed with the quality, freshness, and super-fast delivery. Keep it up, Crunchzilla!",
+    "image": "/images/testimonials/gugul-dash-review.webp",
+    "imageAlt": "Gugul Dash verified WhatsApp customer review for Crunchzilla fresh Makhana express delivery"
+  },
+  {
     "id": "ruchi",
     "name": "Ruchi",
     "purchase": "Festival Specialties",
@@ -26,13 +35,6 @@
     "purchase": "Gaya Tilkut",
     "rating": 5,
     "quote": "I absolutely loved the gud tilkut. The taste instantly reminded me of my hometown — it felt just like having something made at home. It’s soft, light, and melts in the mouth beautifully. Being so far away, it was truly comforting to taste something so familiar."
-  },
-  {
-    "id": "gugul-dash",
-    "name": "Gugul Dash",
-    "purchase": "Express Delivery",
-    "rating": 5,
-    "quote": "The delivery was also very prompt and arrived the very next day, which was a pleasant surprise. Overall, a wonderful experience, and I really enjoyed it. Highly recommended."
   },
   {
     "id": "vivek-adarsh",
