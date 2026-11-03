@@ -8,6 +8,7 @@ const brand = {
 const hero = {
   tilkut: "/images/hero/tilkut-hero.gif",
   makhanaChai: "/images/hero/makhana-chai.jpg",
+  makhanaHeroAi: "/images/hero/makhana-hero-ai.jpg",
 } as const;
 
 const products = {

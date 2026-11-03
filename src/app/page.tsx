@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import TrustRibbon from "@/components/home/TrustRibbon";
+import MakhanaHeroSection from "@/components/home/MakhanaHeroSection";
+import ExploreMakhanaSection from "@/components/home/ExploreMakhanaSection";
 import HeroSection from "@/components/home/HeroSection";
 import PillarsSection from "@/components/home/PillarsSection";
 import BestsellersSection from "@/components/home/BestsellersSection";
@@ -53,6 +55,8 @@ export default async function Home() {
       <Header />
       <main className="flex w-full flex-col bg-surface">
         <TrustRibbon />
+        <MakhanaHeroSection />
+        <ExploreMakhanaSection />
         <HeroSection />
         <PillarsSection />
         <BestsellersSection products={products} />
