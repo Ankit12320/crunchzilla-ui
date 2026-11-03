@@ -28,11 +28,19 @@ const pantry = {
   sesameSeeds: "/images/pantry/sesame-seeds.jpg",
 } as const;
 
+const effects = {
+  makhana1: "/images/effects/makhana-1.webp",
+  makhana2: "/images/effects/makhana-2.webp",
+  makhana3: "/images/effects/makhana-3.webp",
+  makhana4: "/images/effects/makhana-4.webp",
+} as const;
+
 export const IMAGES = {
   brand,
   hero,
   products,
   pantry,
+  effects,
   // Shop catalog card images (reuse the files above — no duplicates on disk)
   catalog: {
     tilkut: hero.tilkut,

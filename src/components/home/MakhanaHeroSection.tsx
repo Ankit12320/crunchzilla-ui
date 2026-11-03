@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Icon from "@/components/common/Icon";
+import MakhanaRain from "@/components/home/MakhanaRain";
 import { IMAGES } from "@/constants/images";
 import { SITE } from "@/constants/site";
 import { whatsappLink } from "@/lib/whatsapp";
@@ -24,6 +25,9 @@ export default function MakhanaHeroSection() {
         className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[600px] w-full max-w-7xl bg-[radial-gradient(ellipse_at_top,_rgba(242,201,76,0.18),_transparent_70%)] blur-3xl -z-10"
         aria-hidden="true"
       />
+
+      {/* Elegant Rain of Makhana Visual Effect */}
+      <MakhanaRain />
 
       <div className="container-page">
         {/* Minimal, High-End Centered Introduction */}

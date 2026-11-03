@@ -104,3 +104,76 @@
 @utility animate-float-gentle {
   animation: floatGentle 4s ease-in-out infinite;
 }
+
+/* ── Rain of Makhana Animations ── */
+@keyframes makhanaFall1 {
+  0% {
+    top: -60px;
+    transform: translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateX(20px) rotate(110deg);
+  }
+  88% {
+    opacity: 0.85;
+  }
+  100% {
+    top: 105%;
+    transform: translateX(-14px) rotate(240deg);
+    opacity: 0;
+  }
+}
+
+@keyframes makhanaFall2 {
+  0% {
+    top: -60px;
+    transform: translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateX(-24px) rotate(-90deg);
+  }
+  88% {
+    opacity: 0.75;
+  }
+  100% {
+    top: 105%;
+    transform: translateX(16px) rotate(-220deg);
+    opacity: 0;
+  }
+}
+
+@keyframes makhanaFall3 {
+  0% {
+    top: -60px;
+    transform: translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(26px) rotate(80deg);
+  }
+  88% {
+    opacity: 0.8;
+  }
+  100% {
+    top: 105%;
+    transform: translateX(36px) rotate(190deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .makhana-rain-layer {
+    display: none !important;
+  }
+}
