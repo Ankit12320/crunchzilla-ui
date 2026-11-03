@@ -27,7 +27,7 @@ export default function MakhanaHeroSection() {
 
       <div className="container-page">
         {/* Minimal, High-End Centered Introduction */}
-        <div className="mx-auto max-w-3xl text-center space-y-4">
+        <div className="mx-auto max-w-3xl text-center space-y-4 animate-fade-in-up">
           <div className="inline-flex items-center gap-2 rounded-full bg-golden-sand/80 border border-amber-900/10 px-4 py-1.5 shadow-xs backdrop-blur-xs">
             <Icon name="spa" className="text-[17px] text-secondary" />
             <span className="text-label-sm font-bold uppercase tracking-wider text-primary">
@@ -70,16 +70,16 @@ export default function MakhanaHeroSection() {
         </div>
 
         {/* Large, Visually Prominent Makhana Hero Photography */}
-        <div className="mt-8 sm:mt-12 mx-auto max-w-5xl">
-          <div className="group relative overflow-hidden rounded-3xl bg-pure-parchment p-3 sm:p-4 shadow-premium-lg border border-amber-900/10 transition-all duration-700 hover:shadow-premium-hover">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-surface-container-low">
+        <div className="mt-8 sm:mt-12 mx-auto max-w-5xl animate-fade-in-up">
+          <div className="group relative overflow-hidden rounded-3xl bg-pure-parchment p-3 sm:p-4 shadow-premium-lg border border-amber-900/10 transition-all duration-700 hover:shadow-premium-hover animate-float-gentle">
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden rounded-2xl bg-surface-container-low">
               <Image
                 src={IMAGES.hero.makhanaHeroAi}
-                alt="Crunchzilla freshly slow-roasted jumbo Mithila Makhana foxnuts in handcrafted ceramic tableware with warm morning lighting"
+                alt="Premium natural Makhana from Crunchzilla"
                 fill
                 priority
                 sizes="(min-width: 1280px) 1024px, (min-width: 1024px) 90vw, 100vw"
-                className="object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]"
+                className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-[1.04]"
               />
 
               {/* Floating Quality Credentials Glass Badges */}
@@ -131,3 +131,4 @@ export default function MakhanaHeroSection() {
     </section>
   );
 }
+
