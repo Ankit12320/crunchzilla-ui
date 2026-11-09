@@ -9,36 +9,58 @@ import PillarsSection from "@/components/home/PillarsSection";
 import BestsellersSection from "@/components/home/BestsellersSection";
 import MakhanaSpotlight from "@/components/home/MakhanaSpotlight";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+import SeoFaqSection from "@/components/home/SeoFaqSection";
 import FeedbackSection from "@/components/home/FeedbackSection";
 import VideoSection from "@/components/home/VideoSection";
+import JsonLd from "@/components/seo/JsonLd";
 import { fetchCatalog } from "@/lib/catalog";
 import { fetchTestimonials } from "@/lib/testimonials";
+import { getItemListSchema, getHomepageFaqSchema } from "@/lib/seo-schemas";
 import { SITE } from "@/constants/site";
 
 export const metadata: Metadata = {
-  title: "Authentic Food Products from Bihar | Buy Makhana, Sattu & Gaya Tilkut Online",
+  title: "Buy Tilkut, Sattu, Makhana & Katarni Chura Online | Crunchzilla",
   description:
-    "Buy authentic traditional food products from Bihar online: Premium Makhana, Pure Chana Sattu, Gaya Tilkut, Katarni Chura & Organic Desi Gur. Express delivery to Bangalore, Bihar and across India.",
+    "Order authentic Gaya Tilkut, 100% Pure Chana Sattu, Mithila Makhana & Fragrant Katarni Chura near you. 1-hour fast delivery in Bangalore & shipping across India.",
   alternates: {
     canonical: SITE.url,
   },
   keywords: [
-    "Authentic food products from Bihar",
-    "Buy Makhana Online",
+    "Buy Tilkut Online",
+    "Gaya Tilkut Near Me",
+    "Tilkut Nearby",
     "Buy Sattu Online",
+    "Pure Chana Sattu Near Me",
+    "Sattu Nearby",
+    "Buy Makhana Online",
+    "Makhana Near Me",
+    "Makhana Nearby",
+    "Katarni Chura Near Me",
+    "Chura Near By",
+    "Chura Nearby",
+    "Buy Chura Online",
+    "Katarni Chura Online",
+    "Authentic food products from Bihar",
     "Traditional Bihar Food Products",
     "Bihar Special Food Products",
     "Buy Gaya Tilkut Online",
     "Bihar food products in Bangalore",
     "Buy Makhana in Bangalore",
     "Buy Sattu in Bangalore",
+    "Buy Chura in Bangalore",
     "Bihar traditional snacks online",
     "Authentic Bihar products online",
+    "Pure Chana Sattu",
+    "Gaya Tilkut",
+    "Katarni Chura",
+    "Basmati Chura",
+    "Organic Jaggery Gud",
+    "Dahi Chura Bihar",
   ],
   openGraph: {
-    title: "Authentic Food Products from Bihar | Buy Makhana, Sattu & Gaya Tilkut",
+    title: "Buy Tilkut, Sattu, Makhana & Katarni Chura Online | Crunchzilla",
     description:
-      "Wholesome artisanal staples and traditional delicacies from Bihar crafted with zero chemicals and no palm oil. Delivered to your doorstep.",
+      "Wholesome artisanal staples and traditional delicacies from Bihar: Gaya Tilkut, Pure Chana Sattu, Mithila Makhana, and Katarni Chura delivered near you.",
     url: SITE.url,
     siteName: SITE.brandName,
   },
@@ -50,8 +72,13 @@ export default async function Home() {
     fetchTestimonials(),
   ]);
 
+  const faqSchema = getHomepageFaqSchema();
+  const itemListSchema = getItemListSchema(products);
+
   return (
     <>
+      <JsonLd data={faqSchema} />
+      <JsonLd data={itemListSchema} />
       <Header />
       <main className="flex w-full flex-col bg-surface">
         <TrustRibbon />
@@ -62,6 +89,7 @@ export default async function Home() {
         <BestsellersSection products={products} />
         <MakhanaSpotlight />
         <TestimonialsSection testimonials={testimonials} />
+        <SeoFaqSection />
         <FeedbackSection />
         <VideoSection />
       </main>

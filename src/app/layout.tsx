@@ -84,6 +84,13 @@ export const metadata: Metadata = {
     icon: IMAGES.brand.logo,
     apple: IMAGES.brand.logo,
   },
+  other: {
+    "geo.region": "IN-KA;IN-BR",
+    "geo.placename": "Bengaluru, Patna, Bihar, India",
+    "geo.position": "12.9716;77.5946",
+    "ICBM": "12.9716, 77.5946",
+    "apple-mobile-web-app-title": "Crunchzilla",
+  },
 };
 
 export const viewport: Viewport = {
