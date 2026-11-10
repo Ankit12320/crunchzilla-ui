@@ -292,3 +292,40 @@ export function getHomepageFaqSchema() {
   ]);
 }
 
+export function getArticleSchema(blog: {
+  title: string;
+  metaDescription: string;
+  slug: string;
+  image: string;
+  publishedAt: string;
+  updatedAt: string;
+  author: { name: string };
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: blog.title,
+    description: blog.metaDescription,
+    image: blog.image.startsWith("http") ? blog.image : `${SITE.url}${blog.image}`,
+    datePublished: blog.publishedAt,
+    dateModified: blog.updatedAt,
+    author: {
+      "@type": "Person",
+      name: blog.author.name,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE.url}${IMAGES.brand.logo}`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE.url}/blog/${blog.slug}`,
+    },
+  };
+}
+
+

@@ -48,6 +48,30 @@ const PRODUCT_HERITAGE_INFO: Record<
     storage: "Keep in a cool, airtight container to maintain crispness. Shelf life: 6 months.",
     ingredients: "100% Jumbo Grade Lotus Seeds (Phool Makhana).",
   },
+  "peri-peri-makhana": {
+    origin: "Mithila Lotus Belt & Gourmet Spice Blends",
+    tradition:
+      "Handpicked 6+ HP jumbo Mithila fox nuts air-roasted in micro-batches with zero palm oil, seasoned with fiery African Bird's eye chilli, sun-dried lemon zest, and aromatic garden herbs.",
+    nutrition: [
+      "14.5g natural plant protein per 100g",
+      "Zero trans fat and zero palm oil",
+      "Guilt-free spicy snacking alternative to fried crisps",
+    ],
+    storage: "Store in a cool, airtight pack to preserve maximum crunch. Shelf life: 6 months.",
+    ingredients: "Jumbo Lotus Seeds (Phool Makhana), Cold-Pressed Edible Oil, Peri Peri Spices (Chilli, Garlic, Lemon, Salt).",
+  },
+  "mint-makhana": {
+    origin: "Mithila Lotus Belt & Traditional Herb Infusion",
+    tradition:
+      "Artisanal roasted Mithila lotus seeds tossed gently with authentic sun-dried garden pudina (mint), Himalayan black salt, and roasted cumin for a soothing, digestive crunch.",
+    nutrition: [
+      "15g clean plant protein per 100g",
+      "Digestive benefits from natural mint and roasted jeera",
+      "Zero cholesterol and cooling Ayurvedic properties",
+    ],
+    storage: "Store in an airtight container away from moisture. Shelf life: 6 months.",
+    ingredients: "Jumbo Lotus Seeds (Phool Makhana), Cold-Pressed Edible Oil, Pudina Herb Powder, Black Salt, Cumin.",
+  },
   "chana-sattu": {
     origin: "Traditional Wood-Fired Clay Ovens of Bihar",
     tradition:

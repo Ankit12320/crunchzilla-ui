@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/constants/site";
 import { fetchCatalog } from "@/lib/catalog";
+import { fetchBlogs } from "@/lib/blogs";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const products = await fetchCatalog();
+  const [products, blogs] = await Promise.all([fetchCatalog(), fetchBlogs()]);
   const currentDate = new Date().toISOString();
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -18,6 +19,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: currentDate,
       changeFrequency: "daily",
       priority: 0.9,
+    },
+    {
+      url: `${SITE.url}/blog`,
+      lastModified: currentDate,
+      changeFrequency: "daily",
+      priority: 0.85,
     },
     {
       url: `${SITE.url}/about`,
@@ -79,6 +86,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  return [...staticRoutes, ...productRoutes, ...categoryRoutes];
+  const blogRoutes: MetadataRoute.Sitemap = blogs.map((blog) => ({
+    url: `${SITE.url}/blog/${blog.slug}`,
+    lastModified: currentDate,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...productRoutes, ...categoryRoutes, ...blogRoutes];
 }
 
