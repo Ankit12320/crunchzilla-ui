@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import CartDrawer from "@/components/cart/CartDrawer";
 import Toaster from "@/components/common/Toaster";
@@ -43,6 +44,9 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
+  },
+  verification: {
+    google: SITE.googleSiteVerification || undefined,
   },
   alternates: {
     canonical: "./",
@@ -128,6 +132,24 @@ export default function RootLayout({
         <JsonLd data={orgSchema} />
         <JsonLd data={websiteSchema} />
         <JsonLd data={localBusinessSchema} />
+        {SITE.googleAnalyticsId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${SITE.googleAnalyticsId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${SITE.googleAnalyticsId}', {
+                  page_path: window.location.pathname,
+                });
+              `}
+            </Script>
+          </>
+        )}
       </head>
       <body className="antialiased">
         {children}

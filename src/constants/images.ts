@@ -50,6 +50,8 @@ export const IMAGES = {
   catalog: {
     tilkut: hero.tilkut,
     makhana: products.makhana,
+    periPeriMakhana: products.makhanaPackets,
+    mintMakhana: products.makhana,
     sattu: products.sattu,
     katarniChura: pantry.sesameSeeds,
     basmatiPoha: products.basmatiPoha,

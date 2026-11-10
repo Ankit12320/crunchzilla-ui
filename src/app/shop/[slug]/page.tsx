@@ -85,6 +85,36 @@ const SEO_PRODUCT_OVERRIDES: Record<
       "Air roasted Makhana in Bangalore",
     ],
   },
+  "peri-peri-makhana": {
+    title: "Buy Peri Peri Makhana Online | Spicy Roasted Flavoured Makhana Near Me - Crunchzilla",
+    description:
+      "Buy fiery Peri Peri Roasted Makhana online. Jumbo Mithila fox nuts seasoned with authentic African Bird's eye chilli, lime & spices. Zero palm oil, high protein, guilt-free crunch. Express delivery nearby in Bangalore & India.",
+    extraKeywords: [
+      "Peri Peri Makhana",
+      "Buy Peri Peri Makhana online",
+      "Peri Peri Makhana near me",
+      "Flavoured Makhana online",
+      "Spicy Roasted Makhana",
+      "Peri Peri Fox Nuts",
+      "Healthy spicy snacks near me",
+      "Diet snacks Peri Peri Makhana",
+    ],
+  },
+  "mint-makhana": {
+    title: "Buy Mint Pudina Makhana Online | Cooling Roasted Flavoured Makhana Near Me - Crunchzilla",
+    description:
+      "Buy refreshing Mint Pudina Roasted Makhana online. Handpicked jumbo lotus seeds roasted with real sun-dried garden mint, black salt & cumin. Zero cholesterol, crisp & digestive. Express delivery in Bangalore & India.",
+    extraKeywords: [
+      "Mint Makhana",
+      "Pudina Makhana",
+      "Buy Mint Makhana online",
+      "Mint Makhana near me",
+      "Pudina flavoured Fox Nuts",
+      "Flavoured Makhana online",
+      "Digestive roasted snacks near me",
+      "Crunchzilla Mint Makhana",
+    ],
+  },
   "basmati-poha": {
     title: "Buy Basmati Poha Online | Thin Flattened Chura Near Me - Crunchzilla",
     description:

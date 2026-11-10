@@ -40,6 +40,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       "gaya-tilkut",
       "chana-sattu",
       "roasted-makhana",
+      "peri-peri-makhana",
+      "mint-makhana",
     ].includes(product.slug);
 
     return {

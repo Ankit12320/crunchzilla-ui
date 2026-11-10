@@ -91,6 +91,108 @@
     ]
   },
   {
+    "slug": "peri-peri-makhana",
+    "name": "Fiery Peri Peri Roasted Makhana",
+    "category": "makhana",
+    "eyebrow": "Gourmet Flavoured Crunch",
+    "description": "Jumbo 6+ HP Mithila lotus seeds slow-roasted in micro-batches with zero palm oil, tossed with zesty African Bird's Eye chilli, tangy lime, and aromatic herbs.",
+    "image": "periPeriMakhana",
+    "imageAlt": "Crunchzilla Fiery Peri Peri Flavoured Roasted Makhana Fox Nuts",
+    "images": [
+      "/images/products/makhana-packets-bowl.jpg",
+      "/images/products/makhana.jpg",
+      "/images/hero/makhana-hero-ai.jpg"
+    ],
+    "primaryBadge": {
+      "icon": "local_fire_department",
+      "label": "Spicy Zest",
+      "tone": "terracotta"
+    },
+    "secondaryBadge": {
+      "label": "Zero Palm Oil",
+      "tone": "cardamom"
+    },
+    "highlight": {
+      "left": "Fiery African Peri Peri",
+      "right": "16g Protein / 100g"
+    },
+    "rating": 4.9,
+    "reviewCount": 86,
+    "popularity": 96,
+    "variantLabel": "Select Pack Size",
+    "variants": [
+      {
+        "id": "100g",
+        "label": "100g Pouch",
+        "price": 149,
+        "mrp": 179
+      },
+      {
+        "id": "250g",
+        "label": "250g Pack",
+        "price": 349,
+        "mrp": 399
+      },
+      {
+        "id": "500g",
+        "label": "500g Family Pack",
+        "price": 649,
+        "mrp": 749
+      }
+    ]
+  },
+  {
+    "slug": "mint-makhana",
+    "name": "Refreshing Mint (Pudina) Makhana",
+    "category": "makhana",
+    "eyebrow": "Herbal Gourmet Crunch",
+    "description": "Slow-roasted Mithila fox nuts infused with natural garden pudina (mint), black salt, and roasted cumin. Light, digestive, and extraordinarily refreshing.",
+    "image": "mintMakhana",
+    "imageAlt": "Crunchzilla Refreshing Pudina Mint Flavoured Roasted Makhana Fox Nuts",
+    "images": [
+      "/images/products/makhana.jpg",
+      "/images/products/makhana-packets-bowl.jpg",
+      "/images/hero/makhana-chai.jpg"
+    ],
+    "primaryBadge": {
+      "icon": "eco",
+      "label": "Cooling Pudina",
+      "tone": "forest"
+    },
+    "secondaryBadge": {
+      "label": "Air Roasted",
+      "tone": "cardamom"
+    },
+    "highlight": {
+      "left": "Fresh Sun-Dried Mint",
+      "right": "Zero Cholesterol"
+    },
+    "rating": 4.9,
+    "reviewCount": 74,
+    "popularity": 94,
+    "variantLabel": "Select Pack Size",
+    "variants": [
+      {
+        "id": "100g",
+        "label": "100g Pouch",
+        "price": 149,
+        "mrp": 179
+      },
+      {
+        "id": "250g",
+        "label": "250g Pack",
+        "price": 349,
+        "mrp": 399
+      },
+      {
+        "id": "500g",
+        "label": "500g Family Pack",
+        "price": 649,
+        "mrp": 749
+      }
+    ]
+  },
+  {
     "slug": "chana-sattu",
     "name": "Pure Roasted Chana Sattu",
     "category": "sattu",

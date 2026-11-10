@@ -80,7 +80,7 @@ export default function TestimonialsSection({
                     width={968}
                     height={1024}
                     sizes="(min-width: 1024px) 420px, 90vw"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-contain block rounded-xl"
                     priority
                   />
 

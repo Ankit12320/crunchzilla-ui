@@ -25,6 +25,8 @@ export const SITE = {
   happyHouseholds: "500+",
   feedbackFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLSeGD9Iz1jcNwF1c6OV9tbsogCtNUzc5mE0yqmbENUVkvkEa9w/viewform?usp=header",
+  googleSiteVerification: process.env.NEXT_PUBLIC_GSC_VERIFICATION || "",
+  googleAnalyticsId: process.env.NEXT_PUBLIC_GA_ID || "",
   keywords: [
     "Buy Tilkut Online",
     "Gaya Tilkut Near Me",
@@ -35,6 +37,12 @@ export const SITE = {
     "Buy Makhana Online",
     "Makhana Near Me",
     "Makhana Nearby",
+    "Peri Peri Makhana",
+    "Buy Peri Peri Makhana Online",
+    "Mint Makhana",
+    "Pudina Makhana",
+    "Flavoured Makhana Online",
+    "Roasted Makhana Fox Nuts",
     "Katarni Chura Near Me",
     "Chura Near By",
     "Chura Nearby",
