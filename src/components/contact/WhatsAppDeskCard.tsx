@@ -1,5 +1,6 @@
 import Icon from "@/components/common/Icon";
 import { SITE } from "@/constants/site";
+import { whatsappLink } from "@/lib/whatsapp";
 
 export default function WhatsAppDeskCard() {
   return (
@@ -22,24 +23,16 @@ export default function WhatsAppDeskCard() {
             requests.
           </p>
         </div>
-        <div className="pt-2 space-y-2.5">
+        <div className="pt-2">
+          <div className="mb-3 text-title-lg tracking-wider">{SITE.phoneDisplay}</div>
           <a
-            href={SITE.orderWhatsAppLink}
+            href={whatsappLink(`Hi ${SITE.name}, I have a question about your artisanal products.`)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-pure-parchment px-4 py-3 text-label-md font-bold text-botanical-forest shadow-md transition-all duration-200 hover:scale-[1.02] hover:bg-golden-sand active:scale-[0.98]"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-pure-parchment px-4 py-3 text-label-lg text-botanical-forest shadow-md transition-all duration-200 hover:scale-[1.02] hover:bg-golden-sand active:scale-[0.98]"
           >
-            <Icon name="chat" className="text-[20px] text-whatsapp-emerald" />
-            Order Now: {SITE.orderPhoneDisplay}
-          </a>
-          <a
-            href={SITE.supportWhatsAppLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white/20 border border-white/30 px-4 py-3 text-label-md font-bold text-pure-parchment backdrop-blur-md shadow-md transition-all duration-200 hover:scale-[1.02] hover:bg-white/30 active:scale-[0.98]"
-          >
-            <Icon name="chat" className="text-[20px] text-emerald-300" />
-            WhatsApp Support: {SITE.supportPhoneDisplay}
+            <Icon name="send" className="text-[20px]" />
+            Open Instant Chat
           </a>
         </div>
       </div>
