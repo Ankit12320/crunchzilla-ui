@@ -18,7 +18,7 @@ export function getSanitizedWhatsAppNumber(phone?: string): string {
 /**
  * Builds a standard WhatsApp click-to-chat URL using wa.me.
  * Strictly encodes the message with encodeURIComponent to support Android, iPhone, and Desktop.
- * Example format: https://wa.me/917856019631?text=ENCODED_MESSAGE
+ * Example format: https://wa.me/919448874640?text=ENCODED_MESSAGE
  */
 export function whatsappLink(message?: string, phone?: string): string {
   const cleanNumber = getSanitizedWhatsAppNumber(phone);
