@@ -97,7 +97,7 @@ export default function ForgotPasswordForm() {
             type="text"
             value={identifier}
             onChange={(e) => setIdentifier(e.target.value)}
-            placeholder="e.g. crunchzilla02@gmail.com or 9448874640"
+            placeholder="e.g. crunchzilla02@gmail.com or 7856019631"
             className="w-full min-h-[46px] rounded-xl border border-surface-container-high bg-surface-container-lowest pr-4 pl-11 text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
           />
         </div>

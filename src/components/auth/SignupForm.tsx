@@ -141,7 +141,7 @@ export default function SignupForm() {
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            placeholder="e.g. 9448874640"
+            placeholder="e.g. 7856019631"
             className="w-full min-h-[46px] rounded-xl border border-surface-container-high bg-surface-container-lowest pr-4 pl-11 text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
           />
         </div>

@@ -35,9 +35,9 @@ export default function ContactChannels() {
       </Channel>
 
       <Channel icon="phone_in_talk" iconClass="bg-secondary-fixed text-secondary">
-        <span className={labelClass}>Customer Care Hotline</span>
+        <span className={labelClass}>Customer Hotline</span>
         <a
-          href={`tel:+${SITE.customerCareNumber}`}
+          href={`tel:+${SITE.whatsappNumber}`}
           className="block text-title-sm text-on-surface transition-colors hover:text-primary"
         >
           {SITE.phoneDisplay}

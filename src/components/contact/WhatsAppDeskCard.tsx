@@ -24,12 +24,7 @@ export default function WhatsAppDeskCard() {
           </p>
         </div>
         <div className="pt-2">
-          <div className="mb-3">
-            <span className="text-label-xs uppercase tracking-wider text-pure-parchment/80 block">
-              Direct Order Desk
-            </span>
-            <span className="text-title-lg font-bold tracking-wider">{SITE.orderWhatsAppDisplay}</span>
-          </div>
+          <div className="mb-3 text-title-lg tracking-wider">{SITE.phoneDisplay}</div>
           <a
             href={whatsappLink(`Hi ${SITE.name}, I have a question about your artisanal products.`)}
             target="_blank"
@@ -37,7 +32,7 @@ export default function WhatsAppDeskCard() {
             className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-pure-parchment px-4 py-3 text-label-lg text-botanical-forest shadow-md transition-all duration-200 hover:scale-[1.02] hover:bg-golden-sand active:scale-[0.98]"
           >
             <Icon name="send" className="text-[20px]" />
-            Open Instant Chat ({SITE.orderWhatsAppDisplay})
+            Open Instant Chat
           </a>
         </div>
       </div>

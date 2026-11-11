@@ -14,7 +14,6 @@ import {
   whatsappWebLink,
   buildWhatsAppOrderMessage,
 } from "@/lib/whatsapp";
-import { SITE } from "@/constants/site";
 
 const subscribe = () => () => {};
 
@@ -427,10 +426,6 @@ export default function CartView() {
                 <div className="flex items-center gap-2">
                   <Icon name="payments" className="text-[18px] text-secondary" />
                   <span>Direct order • Pay via UPI/Card • Fresh batches</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Icon name="phone" className="text-[18px] text-secondary" />
-                  <span>Customer Care Helpline: {SITE.phoneDisplay}</span>
                 </div>
               </div>
             </div>
