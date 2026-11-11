@@ -9,7 +9,11 @@ export const SITE = {
   footerBlurb:
     "Handcrafted, slow-roasted artisanal staples and regional heritage delicacies from Bihar crafted with zero shortcuts, no palm oil, and genuine farm-fresh ingredients.",
   whatsappNumber: "919448874640",
+  secondaryWhatsappNumber: "917856019631",
   phoneDisplay: "+91 9448874640",
+  secondaryPhoneDisplay: "+91 7856019631",
+  allPhonesDisplay: "+91 9448874640 / +91 7856019631",
+  phoneNumbers: ["+91 9448874640", "+91 7856019631"],
   email: "crunchzilla02@gmail.com",
   // Support (WhatsApp, phone, email) is available round the clock
   supportHours: "24*7",

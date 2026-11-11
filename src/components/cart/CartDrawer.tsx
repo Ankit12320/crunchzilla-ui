@@ -20,6 +20,7 @@ import {
   whatsappWebLink,
   buildWhatsAppOrderMessage,
 } from "@/lib/whatsapp";
+import { SITE } from "@/constants/site";
 
 const subscribe = () => () => {};
 
@@ -347,12 +348,17 @@ export default function CartDrawer() {
                 </Link>
               </div>
 
-              <p className="text-center text-[12px] text-on-surface-variant flex items-center justify-center gap-1.5">
-                <Icon
-                  name="verified_user"
-                  className="text-[15px] text-secondary"
-                />
-                Direct Order on WhatsApp • Pay via UPI/Card • Fresh Batches
+              <p className="text-center text-[12px] text-on-surface-variant flex flex-col items-center justify-center gap-0.5">
+                <span className="flex items-center gap-1.5">
+                  <Icon
+                    name="verified_user"
+                    className="text-[15px] text-secondary"
+                  />
+                  Direct Order on WhatsApp • Pay via UPI/Card • Fresh Batches
+                </span>
+                <span className="text-[11px] text-on-surface-variant/80">
+                  Helplines: {SITE.phoneDisplay} | {SITE.secondaryPhoneDisplay}
+                </span>
               </p>
             </div>
           </>

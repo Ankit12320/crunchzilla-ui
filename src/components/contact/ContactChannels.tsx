@@ -35,13 +35,21 @@ export default function ContactChannels() {
       </Channel>
 
       <Channel icon="phone_in_talk" iconClass="bg-secondary-fixed text-secondary">
-        <span className={labelClass}>Customer Hotline</span>
-        <a
-          href={`tel:+${SITE.whatsappNumber}`}
-          className="block text-title-sm text-on-surface transition-colors hover:text-primary"
-        >
-          {SITE.phoneDisplay}
-        </a>
+        <span className={labelClass}>Customer Hotlines (Call &amp; Order)</span>
+        <div className="space-y-1">
+          <a
+            href={`tel:+${SITE.whatsappNumber}`}
+            className="block text-title-sm text-on-surface transition-colors hover:text-primary"
+          >
+            {SITE.phoneDisplay}
+          </a>
+          <a
+            href={`tel:+${SITE.secondaryWhatsappNumber}`}
+            className="block text-title-sm text-on-surface transition-colors hover:text-primary"
+          >
+            {SITE.secondaryPhoneDisplay}
+          </a>
+        </div>
         <p className="text-body-sm text-on-surface-variant">Available {SITE.supportHours}, all days</p>
       </Channel>
 

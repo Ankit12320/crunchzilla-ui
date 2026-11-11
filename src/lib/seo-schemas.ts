@@ -27,7 +27,13 @@ export function getOrganizationSchema() {
         contactType: "customer service",
         availableLanguage: ["English", "Hindi"],
         areaServed: "IN",
-        contactOption: "TollFree",
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: SITE.secondaryPhoneDisplay,
+        contactType: "customer service",
+        availableLanguage: ["English", "Hindi"],
+        areaServed: "IN",
       },
     ],
     sameAs: [
@@ -272,7 +278,7 @@ export function getHomepageFaqSchema() {
     {
       question: "How do I order authentic Bihar Tilkut, Sattu, and Chura nearby on WhatsApp?",
       answer:
-        "You can easily order on WhatsApp by clicking the WhatsApp button on Crunchzilla.in or messaging +91 9448874640. Select your pack size for Gaya Tilkut, Wood-Fired Chana Sattu, Jumbo Makhana, or Katarni Chura for instant checkout and dispatch.",
+        "You can easily order on WhatsApp by clicking the WhatsApp button on Crunchzilla.in or messaging +91 9448874640 or +91 7856019631. Select your pack size for Gaya Tilkut, Wood-Fired Chana Sattu, Jumbo Makhana, or Katarni Chura for instant checkout and dispatch.",
     },
     {
       question: "What makes Crunchzilla's Katarni Chura from Bihar unique?",

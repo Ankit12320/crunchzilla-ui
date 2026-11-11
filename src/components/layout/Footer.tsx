@@ -11,14 +11,32 @@ const linkClass = "transition-colors hover:text-primary";
 
 export default function Footer() {
   const careItems = [
-    { icon: "call", iconClass: "text-primary", label: SITE.phoneDisplay, href: `tel:+${SITE.whatsappNumber}` },
+    {
+      icon: "call",
+      iconClass: "text-primary",
+      label: `Helpline: ${SITE.phoneDisplay}`,
+      href: `tel:+${SITE.whatsappNumber}`,
+    },
+    {
+      icon: "call",
+      iconClass: "text-primary",
+      label: `Helpline 2: ${SITE.secondaryPhoneDisplay}`,
+      href: `tel:+${SITE.secondaryWhatsappNumber}`,
+    },
     { icon: "mail", iconClass: "text-primary", label: SITE.email, href: `mailto:${SITE.email}` },
     { icon: "schedule", iconClass: "text-secondary", label: `Open ${SITE.supportHours}, all days` },
     {
       icon: "chat",
       iconClass: "text-whatsapp-emerald",
-      label: `WhatsApp Support: ${SITE.phoneDisplay}`,
+      label: `WhatsApp: ${SITE.phoneDisplay}`,
       href: whatsappLink(),
+      external: true,
+    },
+    {
+      icon: "chat",
+      iconClass: "text-whatsapp-emerald",
+      label: `WhatsApp 2: ${SITE.secondaryPhoneDisplay}`,
+      href: whatsappLink(undefined, SITE.secondaryWhatsappNumber),
       external: true,
     },
     {
