@@ -46,7 +46,7 @@ const FAQ_ITEMS: FaqItem[] = [
     badge: "Instant WhatsApp Order",
     question: "How do I order Tilkut, Sattu, Makhana, or Chura nearby on WhatsApp?",
     answer:
-      "Ordering on WhatsApp is instant and effortless! Simply click the 'Order on WhatsApp' button on any product card or message our concierge at +91 7856019631. Specify your required weight (500g or 1kg) and delivery address for immediate order confirmation and live dispatch updates.",
+      "Ordering on WhatsApp is instant and effortless! Simply click the 'Order on WhatsApp' button on any product card or message our concierge at +91 9448874640 (Order Desk) or +91 7856019631 (Support). Specify your required weight (500g or 1kg) and delivery address for immediate order confirmation and live dispatch updates.",
   },
 ];
 
@@ -141,7 +141,7 @@ export default function SeoFaqSection() {
               </div>
 
               <a
-                href="https://wa.me/917856019631?text=Hi%20Crunchzilla%2C%20I%20want%20to%20order%20fresh%20Tilkut%2C%20Sattu%2C%20Makhana%2C%20and%20Katarni%20Chura%20near%20me."
+                href="https://wa.me/919448874640?text=Hi%20Crunchzilla%2C%20I%20want%20to%20order%20fresh%20Tilkut%2C%20Sattu%2C%20Makhana%2C%20and%20Katarni%20Chura%20near%20me."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[44px] shrink-0 items-center justify-center gap-2 rounded-full bg-whatsapp-emerald px-6 py-2.5 text-label-sm font-bold text-pure-parchment shadow-premium-sm transition-all hover:bg-secondary active:scale-95 whitespace-nowrap"

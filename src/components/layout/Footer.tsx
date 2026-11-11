@@ -4,23 +4,34 @@ import Icon from "@/components/common/Icon";
 import { FacebookIcon, InstagramIcon } from "@/components/common/SocialIcons";
 import { IMAGES } from "@/constants/images";
 import { FOOTER_CATEGORIES, LEGAL_LINKS, NAV_LINKS, SITE } from "@/constants/site";
-import { whatsappLink } from "@/lib/whatsapp";
 
 const headingClass = "mb-4 text-title-sm uppercase tracking-widest text-primary";
 const linkClass = "transition-colors hover:text-primary";
 
 export default function Footer() {
   const careItems = [
-    { icon: "call", iconClass: "text-primary", label: SITE.phoneDisplay, href: `tel:+${SITE.whatsappNumber}` },
-    { icon: "mail", iconClass: "text-primary", label: SITE.email, href: `mailto:${SITE.email}` },
-    { icon: "schedule", iconClass: "text-secondary", label: `Open ${SITE.supportHours}, all days` },
     {
       icon: "chat",
       iconClass: "text-whatsapp-emerald",
-      label: `WhatsApp Support: ${SITE.phoneDisplay}`,
-      href: whatsappLink(),
+      label: `Order Now: ${SITE.orderPhoneDisplay}`,
+      href: SITE.orderWhatsAppLink,
       external: true,
     },
+    {
+      icon: "chat",
+      iconClass: "text-whatsapp-emerald",
+      label: `WhatsApp Support: ${SITE.supportPhoneDisplay}`,
+      href: SITE.supportWhatsAppLink,
+      external: true,
+    },
+    {
+      icon: "call",
+      iconClass: "text-primary",
+      label: `Helpline: ${SITE.supportPhoneDisplay}`,
+      href: `tel:+${SITE.supportWhatsappNumber}`,
+    },
+    { icon: "mail", iconClass: "text-primary", label: SITE.email, href: `mailto:${SITE.email}` },
+    { icon: "schedule", iconClass: "text-secondary", label: `Open ${SITE.supportHours}, all days` },
     {
       icon: "groups",
       iconClass: "text-whatsapp-emerald",

@@ -427,6 +427,20 @@ export default function CartView() {
                   <Icon name="payments" className="text-[18px] text-secondary" />
                   <span>Direct order • Pay via UPI/Card • Fresh batches</span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <Icon name="chat" className="text-[18px] text-whatsapp-emerald" />
+                  <span>
+                    WhatsApp Support:{" "}
+                    <a
+                      href="https://wa.me/917856019631"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline font-medium text-on-surface hover:text-primary"
+                    >
+                      +91 7856019631
+                    </a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>

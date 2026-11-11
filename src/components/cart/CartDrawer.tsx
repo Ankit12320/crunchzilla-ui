@@ -347,13 +347,26 @@ export default function CartDrawer() {
                 </Link>
               </div>
 
-              <p className="text-center text-[12px] text-on-surface-variant flex items-center justify-center gap-1.5">
-                <Icon
-                  name="verified_user"
-                  className="text-[15px] text-secondary"
-                />
-                Direct Order on WhatsApp • Pay via UPI/Card • Fresh Batches
-              </p>
+              <div className="text-center text-[12px] text-on-surface-variant space-y-0.5">
+                <p className="flex items-center justify-center gap-1.5">
+                  <Icon
+                    name="verified_user"
+                    className="text-[15px] text-secondary"
+                  />
+                  <span>Direct Order on WhatsApp • Pay via UPI/Card</span>
+                </p>
+                <p className="text-[11px] text-on-surface-variant/75">
+                  Customer Support:{" "}
+                  <a
+                    href="https://wa.me/917856019631"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-primary font-medium"
+                  >
+                    +91 7856019631
+                  </a>
+                </p>
+              </div>
             </div>
           </>
         ) : (

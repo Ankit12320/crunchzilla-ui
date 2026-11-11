@@ -8,7 +8,15 @@ export const SITE = {
     "Buy authentic traditional food products from Bihar online: Premium Makhana, Pure Chana Sattu, Gaya Tilkut, Katarni Chura, Basmati Poha & Organic Desi Gur. Fast delivery in Bangalore, Bihar & across India.",
   footerBlurb:
     "Handcrafted, slow-roasted artisanal staples and regional heritage delicacies from Bihar crafted with zero shortcuts, no palm oil, and genuine farm-fresh ingredients.",
-  whatsappNumber: "917856019631",
+  // Customer Order WhatsApp Number (Order Now opens WhatsApp with 9448874640)
+  whatsappNumber: "919448874640",
+  orderPhoneDisplay: "+91 9448874640",
+  orderWhatsAppLink: "https://wa.me/919448874640",
+
+  // WhatsApp Support & Customer Care (Support opens WhatsApp with 7856019631)
+  supportWhatsappNumber: "917856019631",
+  supportPhoneDisplay: "+91 7856019631",
+  supportWhatsAppLink: "https://wa.me/917856019631",
   phoneDisplay: "+91 7856019631",
   email: "crunchzilla02@gmail.com",
   // Support (WhatsApp, phone, email) is available round the clock
