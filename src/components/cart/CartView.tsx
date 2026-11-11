@@ -430,7 +430,7 @@ export default function CartView() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Icon name="phone" className="text-[18px] text-secondary" />
-                  <span>Order Helplines: {SITE.phoneDisplay} / {SITE.secondaryPhoneDisplay}</span>
+                  <span>Customer Care Helpline: {SITE.phoneDisplay}</span>
                 </div>
               </div>
             </div>

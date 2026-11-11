@@ -357,7 +357,7 @@ export default function CartDrawer() {
                   Direct Order on WhatsApp • Pay via UPI/Card • Fresh Batches
                 </span>
                 <span className="text-[11px] text-on-surface-variant/80">
-                  Helplines: {SITE.phoneDisplay} | {SITE.secondaryPhoneDisplay}
+                  Customer Care: {SITE.phoneDisplay}
                 </span>
               </p>
             </div>

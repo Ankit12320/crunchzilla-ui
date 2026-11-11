@@ -141,7 +141,7 @@ export default function SeoFaqSection() {
               </div>
 
               <a
-                href="https://wa.me/917856019631?text=Hi%20Crunchzilla%2C%20I%20want%20to%20order%20fresh%20Tilkut%2C%20Sattu%2C%20Makhana%2C%20and%20Katarni%20Chura%20near%20me."
+                href="https://wa.me/919448874640?text=Hi%20Crunchzilla%2C%20I%20want%20to%20order%20fresh%20Tilkut%2C%20Sattu%2C%20Makhana%2C%20and%20Katarni%20Chura%20near%20me."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[44px] shrink-0 items-center justify-center gap-2 rounded-full bg-whatsapp-emerald px-6 py-2.5 text-label-sm font-bold text-pure-parchment shadow-premium-sm transition-all hover:bg-secondary active:scale-95 whitespace-nowrap"
