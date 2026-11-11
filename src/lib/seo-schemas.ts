@@ -27,7 +27,13 @@ export function getOrganizationSchema() {
         contactType: "customer service",
         availableLanguage: ["English", "Hindi"],
         areaServed: "IN",
-        contactOption: "TollFree",
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: SITE.secondaryPhoneDisplay,
+        contactType: "customer service",
+        availableLanguage: ["English", "Hindi"],
+        areaServed: "IN",
       },
     ],
     sameAs: [

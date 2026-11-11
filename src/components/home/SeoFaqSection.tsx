@@ -46,7 +46,7 @@ const FAQ_ITEMS: FaqItem[] = [
     badge: "Instant WhatsApp Order",
     question: "How do I order Tilkut, Sattu, Makhana, or Chura nearby on WhatsApp?",
     answer:
-      "Ordering on WhatsApp is instant and effortless! Simply click the 'Order on WhatsApp' button on any product card or message our concierge at +91 7856019631. Specify your required weight (500g or 1kg) and delivery address for immediate order confirmation and live dispatch updates.",
+      "Ordering on WhatsApp is instant and effortless! Simply click the 'Order on WhatsApp' button on any product card or message our concierge at +91 7856019631 (or alternate support at +91 9448874640). Specify your required weight (500g or 1kg) and delivery address for immediate order confirmation and live dispatch updates.",
   },
 ];
 

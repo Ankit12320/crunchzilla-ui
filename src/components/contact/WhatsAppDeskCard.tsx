@@ -24,16 +24,30 @@ export default function WhatsAppDeskCard() {
           </p>
         </div>
         <div className="pt-2">
-          <div className="mb-3 text-title-lg tracking-wider">{SITE.phoneDisplay}</div>
-          <a
-            href={whatsappLink(`Hi ${SITE.name}, I have a question about your artisanal products.`)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-pure-parchment px-4 py-3 text-label-lg text-botanical-forest shadow-md transition-all duration-200 hover:scale-[1.02] hover:bg-golden-sand active:scale-[0.98]"
-          >
-            <Icon name="send" className="text-[20px]" />
-            Open Instant Chat
-          </a>
+          <div className="mb-3 space-y-0.5">
+            <div className="text-title-md font-bold tracking-wider">{SITE.phoneDisplay} (Primary)</div>
+            <div className="text-title-sm tracking-wider text-pure-parchment/80">{SITE.secondaryPhoneDisplay} (Alternate Support)</div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <a
+              href={whatsappLink(`Hi ${SITE.name}, I have a query about products or orders.`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-1.5 rounded-full bg-pure-parchment px-3 py-2.5 text-label-sm font-bold text-botanical-forest shadow-md transition-all duration-200 hover:scale-[1.02] hover:bg-golden-sand active:scale-[0.98]"
+            >
+              <Icon name="chat" className="text-[17px] text-whatsapp-emerald" />
+              Primary: {SITE.phoneDisplay}
+            </a>
+            <a
+              href={whatsappLink(`Hi ${SITE.name}, I have a query about products or orders.`, SITE.secondaryWhatsappNumber)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-1.5 rounded-full bg-white/20 border border-white/30 px-3 py-2.5 text-label-sm font-bold text-pure-parchment backdrop-blur-md shadow-md transition-all duration-200 hover:scale-[1.02] hover:bg-white/30 active:scale-[0.98]"
+            >
+              <Icon name="chat" className="text-[17px] text-emerald-300" />
+              Alternate: {SITE.secondaryPhoneDisplay}
+            </a>
+          </div>
         </div>
       </div>
     </div>
