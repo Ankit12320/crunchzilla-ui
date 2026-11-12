@@ -47,7 +47,7 @@ export default function VideoSection() {
                   src="/videos/crunchzilla-story.mp4"
                   controls
                   playsInline
-                  preload="metadata"
+                  preload="none"
                   className="h-full w-full object-cover"
                   aria-label="Authentic food products from Bihar - Crunchzilla story video"
                 >
