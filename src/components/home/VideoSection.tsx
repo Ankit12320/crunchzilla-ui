@@ -11,22 +11,14 @@ import { whatsappLink } from "@/lib/whatsapp";
 
 export default function VideoSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
 
   const handlePlayToggle = () => {
     if (!videoRef.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current
-        .play()
-        .then(() => setIsPlaying(true))
-        .catch(() => {
-          // Fallback if browser blocks programmatic play
-          setIsPlaying(false);
-        });
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
+    setHasStarted(true);
+    videoRef.current.play().catch((err) => {
+      console.warn("Video play triggered native controls:", err);
+    });
   };
 
   return (
@@ -56,9 +48,6 @@ export default function VideoSection() {
                   controls
                   playsInline
                   preload="metadata"
-                  onPlay={() => setIsPlaying(true)}
-                  onPause={() => setIsPlaying(false)}
-                  onEnded={() => setIsPlaying(false)}
                   className="h-full w-full object-cover"
                   aria-label="Authentic food products from Bihar - Crunchzilla story video"
                 >
@@ -66,8 +55,8 @@ export default function VideoSection() {
                   Your browser does not support the video tag.
                 </video>
 
-                {/* Custom Interactive Play Overlay (visible when paused) */}
-                {!isPlaying && (
+                {/* Custom Interactive Play Overlay (visible until first user play) */}
+                {!hasStarted && (
                   <button
                     type="button"
                     onClick={handlePlayToggle}
