@@ -13,6 +13,7 @@ import SeoFaqSection from "@/components/home/SeoFaqSection";
 import FeedbackSection from "@/components/home/FeedbackSection";
 import VideoSection from "@/components/home/VideoSection";
 import CrackerAnimation from "@/components/home/CrackerAnimation";
+import ChhathPujaPlayer from "@/components/home/ChhathPujaPlayer";
 import JsonLd from "@/components/seo/JsonLd";
 import { fetchCatalog } from "@/lib/catalog";
 import { fetchTestimonials } from "@/lib/testimonials";
@@ -84,6 +85,7 @@ export default async function Home() {
       <main className="relative flex w-full flex-col bg-surface">
         <CrackerAnimation />
         <TrustRibbon />
+        <ChhathPujaPlayer />
         <MakhanaHeroSection />
         <ExploreMakhanaSection />
         <HeroSection />
