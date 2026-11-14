@@ -36,6 +36,7 @@ const PARTICLES: MakhanaParticle[] = [
     delay: "3.5s",
     animationName: "makhanaFall2",
     blur: true,
+    desktopOnly: true,
   },
   {
     id: 3,
@@ -54,6 +55,7 @@ const PARTICLES: MakhanaParticle[] = [
     duration: "14s",
     delay: "5.5s",
     animationName: "makhanaFall1",
+    desktopOnly: true,
   },
   {
     id: 5,
@@ -73,6 +75,7 @@ const PARTICLES: MakhanaParticle[] = [
     delay: "7s",
     animationName: "makhanaFall3",
     blur: true,
+    desktopOnly: true,
   },
 
   // Secondary stream (desktop & tablet only to keep mobile uncluttered)

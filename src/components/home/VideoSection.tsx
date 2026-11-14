@@ -119,7 +119,7 @@ export default function VideoSection() {
                   alt="Crunchzilla stall showing freshly packed Makhana bags, founder, and official exhibition banners"
                   width={576}
                   height={1024}
-                  priority
+                  loading="lazy"
                   sizes="(min-width: 1024px) 42vw, (min-width: 640px) 70vw, 92vw"
                   className="h-auto w-full object-contain block"
                 />

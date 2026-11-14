@@ -199,12 +199,18 @@ export default function CrackerAnimation() {
     handleResize();
     window.addEventListener("resize", handleResize, { passive: true });
 
-    // Initial festive welcoming burst
+    // Initial festive welcoming burst deferred until page settles (3.5s)
     const timer = setTimeout(() => {
-      if (!isScrolledRef.current) {
-        triggerCelebration();
+      if (!isScrolledRef.current && typeof window !== "undefined") {
+        if ("requestIdleCallback" in window) {
+          (window as unknown as { requestIdleCallback: (cb: () => void) => void }).requestIdleCallback(() => {
+            triggerCelebration();
+          });
+        } else {
+          triggerCelebration();
+        }
       }
-    }, 700);
+    }, 3500);
 
     // Pause when scrolled past hero
     const handleScroll = () => {

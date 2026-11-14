@@ -113,7 +113,7 @@ export default function HeroSection() {
                   src={IMAGES.hero.tilkut}
                   alt="Crunchzilla authentic handmade Tilkut presented in clay serveware"
                   fill
-                  priority
+                  loading="lazy"
                   unoptimized
                   sizes="(min-width: 1024px) 512px, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
