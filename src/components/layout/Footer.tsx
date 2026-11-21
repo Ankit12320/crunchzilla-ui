@@ -18,23 +18,10 @@ export default function Footer() {
       href: `tel:+${SITE.whatsappNumber}`,
     },
     {
-      icon: "call",
-      iconClass: "text-primary",
-      label: `Alt Support: ${SITE.secondaryPhoneDisplay}`,
-      href: `tel:+${SITE.secondaryWhatsappNumber}`,
-    },
-    {
       icon: "chat",
       iconClass: "text-whatsapp-emerald",
       label: `WhatsApp: ${SITE.phoneDisplay}`,
       href: whatsappLink(),
-      external: true,
-    },
-    {
-      icon: "chat",
-      iconClass: "text-whatsapp-emerald",
-      label: `Alt WhatsApp: ${SITE.secondaryPhoneDisplay}`,
-      href: whatsappLink(undefined, SITE.secondaryWhatsappNumber),
       external: true,
     },
     { icon: "mail", iconClass: "text-primary", label: SITE.email, href: `mailto:${SITE.email}` },

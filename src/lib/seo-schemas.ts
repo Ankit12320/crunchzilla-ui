@@ -20,22 +20,13 @@ export function getOrganizationSchema() {
     description: SITE.description,
     email: SITE.email,
     telephone: SITE.phoneDisplay,
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        telephone: SITE.phoneDisplay,
-        contactType: "customer service",
-        availableLanguage: ["English", "Hindi"],
-        areaServed: "IN",
-      },
-      {
-        "@type": "ContactPoint",
-        telephone: SITE.secondaryPhoneDisplay,
-        contactType: "customer service",
-        availableLanguage: ["English", "Hindi"],
-        areaServed: "IN",
-      },
-    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: SITE.phoneDisplay,
+      contactType: "customer service",
+      availableLanguage: ["English", "Hindi"],
+      areaServed: "IN",
+    },
     sameAs: [
       SITE.facebookUrl,
       SITE.instagramUrl,
